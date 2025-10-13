@@ -1,4 +1,4 @@
-# HIT15-WEB-PRIVATE-2024 - WEEK 1
+# HIT16-WEB-PRIVATE-2025 - WEEK 1
 
 ---
 
@@ -203,8 +203,9 @@ b. Liên kết Git và Github
 
 4. Github Page
 
-   - Đầu tiên hãy vào trang [html này](https://raw.githubusercontent.com/kang0408/test/refs/heads/master/week-1/index.html) này
-   - Chuột phải chọn `Save as` để tải file `index.html` về máy
+   - Đầu tiên hãy vào trang [html này](https://github.com/txt1stparkuor/hit-web-private/blob/master/week-2/bai2/index.html) này
+   - Chọn download raw file để tải index.html về máy
+   ![alt text](image.png)
    - Tạo 1 folder `week-1` trong folder bạn vừa tạo, đặt file `index.html` vừa tải về vào đó và đẩy folder `week-1` lên repo trên github theo hướng dẫn như trên.
      Kết quả thành công khi trên repo có 1 folder `week-1`, khi bấm vào nó sẽ có 1 file `index.html`
 
@@ -234,13 +235,63 @@ b. Liên kết Git và Github
 
 - HTML (HyperText Markup Language) là ngôn ngữ đánh dấu được sử dụng để tạo cấu trúc và nội dung cho một trang web.
 - HTML không phải là ngôn ngữ lập trình mà là ngôn ngữ đánh dấu để sắp xếp các thành phần như văn bản, hình ảnh, liên kết, biểu mẫu, và các nội dung khác trên trang web.
+- Ví dụ HTML
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Xin chào mọi người</h1>
+    <button>Click me 🍔</button>
+    <script src="index.js"></script>
+</body>
+
+</html>
+```
 
 ### 2. CSS
 
 - CSS (Cascading Style Sheets) là ngôn ngữ dùng để mô tả cách hiển thị của các phần tử HTML trên trang web.
 - Nó quyết định về bố cục, màu sắc, kiểu chữ, kích thước, khoảng cách giữa các phần tử, v.v. CSS giúp trang web trông trực quan và dễ nhìn hơn.
+- Ví dụ CSS
+```css
+button {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: none;
+  transition: all 0.25s;
+}
+.click {
+  background-color: red;
+  color: white;
+}
+button:hover {
+  background-color: #bea4a4;
+}
+```
 
 ### 3. Javascript
 
 - JavaScript là ngôn ngữ lập trình cho phép tương tác và xử lý các hành vi động trên trang web. Với JavaScript, bạn có thể tạo ra các tính năng như xử lý sự kiện, thay đổi nội dung của trang, kiểm tra dữ liệu đầu vào của người dùng, và nhiều hơn nữa.
 - JavaScript làm cho trang web trở nên tương tác, sinh động và thân thiện với người dùng hơn.
+- Ví dụ Javascript
+```javascript
+const button = document.querySelector("button");
+const handleClick = () => {
+  if (button.innerText === "Click me 🍔") {
+    button.innerText = "Ah i got clicked 🌭";
+    button.classList.add("click");
+  } else {
+    button.innerText = "Click me 🍔";
+    button.classList.remove("click");
+  }
+};
+button.addEventListener("click", handleClick);
+```

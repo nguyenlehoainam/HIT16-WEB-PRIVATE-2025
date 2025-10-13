@@ -1,4 +1,4 @@
-# HIT15-WEB-PRIVATE-2024 - WEEK 2
+# HIT16-WEB-PRIVATE-2025 - WEEK 2
 
 ---
 
@@ -327,7 +327,8 @@ Các bước ở trên là cách thêm 1 folder vào workspace, cách tạo fold
 - Một form được tạo bởi thẻ `<form>`. Bên trong nó có thể một trong những thẻ sau đây:
 
   - `<label>`: Được sử dụng để định nghĩa một nhãn cho một số thành phần của form
-    Trong `<label>` có một thuộc tính là `for` nên được gán giá trị bằng thuộc tính `id` trong `<input>`,... để ràng buộc chúng với nhau
+    - Trong `<label>` có một thuộc tính là `for` nên được gán giá trị bằng thuộc tính `id` trong `<input>`,... để ràng buộc chúng với nhau.
+    - Chú ý khi code mỗi một `<input>` nên có một `<label>` đi kèm chứ nên được dùng ví dụ thẻ h1 hay p để thay label hoặc bỏ label.
   - `<input>`: Đây là thẻ được sử dụng phần lớn trong form và nó cũng hiển thị theo nhiều cách dựa trên thuộc tính `type` của nó. Có thể liệt kê một số `type` như sau:
 
     - `text`: đây là `type` mặc định của ô nhập dữ liệu
@@ -468,6 +469,8 @@ Các bước ở trên là cách thêm 1 folder vào workspace, cách tạo fold
     </nav>
     ```
 
+  - `<main>`: Đại diện cho phần nội dung chính của tài liệu.
+
   - `<footer>`: Đại diện cho phần cuối của một tài liệu hoặc một phần của tài liệu. Nó thường chứa thông tin về tác giả, bản quyền, liên kết đến chính sách bảo mật, hoặc thông tin liên hệ.
 
     ```html
@@ -482,6 +485,35 @@ Các bước ở trên là cách thêm 1 folder vào workspace, cách tạo fold
 
   - `<aside>`: Đại diện cho nội dung phụ liên quan đến nội dung chính của tài liệu. Thường được sử dụng cho sidebar, hiển thị thông tin bổ sung như quảng cáo, danh sách bài viết nổi bật, hoặc thông tin liên hệ.
   - `<section>`: Đại diện cho một phần hoặc một phân đoạn nội dung có liên quan trong tài liệu. Nó thường được dùng để nhóm các nội dung có cùng một chủ đề hoặc chức năng cụ thể.
+
+- Ví dụ áp dụng:
+
+```html
+<header>
+  <h1>Logo</h1>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <div>
+    <h2>Section 1</h2>
+    <p>Content for Section 1</p>
+  </div>
+  <div>
+    <h2>Section 2</h2>
+    <p>Content for Section 2</p>
+  </div>
+</main>
+<footer>
+  <p>&copy; 2023 Your Company. All rights reserved.</p>
+</footer>
+```
 
 ❗❗❗ Giải thích những thẻ trên có vẻ dài dòng và khó hiểu nhưng những thẻ này cũng không khác gì so với thẻ `<div>` được thêm thuộc tính `id="header"` hoặc `class="header"`. Tuy nhiên với các thẻ ngữ nghĩa trên sẽ giúp đoạn HTML sẽ dễ đọc hơn và hiểu được nội dung bên trong nó là gì
 

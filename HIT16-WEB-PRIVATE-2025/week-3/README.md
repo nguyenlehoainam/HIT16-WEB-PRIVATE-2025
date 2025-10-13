@@ -1,4 +1,4 @@
-# HIT15-WEB-PRIVATE-2024 - WEEK 3
+# HIT16-WEB-PRIVATE-2025 - WEEK 3
 
 ---
 
@@ -153,7 +153,7 @@ p {
 
 CSS hỗ trợ nhiều đơn vị đo lường, bao gồm cả đơn vị tuyệt đối (cố định) và tương đối (dựa vào phần tử hoặc màn hình).
 
-- **px (pixel)**: Đơn vị cố định, biểu thị số pixel trên màn hình. Thường được dùng khi bạn muốn kích thước chính xác, không thay đổi theo kích thước màn hình hay phần tử cha
+- **px (pixel)**: Đơn vị cố định, biểu thị số pixel trên màn hình. Thường được dùng khi bạn muốn kích thước chính xác, không thay đổi theo kích thước màn hình hay phần tử cha.
 
   ```css
   h1 {
@@ -200,6 +200,10 @@ CSS hỗ trợ nhiều đơn vị đo lường, bao gồm cả đơn vị tuyệ
     font-size: 1.5rem; /* Văn bản có kích thước 24px */
   }
   ```
+
+- Toàn bộ các đơn vị trên đều có thể dùng cho các thuộc tính cần đơn vị như margin, padding, height, width,...
+  - Nếu được thì nên sử dụng rem cho font-size, margin, padding bởi vì đây là đơn vị tương đối
+  - Những thứ cố định như border-radius, kích cỡ của icon thì nên dùng px.
 
 #### 2. CSS Backgrounds
 
@@ -294,6 +298,24 @@ div {
   }
   ```
 
+- **text-overflow**: định dạng cách hiển thị của phần chữ bị tràn ra (overflow). Hay sử dụng giá trị ellipsis khiến cho phần tràn ra biến thành dấu "..."
+
+  - Thường được dùng kết hợp với các thuộc tính sau:
+
+  ```css
+  .single-line-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+  }
+  ```
+
+  ![alt text](<Screenshot 2025-10-13 232731.png>)
+
+  - white-space: nowrap khiến cho dòng text không xuống dòng
+  - overflow: hidden khiến cho phần tràn ra bị ẩn đi
+
 - Nguồn chi tiết hơn: 👉 [Ở đây!](https://www.w3schools.com/css/css_text.asp)
 
 #### 6. CSS Font
@@ -336,6 +358,8 @@ div {
 
 - **max-width**/ **max-height**: Set chiều rộng/ chiều cao tối đa
 - **min-width**/ **min-height**: Set chiều rộng/ chiều cao tối thiểu
+- Để cho reponsive dễ hơn, mọi người nên hạn chế set cứng width height như div trên.
+  - Nếu mà muốn set width, height thì nên dùng max-width và min-height để tránh bị tràn (overflow).
 - Nguồn chi tiết hơn: 👉 [Ở đây!](https://www.w3schools.com/css/css_dimension.asp)
 
 #### 8. Box Model
@@ -397,6 +421,8 @@ Giả sử bạn có một phần tử `<div>` và muốn nó có `width` là `2
   - Kích thước tổng cộng sẽ chính xác là `200px x 100px`
 
   => Điều này xảy ra vì trình duyệt sẽ tự điều chỉnh phần content bên trong để phù hợp với tổng kích thước `200px x 100px`.
+
+  => Tóm lại: để kích thước width và height đúng như mong muốn (không tăng thêm) mặc dù thêm padding, border thì dùng box-sizing: border-box.
 
 #### 9. Padding, Margin
 
@@ -501,11 +527,30 @@ Giả sử bạn có một phần tử `<div>` và muốn nó có `width` là `2
 
 Reset CSS đặt lại các giá trị mặc định của trình duyệt cho các phần tử (như khoảng cách `margin`, `padding`, `font-size`,...), giúp tăng tính nhất quán khi hiển thị trên các trình duyệt khác nhau.
 
+**!!!** Mọi người chú ý luôn phải có reset css ở đầu một file css.
+
 ```css
 * {
   /* Xóa margin, padding và border mặc định */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+a {
+  text-decoration: none;
+}
+ul,
+ol {
+  list-style: none;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
 ```

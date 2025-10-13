@@ -1,908 +1,63 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Week 2</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html><html><head>
+      <title>README</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\admin1\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.19\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
-    />
-
-    <style>
-      code[class*="language-"],
-      pre[class*="language-"] {
-        color: #333;
-        background: 0 0;
-        font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-        text-align: left;
-        white-space: pre;
-        word-spacing: normal;
-        word-break: normal;
-        word-wrap: normal;
-        line-height: 1.4;
-        -moz-tab-size: 8;
-        -o-tab-size: 8;
-        tab-size: 8;
-        -webkit-hyphens: none;
-        -moz-hyphens: none;
-        -ms-hyphens: none;
-        hyphens: none;
-      }
-      pre[class*="language-"] {
-        padding: 0.8em;
-        overflow: auto;
-        border-radius: 3px;
-        background: #f5f5f5;
-      }
-      :not(pre) > code[class*="language-"] {
-        padding: 0.1em;
-        border-radius: 0.3em;
-        white-space: normal;
-        background: #f5f5f5;
-      }
-      .token.blockquote,
-      .token.comment {
-        color: #969896;
-      }
-      .token.cdata {
-        color: #183691;
-      }
-      .token.doctype,
-      .token.macro.property,
-      .token.punctuation,
-      .token.variable {
-        color: #333;
-      }
-      .token.builtin,
-      .token.important,
-      .token.keyword,
-      .token.operator,
-      .token.rule {
-        color: #a71d5d;
-      }
-      .token.attr-value,
-      .token.regex,
-      .token.string,
-      .token.url {
-        color: #183691;
-      }
-      .token.atrule,
-      .token.boolean,
-      .token.code,
-      .token.command,
-      .token.constant,
-      .token.entity,
-      .token.number,
-      .token.property,
-      .token.symbol {
-        color: #0086b3;
-      }
-      .token.prolog,
-      .token.selector,
-      .token.tag {
-        color: #63a35c;
-      }
-      .token.attr-name,
-      .token.class,
-      .token.class-name,
-      .token.function,
-      .token.id,
-      .token.namespace,
-      .token.pseudo-class,
-      .token.pseudo-element,
-      .token.url-reference .token.variable {
-        color: #795da3;
-      }
-      .token.entity {
-        cursor: help;
-      }
-      .token.title,
-      .token.title .token.punctuation {
-        font-weight: 700;
-        color: #1d3e81;
-      }
-      .token.list {
-        color: #ed6a43;
-      }
-      .token.inserted {
-        background-color: #eaffea;
-        color: #55a532;
-      }
-      .token.deleted {
-        background-color: #ffecec;
-        color: #bd2c00;
-      }
-      .token.bold {
-        font-weight: 700;
-      }
-      .token.italic {
-        font-style: italic;
-      }
-      .language-json .token.property {
-        color: #183691;
-      }
-      .language-markup .token.tag .token.punctuation {
-        color: #333;
-      }
-      .language-css .token.function,
-      code.language-css {
-        color: #0086b3;
-      }
-      .language-yaml .token.atrule {
-        color: #63a35c;
-      }
-      code.language-yaml {
-        color: #183691;
-      }
-      .language-ruby .token.function {
-        color: #333;
-      }
-      .language-markdown .token.url {
-        color: #795da3;
-      }
-      .language-makefile .token.symbol {
-        color: #795da3;
-      }
-      .language-makefile .token.variable {
-        color: #183691;
-      }
-      .language-makefile .token.builtin {
-        color: #0086b3;
-      }
-      .language-bash .token.keyword {
-        color: #0086b3;
-      }
-      pre[data-line] {
-        position: relative;
-        padding: 1em 0 1em 3em;
-      }
-      pre[data-line] .line-highlight-wrapper {
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: transparent;
-        display: block;
-        width: 100%;
-      }
-      pre[data-line] .line-highlight {
-        position: absolute;
-        left: 0;
-        right: 0;
-        padding: inherit 0;
-        margin-top: 1em;
-        background: hsla(24, 20%, 50%, 0.08);
-        background: linear-gradient(
-          to right,
-          hsla(24, 20%, 50%, 0.1) 70%,
-          hsla(24, 20%, 50%, 0)
-        );
-        pointer-events: none;
-        line-height: inherit;
-        white-space: pre;
-      }
-      pre[data-line] .line-highlight:before,
-      pre[data-line] .line-highlight[data-end]:after {
-        content: attr(data-start);
-        position: absolute;
-        top: 0.4em;
-        left: 0.6em;
-        min-width: 1em;
-        padding: 0 0.5em;
-        background-color: hsla(24, 20%, 50%, 0.4);
-        color: #f4f1ef;
-        font: bold 65%/1.5 sans-serif;
-        text-align: center;
-        vertical-align: 0.3em;
-        border-radius: 999px;
-        text-shadow: none;
-        box-shadow: 0 1px #fff;
-      }
-      pre[data-line] .line-highlight[data-end]:after {
-        content: attr(data-end);
-        top: auto;
-        bottom: 0.4em;
-      }
-      html body {
-        font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans,
-          sans-serif;
-        font-size: 16px;
-        line-height: 1.6;
-        color: #333;
-        background-color: #fff;
-        overflow: initial;
-        box-sizing: border-box;
-        word-wrap: break-word;
-      }
-      html body > :first-child {
-        margin-top: 0;
-      }
-      html body h1,
-      html body h2,
-      html body h3,
-      html body h4,
-      html body h5,
-      html body h6 {
-        line-height: 1.2;
-        margin-top: 1em;
-        margin-bottom: 16px;
-        color: #000;
-      }
-      html body h1 {
-        font-size: 2.25em;
-        font-weight: 300;
-        padding-bottom: 0.3em;
-      }
-      html body h2 {
-        font-size: 1.75em;
-        font-weight: 400;
-        padding-bottom: 0.3em;
-      }
-      html body h3 {
-        font-size: 1.5em;
-        font-weight: 500;
-      }
-      html body h4 {
-        font-size: 1.25em;
-        font-weight: 600;
-      }
-      html body h5 {
-        font-size: 1.1em;
-        font-weight: 600;
-      }
-      html body h6 {
-        font-size: 1em;
-        font-weight: 600;
-      }
-      html body h1,
-      html body h2,
-      html body h3,
-      html body h4,
-      html body h5 {
-        font-weight: 600;
-      }
-      html body h5 {
-        font-size: 1em;
-      }
-      html body h6 {
-        color: #5c5c5c;
-      }
-      html body strong {
-        color: #000;
-      }
-      html body del {
-        color: #5c5c5c;
-      }
-      html body a:not([href]) {
-        color: inherit;
-        text-decoration: none;
-      }
-      html body a {
-        color: #08c;
-        text-decoration: none;
-      }
-      html body a:hover {
-        color: #00a3f5;
-        text-decoration: none;
-      }
-      html body img {
-        max-width: 100%;
-      }
-      html body > p {
-        margin-top: 0;
-        margin-bottom: 16px;
-        word-wrap: break-word;
-      }
-      html body > ol,
-      html body > ul {
-        margin-bottom: 16px;
-      }
-      html body ol,
-      html body ul {
-        padding-left: 2em;
-      }
-      html body ol.no-list,
-      html body ul.no-list {
-        padding: 0;
-        list-style-type: none;
-      }
-      html body ol ol,
-      html body ol ul,
-      html body ul ol,
-      html body ul ul {
-        margin-top: 0;
-        margin-bottom: 0;
-      }
-      html body li {
-        margin-bottom: 0;
-      }
-      html body li.task-list-item {
-        list-style: none;
-      }
-      html body li > p {
-        margin-top: 0;
-        margin-bottom: 0;
-      }
-      html body .task-list-item-checkbox {
-        margin: 0 0.2em 0.25em -1.8em;
-        vertical-align: middle;
-      }
-      html body .task-list-item-checkbox:hover {
-        cursor: pointer;
-      }
-      html body blockquote {
-        margin: 16px 0;
-        font-size: inherit;
-        padding: 0 15px;
-        color: #5c5c5c;
-        background-color: #f0f0f0;
-        border-left: 4px solid #d6d6d6;
-      }
-      html body blockquote > :first-child {
-        margin-top: 0;
-      }
-      html body blockquote > :last-child {
-        margin-bottom: 0;
-      }
-      html body hr {
-        height: 4px;
-        margin: 32px 0;
-        background-color: #d6d6d6;
-        border: 0 none;
-      }
-      html body table {
-        margin: 10px 0 15px 0;
-        border-collapse: collapse;
-        border-spacing: 0;
-        display: block;
-        width: 100%;
-        overflow: auto;
-        word-break: normal;
-        word-break: keep-all;
-      }
-      html body table th {
-        font-weight: 700;
-        color: #000;
-      }
-      html body table td,
-      html body table th {
-        border: 1px solid #d6d6d6;
-        padding: 6px 13px;
-      }
-      html body dl {
-        padding: 0;
-      }
-      html body dl dt {
-        padding: 0;
-        margin-top: 16px;
-        font-size: 1em;
-        font-style: italic;
-        font-weight: 700;
-      }
-      html body dl dd {
-        padding: 0 16px;
-        margin-bottom: 16px;
-      }
-      html body code {
-        font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-        font-size: 0.85em;
-        color: #000;
-        background-color: #f0f0f0;
-        border-radius: 3px;
-        padding: 0.2em 0;
-      }
-      html body code::after,
-      html body code::before {
-        letter-spacing: -0.2em;
-        content: "\00a0";
-      }
-      html body pre > code {
-        padding: 0;
-        margin: 0;
-        word-break: normal;
-        white-space: pre;
-        background: 0 0;
-        border: 0;
-      }
-      html body .highlight {
-        margin-bottom: 16px;
-      }
-      html body .highlight pre,
-      html body pre {
-        padding: 1em;
-        overflow: auto;
-        line-height: 1.45;
-        border: #d6d6d6;
-        border-radius: 3px;
-      }
-      html body .highlight pre {
-        margin-bottom: 0;
-        word-break: normal;
-      }
-      html body pre code,
-      html body pre tt {
-        display: inline;
-        max-width: initial;
-        padding: 0;
-        margin: 0;
-        overflow: initial;
-        line-height: inherit;
-        word-wrap: normal;
-        background-color: transparent;
-        border: 0;
-      }
-      html body pre code:after,
-      html body pre code:before,
-      html body pre tt:after,
-      html body pre tt:before {
-        content: normal;
-      }
-      html body blockquote,
-      html body dl,
-      html body ol,
-      html body p,
-      html body pre,
-      html body ul {
-        margin-top: 0;
-        margin-bottom: 16px;
-      }
-      html body kbd {
-        color: #000;
-        border: 1px solid #d6d6d6;
-        border-bottom: 2px solid #c7c7c7;
-        padding: 2px 4px;
-        background-color: #f0f0f0;
-        border-radius: 3px;
-      }
-      @media print {
-        html body {
-          background-color: #fff;
-        }
-        html body h1,
-        html body h2,
-        html body h3,
-        html body h4,
-        html body h5,
-        html body h6 {
-          color: #000;
-          page-break-after: avoid;
-        }
-        html body blockquote {
-          color: #5c5c5c;
-        }
-        html body pre {
-          page-break-inside: avoid;
-        }
-        html body table {
-          display: table;
-        }
-        html body img {
-          display: block;
-          max-width: 100%;
-          max-height: 100%;
-        }
-        html body code,
-        html body pre {
-          word-wrap: break-word;
-          white-space: pre;
-        }
-      }
-      .markdown-preview {
-        width: 100%;
-        height: 100%;
-        box-sizing: border-box;
-      }
-      .markdown-preview ul {
-        list-style: disc;
-      }
-      .markdown-preview ul ul {
-        list-style: circle;
-      }
-      .markdown-preview ul ul ul {
-        list-style: square;
-      }
-      .markdown-preview ol {
-        list-style: decimal;
-      }
-      .markdown-preview ol ol,
-      .markdown-preview ul ol {
-        list-style-type: lower-roman;
-      }
-      .markdown-preview ol ol ol,
-      .markdown-preview ol ul ol,
-      .markdown-preview ul ol ol,
-      .markdown-preview ul ul ol {
-        list-style-type: lower-alpha;
-      }
-      .markdown-preview .newpage,
-      .markdown-preview .pagebreak {
-        page-break-before: always;
-      }
-      .markdown-preview pre.line-numbers {
-        position: relative;
-        padding-left: 3.8em;
-        counter-reset: linenumber;
-      }
-      .markdown-preview pre.line-numbers > code {
-        position: relative;
-      }
-      .markdown-preview pre.line-numbers .line-numbers-rows {
-        position: absolute;
-        pointer-events: none;
-        top: 1em;
-        font-size: 100%;
-        left: 0;
-        width: 3em;
-        letter-spacing: -1px;
-        border-right: 1px solid #999;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-      .markdown-preview pre.line-numbers .line-numbers-rows > span {
-        pointer-events: none;
-        display: block;
-        counter-increment: linenumber;
-      }
-      .markdown-preview pre.line-numbers .line-numbers-rows > span:before {
-        content: counter(linenumber);
-        color: #999;
-        display: block;
-        padding-right: 0.8em;
-        text-align: right;
-      }
-      .markdown-preview .mathjax-exps .MathJax_Display {
-        text-align: center !important;
-      }
-      .markdown-preview:not([data-for="preview"])
-        .code-chunk
-        .code-chunk-btn-group {
-        display: none;
-      }
-      .markdown-preview:not([data-for="preview"]) .code-chunk .status {
-        display: none;
-      }
-      .markdown-preview:not([data-for="preview"]) .code-chunk .output-div {
-        margin-bottom: 16px;
-      }
-      .markdown-preview .md-toc {
-        padding: 0;
-      }
-      .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link {
-        display: inline;
-        padding: 0.25rem 0;
-      }
-      .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,
-      .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p {
-        display: inline;
-      }
-      .markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link {
-        font-weight: 800;
-      }
-      .scrollbar-style::-webkit-scrollbar {
-        width: 8px;
-      }
-      .scrollbar-style::-webkit-scrollbar-track {
-        border-radius: 10px;
-        background-color: transparent;
-      }
-      .scrollbar-style::-webkit-scrollbar-thumb {
-        border-radius: 5px;
-        background-color: rgba(150, 150, 150, 0.66);
-        border: 4px solid rgba(150, 150, 150, 0.66);
-        background-clip: content-box;
-      }
-      html body[for="html-export"]:not([data-presentation-mode]) {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        margin: 0;
-        padding: 0;
-        overflow: auto;
-      }
-      html
-        body[for="html-export"]:not([data-presentation-mode])
-        .markdown-preview {
-        position: relative;
-        top: 0;
-        min-height: 100vh;
-      }
-      @media screen and (min-width: 914px) {
-        html
-          body[for="html-export"]:not([data-presentation-mode])
-          .markdown-preview {
-          padding: 2em calc(50% - 457px + 2em);
-        }
-      }
-      @media screen and (max-width: 914px) {
-        html
-          body[for="html-export"]:not([data-presentation-mode])
-          .markdown-preview {
-          padding: 2em;
-        }
-      }
-      @media screen and (max-width: 450px) {
-        html
-          body[for="html-export"]:not([data-presentation-mode])
-          .markdown-preview {
-          font-size: 14px !important;
-          padding: 1em;
-        }
-      }
-      @media print {
-        html
-          body[for="html-export"]:not([data-presentation-mode])
-          #sidebar-toc-btn {
-          display: none;
-        }
-      }
-      html
-        body[for="html-export"]:not([data-presentation-mode])
-        #sidebar-toc-btn {
-        position: fixed;
-        bottom: 8px;
-        left: 8px;
-        font-size: 28px;
-        cursor: pointer;
-        color: inherit;
-        z-index: 99;
-        width: 32px;
-        text-align: center;
-        opacity: 0.4;
-      }
-      html
-        body[for="html-export"]:not(
-          [data-presentation-mode]
-        )[html-show-sidebar-toc]
-        #sidebar-toc-btn {
-        opacity: 1;
-      }
-      html
-        body[for="html-export"]:not(
-          [data-presentation-mode]
-        )[html-show-sidebar-toc]
-        .md-sidebar-toc {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 300px;
-        height: 100%;
-        padding: 32px 0 48px 0;
-        font-size: 14px;
-        box-shadow: 0 0 4px rgba(150, 150, 150, 0.33);
-        box-sizing: border-box;
-        overflow: auto;
-        background-color: inherit;
-      }
-      html
-        body[for="html-export"]:not(
-          [data-presentation-mode]
-        )[html-show-sidebar-toc]
-        .md-sidebar-toc::-webkit-scrollbar {
-        width: 8px;
-      }
-      html
-        body[for="html-export"]:not(
-          [data-presentation-mode]
-        )[html-show-sidebar-toc]
-        .md-sidebar-toc::-webkit-scrollbar-track {
-        border-radius: 10px;
-        background-color: transparent;
-      }
-      html
-        body[for="html-export"]:not(
-          [data-presentation-mode]
-        )[html-show-sidebar-toc]
-        .md-sidebar-toc::-webkit-scrollbar-thumb {
-        border-radius: 5px;
-        background-color: rgba(150, 150, 150, 0.66);
-        border: 4px solid rgba(150, 150, 150, 0.66);
-        background-clip: content-box;
-      }
-      html
-        body[for="html-export"]:not(
-          [data-presentation-mode]
-        )[html-show-sidebar-toc]
-        .md-sidebar-toc
-        a {
-        text-decoration: none;
-      }
-      html
-        body[for="html-export"]:not(
-          [data-presentation-mode]
-        )[html-show-sidebar-toc]
-        .md-sidebar-toc
-        .md-toc {
-        padding: 0 16px;
-      }
-      html
-        body[for="html-export"]:not(
-          [data-presentation-mode]
-        )[html-show-sidebar-toc]
-        .md-sidebar-toc
-        .md-toc
-        .md-toc-link-wrapper
-        .md-toc-link {
-        display: inline;
-        padding: 0.25rem 0;
-      }
-      html
-        body[for="html-export"]:not(
-          [data-presentation-mode]
-        )[html-show-sidebar-toc]
-        .md-sidebar-toc
-        .md-toc
-        .md-toc-link-wrapper
-        .md-toc-link
-        div,
-      html
-        body[for="html-export"]:not(
-          [data-presentation-mode]
-        )[html-show-sidebar-toc]
-        .md-sidebar-toc
-        .md-toc
-        .md-toc-link-wrapper
-        .md-toc-link
-        p {
-        display: inline;
-      }
-      html
-        body[for="html-export"]:not(
-          [data-presentation-mode]
-        )[html-show-sidebar-toc]
-        .md-sidebar-toc
-        .md-toc
-        .md-toc-link-wrapper.highlighted
-        .md-toc-link {
-        font-weight: 800;
-      }
-      html
-        body[for="html-export"]:not(
-          [data-presentation-mode]
-        )[html-show-sidebar-toc]
-        .markdown-preview {
-        left: 300px;
-        width: calc(100% - 300px);
-        padding: 2em calc(50% - 457px - 300px / 2);
-        margin: 0;
-        box-sizing: border-box;
-      }
-      @media screen and (max-width: 1274px) {
-        html
-          body[for="html-export"]:not(
-            [data-presentation-mode]
-          )[html-show-sidebar-toc]
-          .markdown-preview {
-          padding: 2em;
-        }
-      }
-      @media screen and (max-width: 450px) {
-        html
-          body[for="html-export"]:not(
-            [data-presentation-mode]
-          )[html-show-sidebar-toc]
-          .markdown-preview {
-          width: 100%;
-        }
-      }
-      html
-        body[for="html-export"]:not([data-presentation-mode]):not(
-          [html-show-sidebar-toc]
-        )
-        .markdown-preview {
-        left: 50%;
-        transform: translateX(-50%);
-      }
-      html
-        body[for="html-export"]:not([data-presentation-mode]):not(
-          [html-show-sidebar-toc]
-        )
-        .md-sidebar-toc {
-        display: none;
-      }
-      /* Please visit the URL below for more information: */
-      /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
-    </style>
-    <!-- The content below will be included at the end of the <head> element. -->
-    <script type="text/javascript">
-      document.addEventListener("DOMContentLoaded", function () {
-        // your code here
-      });
-    </script>
-  </head>
-  <body for="html-export">
-    <div class="crossnote markdown-preview">
-      <h1 id="hit15-web-private-2024---week-2">
-        HIT16-WEB-PRIVATE-2025 - WEEK 2
-      </h1>
-      <hr />
-      <h2 id="homereadmehtml"><a href="../../README.html">Home</a></h2>
-      <hr />
-      <h2 id="nội-dung">Nội dung</h2>
-      <h3 id="i-cấu-trúc-cơ-bản-của-trang-htmli-cấu-trúc-cơ-bản-của-trang-html">
-        <a
-          href="#i-c%E1%BA%A5u-tr%C3%BAc-c%C6%A1-b%E1%BA%A3n-c%E1%BB%A7a-trang-html"
-          >I. Cấu trúc cơ bản của trang HTML</a
-        >
-      </h3>
-      <h3 id="ii-các-thẻ-cơ-bản-trong-htmlii-các-thẻ-cơ-bản-trong-html">
-        <a href="#ii-c%C3%A1c-th%E1%BA%BB-c%C6%A1-b%E1%BA%A3n-trong-html"
-          >II. Các thẻ cơ bản trong HTML</a
-        >
-      </h3>
-      <p>
-        <a href="#1-c%E1%BA%A5u-t%E1%BA%A1o-c%E1%BB%A7a-th%E1%BA%BB-trong-html"
-          >1. Cấu tạo của thẻ trong HTML</a
-        >
-      </p>
-      <p>
-        <a href="#2-c%C3%A1c-th%E1%BA%BB-c%C6%A1-b%E1%BA%A3n"
-          >2. Các thẻ cơ bản</a
-        >
-      </p>
-      <h3 id="iii-semantic-htmliii-semantic-html">
-        <a href="#iii-semantic-html">III. Semantic HTML</a>
-      </h3>
-      <h3 id="iv-tò-mòiv-tò-mò"><a href="#iv-t%C3%B2-m%C3%B2">IV. Tò mò</a></h3>
-      <hr />
-      <h2 id="i-cấu-trúc-cơ-bản-của-trang-html">
-        I. Cấu trúc cơ bản của trang HTML
-      </h2>
-      <ul>
-        <li>
-          <p>1 file HTML có phần đuôi mở rộng là <code>.html</code></p>
-        </li>
-        <li>
-          <p>Cấu trúc cơ bản của trang HTML thường gồm 3 phần:</p>
-          <ul>
-            <li>
-              <code>&lt;!Doctype html&gt;</code>: Đây là khai báo kiểu tài liệu,
-              cho trình duyệt biết rằng tài liệu này sử dụng phiên bản HTML5.
-            </li>
-            <li>
-              <code>&lt;html&gt;&lt;/html&gt;</code>: Thẻ này bao bọc toàn bộ
-              tài liệu HTML.
-            </li>
-            <li>
-              <code>&lt;head&gt;&lt;/head&gt;</code>: Phần này chứa các thông
-              tin "meta" về trang, như tiêu đề trang, charset (mã hóa ký tự),
-              viewport (đối với thiết bị di động), và liên kết đến các file CSS,
-              JavaScript bên ngoài.
-              <ul>
-                <li>
-                  <code>&lt;meta charset="UTF-8"&gt;</code>: Xác định mã hóa ký
-                  tự, thường sử dụng UTF-8.
-                </li>
-                <li>
-                  <code
-                    >&lt;meta name="viewport" content="width=device-width,
-                    initial-scale=1.0"&gt;</code
-                  >: Đảm bảo trang web hiển thị đúng trên thiết bị di động.<br />
-                  → Mục đích của các thẻ <code>&lt;meta&gt;</code>: cung cấp
-                  thông tin về trang web cho trình duyệt từ đó cải thiện SEO
-                  (tối ưu hóa công cụ tìm kiếm)
-                </li>
-                <li>
-                  <code>&lt;title&gt;</code>: Tiêu đề của trang web, xuất hiện
-                  trên tab của trình duyệt.<br />
-                  ...
-                </li>
-              </ul>
-            </li>
-            <li>
-              <code>&lt;body&gt;&lt;/body&gt;</code>: Phần chứa những nội dung
-              hiển thị trên trang web
-            </li>
-          </ul>
-          <pre
-            data-role="codeBlock"
-            data-info="html"
-            class="language-html html"
-          ><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="hit16-web-private-2025---week-2">HIT16-WEB-PRIVATE-2025 - WEEK 2 </h1>
+<hr>
+<h2 id="homereadmehtml"><a href="../README.html">Home</a> </h2>
+<hr>
+<h2 id="nội-dung">Nội dung </h2>
+<h3 id="i-cấu-trúc-cơ-bản-của-trang-htmli-cấu-trúc-cơ-bản-của-trang-html"><a href="#i-c%E1%BA%A5u-tr%C3%BAc-c%C6%A1-b%E1%BA%A3n-c%E1%BB%A7a-trang-html">I. Cấu trúc cơ bản của trang HTML</a> </h3>
+<h3 id="ii-các-thẻ-cơ-bản-trong-htmlii-các-thẻ-cơ-bản-trong-html"><a href="#ii-c%C3%A1c-th%E1%BA%BB-c%C6%A1-b%E1%BA%A3n-trong-html">II. Các thẻ cơ bản trong HTML</a> </h3>
+<p><a href="#1-c%E1%BA%A5u-t%E1%BA%A1o-c%E1%BB%A7a-th%E1%BA%BB-trong-html">1. Cấu tạo của thẻ trong HTML</a></p>
+<p><a href="#2-c%C3%A1c-th%E1%BA%BB-c%C6%A1-b%E1%BA%A3n">2. Các thẻ cơ bản</a></p>
+<h3 id="iii-semantic-htmliii-semantic-html"><a href="#iii-semantic-html">III. Semantic HTML</a> </h3>
+<h3 id="iv-tò-mòiv-tò-mò"><a href="#iv-t%C3%B2-m%C3%B2">IV. Tò mò</a> </h3>
+<hr>
+<h2 id="i-cấu-trúc-cơ-bản-của-trang-html">I. Cấu trúc cơ bản của trang HTML </h2>
+<ul>
+<li>
+<p>1 file HTML có phần đuôi mở rộng là <code>.html</code></p>
+</li>
+<li>
+<p>Cấu trúc cơ bản của trang HTML thường gồm 3 phần:</p>
+<ul>
+<li><code>&lt;!Doctype html&gt;</code>: Đây là khai báo kiểu tài liệu, cho trình duyệt biết rằng tài liệu này sử dụng phiên bản HTML5.</li>
+<li><code>&lt;html&gt;&lt;/html&gt;</code>: Thẻ này bao bọc toàn bộ tài liệu HTML.</li>
+<li><code>&lt;head&gt;&lt;/head&gt;</code>: Phần này chứa các thông tin "meta" về trang, như tiêu đề trang, charset (mã hóa ký tự), viewport (đối với thiết bị di động), và liên kết đến các file CSS, JavaScript bên ngoài.
+<ul>
+<li><code>&lt;meta charset="UTF-8"&gt;</code>: Xác định mã hóa ký tự, thường sử dụng UTF-8.</li>
+<li><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code>: Đảm bảo trang web hiển thị đúng trên thiết bị di động.<br>
+→ Mục đích của các thẻ <code>&lt;meta&gt;</code>: cung cấp thông tin về trang web cho trình duyệt từ đó cải thiện SEO (tối ưu hóa công cụ tìm kiếm)</li>
+<li><code>&lt;title&gt;</code>: Tiêu đề của trang web, xuất hiện trên tab của trình duyệt.<br>
+...</li>
+</ul>
+</li>
+<li><code>&lt;body&gt;&lt;/body&gt;</code>: Phần chứa những nội dung hiển thị trên trang web</li>
+</ul>
+<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
@@ -914,146 +69,79 @@
     Phần thân đặt ở đây
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
-        </li>
-      </ul>
-      <h2 id="ii-các-thẻ-cơ-bản-trong-html">II. Các thẻ cơ bản trong HTML</h2>
-      <h3 id="1-cấu-tạo-của-thẻ-trong-html">1. Cấu tạo của thẻ trong HTML</h3>
-      <p><img src="./image/tag.png" alt="tag-structure" /></p>
-      <ul>
-        <li>
-          Cấu tạo:
-          <ul>
-            <li>
-              <code>Tag name</code>: Tên các thẻ trong HTML được sử dụng để tạo
-              ra các phần tử, thành phần trong web. Ví dụ:
-              <code>&lt;h1&gt;&lt;/h1&gt;</code>,
-              <code>&lt;p&gt;&lt;/p&gt;</code>,
-              <code>&lt;a&gt;&lt;/a&gt;</code>,...
-            </li>
-            <li>
-              <code>Attribute</code>: Các thuộc tính sẽ cung cấp thêm thông tin
-              cho các phần tử HTML
-              <ul>
-                <li><code>Attribute name</code>: Tên thuộc tính</li>
-                <li><code>Attribute value</code>: Gía trị của thuộc tính</li>
-              </ul>
-            </li>
-            <li><code>Content</code>: Các nội dung bên trong thẻ HTML</li>
-          </ul>
-        </li>
-        <li>
-          Chú ý:
-          <ul>
-            <li>
-              Các thẻ trong HTML thường có <code>Start tag</code> và
-              <code>End tag</code>. Có một số thẻ chỉ có
-              <code>End tag</code> hay còn gọi là
-              <code>Self closing tag</code> ví dụ như thẻ
-              <code>&lt;img/&gt;</code>
-            </li>
-            <li>
-              Các thuộc tính <code>Attribute</code> phải đặt trong
-              <code>Start tag</code>. Còn các <code>Self closing tag</code> các
-              thuộc tính đặt trong chính nó
-            </li>
-            <li>
-              <code>&lt;h1&gt;</code> đây gọi là 1 thẻ nhưng
-              <code>&lt;h1&gt;Heading&lt;/h1&gt;</code> được gọi là 1 thành phần
-              HTML hay 1 Element HTML
-            </li>
-          </ul>
-        </li>
-        <li>
-          Vị trí: Các thẻ cơ bản này thường được đặt trong thẻ
-          <code>&lt;body&gt;&lt;/body&gt;</code>
-        </li>
-        <li>Mục đích: Tạo ra các thành phần, phần tử trong trang web</li>
-      </ul>
-      <h3 id="2-các-thẻ-cơ-bản">2. Các thẻ cơ bản</h3>
-      <p>
-        Trước khi bắt đầu tìm hiểu các thẻ cơ bản, các bạn hãy thực hiện theo
-        các bước sau đây để có thể mở thư mục
-        <code>HIT15_WEB_PRIVATE</code> trong VSCode
-      </p>
-      <ul>
-        <li>
-          <p>B1: Mở VSCode</p>
-        </li>
-        <li>
-          <p>B2:</p>
-          <ul>
-            <li>
-              <p>
-                Chọn <code>File</code> → Chọn
-                <code>Add Folder to Workspace..</code>.<br />
-                <img
-                  src="./image/add-workspace.png"
-                  alt="add folder to workspace"
-                />
-              </p>
-            </li>
-            <li>
-              <p>
-                Một cửa sổ chọn thư mục hiện lên. Tìm đến chọn thư mục
-                <code>HIT15_WEB_PRIVATE</code> và nhấn <code>Add</code>
-              </p>
-            </li>
-            <li>
-              <p>
-                Nếu chưa thấy cửa sổ như sau, hãy nhìn qua hình thứ hai và bấm
-                vào icon được gạch đỏ để thấy được folder
-                <code>HIT15_WEB_PRIVATE</code><br />
-                <img src="./image/explorer.png" alt="explorer" />
-              </p>
-              <p><img src="./image/open-explorer.png" alt="open explorer" /></p>
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <p>
-        Nếu các bạn đã thêm được thư mục trên vào workspace, hãy tiếp tục thực
-        hiện theo các bước dưới đây để tạo ra thư mục <code>week-2</code> và
-        file <code>index.html</code> đầu tiên:
-      </p>
-      <ul>
-        <li>
-          B1: Tạo thư mục <code>week-2</code>
-          <ul>
-            <li>
-              Click vào thư mục <code>HIT15_WEB_PRIVATE</code><br />
-              <img src="./image/click-folder.png" alt="alt" />
-            </li>
-            <li>
-              Click vào icon được gạch đỏ, đặt tên <code>week-2</code> và nhấn
-              enter<br />
-              <img src="./image/add-folder.png" alt="alt" /><br />
-              <img src="./image/add-folder-result.png" alt="alt" />
-            </li>
-            <li>
-              Tương tự như trên, click vào thư mục <code>week-2</code>, tiếp tục
-              click vào icon được gạch đỏ, đặt tên <code>index.html</code> và
-              nhấn enter<br />
-              <img src="./image/add-file.png" alt="alt" /><br />
-              <img src="./image/add-file-result.png" alt="alt" />
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <p>
-        Các bước ở trên là cách thêm 1 folder vào workspace, cách tạo folder,
-        tạo file trong VSCode. Lúc này hãy nhìn sang bên phải chính là phần
-        editor của VSCode.<br />
-        <img src="./image/full-workspace.png" alt="alt" />
-      </p>
-      <ul>
-        <li>Copy đoạn code cấu trúc cơ bản sau đây vào phần editor</li>
-      </ul>
-      <pre
-        data-role="codeBlock"
-        data-info="html"
-        class="language-html html"
-      ><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></li>
+</ul>
+<h2 id="ii-các-thẻ-cơ-bản-trong-html">II. Các thẻ cơ bản trong HTML </h2>
+<h3 id="1-cấu-tạo-của-thẻ-trong-html">1. Cấu tạo của thẻ trong HTML </h3>
+<p><img src="./image/tag.png" alt="tag-structure"></p>
+<ul>
+<li>Cấu tạo:
+<ul>
+<li><code>Tag name</code>: Tên các thẻ trong HTML được sử dụng để tạo ra các phần tử, thành phần trong web. Ví dụ: <code>&lt;h1&gt;&lt;/h1&gt;</code>, <code>&lt;p&gt;&lt;/p&gt;</code>, <code>&lt;a&gt;&lt;/a&gt;</code>,...</li>
+<li><code>Attribute</code>: Các thuộc tính sẽ cung cấp thêm thông tin cho các phần tử HTML
+<ul>
+<li><code>Attribute name</code>: Tên thuộc tính</li>
+<li><code>Attribute value</code>: Gía trị của thuộc tính</li>
+</ul>
+</li>
+<li><code>Content</code>: Các nội dung bên trong thẻ HTML</li>
+</ul>
+</li>
+<li>Chú ý:
+<ul>
+<li>Các thẻ trong HTML thường có <code>Start tag</code> và <code>End tag</code>. Có một số thẻ chỉ có <code>End tag</code> hay còn gọi là <code>Self closing tag</code> ví dụ như thẻ <code>&lt;img/&gt;</code></li>
+<li>Các thuộc tính <code>Attribute</code> phải đặt trong <code>Start tag</code>. Còn các <code>Self closing tag</code> các thuộc tính đặt trong chính nó</li>
+<li><code>&lt;h1&gt;</code> đây gọi là 1 thẻ nhưng <code>&lt;h1&gt;Heading&lt;/h1&gt;</code> được gọi là 1 thành phần HTML hay 1 Element HTML</li>
+</ul>
+</li>
+<li>Vị trí: Các thẻ cơ bản này thường được đặt trong thẻ <code>&lt;body&gt;&lt;/body&gt;</code></li>
+<li>Mục đích: Tạo ra các thành phần, phần tử trong trang web</li>
+</ul>
+<h3 id="2-các-thẻ-cơ-bản">2. Các thẻ cơ bản </h3>
+<p>Trước khi bắt đầu tìm hiểu các thẻ cơ bản, các bạn hãy thực hiện theo các bước sau đây để có thể mở thư mục <code>HIT15_WEB_PRIVATE</code> trong VSCode</p>
+<ul>
+<li>
+<p>B1: Mở VSCode</p>
+</li>
+<li>
+<p>B2:</p>
+<ul>
+<li>
+<p>Chọn <code>File</code> → Chọn <code>Add Folder to Workspace..</code>.<br>
+<img src="./image/add-workspace.png" alt="add folder to workspace"></p>
+</li>
+<li>
+<p>Một cửa sổ chọn thư mục hiện lên. Tìm đến chọn thư mục <code>HIT15_WEB_PRIVATE</code> và nhấn <code>Add</code></p>
+</li>
+<li>
+<p>Nếu chưa thấy cửa sổ như sau, hãy nhìn qua hình thứ hai và bấm vào icon được gạch đỏ để thấy được folder <code>HIT15_WEB_PRIVATE</code><br>
+<img src="./image/explorer.png" alt="explorer"></p>
+<p><img src="./image/open-explorer.png" alt="open explorer"></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>Nếu các bạn đã thêm được thư mục trên vào workspace, hãy tiếp tục thực hiện theo các bước dưới đây để tạo ra thư mục <code>week-2</code> và file <code>index.html</code> đầu tiên:</p>
+<ul>
+<li>B1: Tạo thư mục <code>week-2</code>
+<ul>
+<li>Click vào thư mục <code>HIT15_WEB_PRIVATE</code><br>
+<img src="./image/click-folder.png" alt="alt"></li>
+<li>Click vào icon được gạch đỏ, đặt tên <code>week-2</code> và nhấn enter<br>
+<img src="./image/add-folder.png" alt="alt"><br>
+<img src="./image/add-folder-result.png" alt="alt"></li>
+<li>Tương tự như trên, click vào thư mục <code>week-2</code>, tiếp tục click vào icon được gạch đỏ, đặt tên <code>index.html</code> và nhấn enter<br>
+<img src="./image/add-file.png" alt="alt"><br>
+<img src="./image/add-file-result.png" alt="alt"></li>
+</ul>
+</li>
+</ul>
+<p>Các bước ở trên là cách thêm 1 folder vào workspace, cách tạo folder, tạo file trong VSCode. Lúc này hãy nhìn sang bên phải chính là phần editor của VSCode.<br>
+<img src="./image/full-workspace.png" alt="alt"></p>
+<ul>
+<li>Copy đoạn code cấu trúc cơ bản sau đây vào phần editor</li>
+</ul>
+<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
@@ -1065,316 +153,158 @@
     Hello world
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
-      <p><img src="./image/base-html.png" alt="alt" /></p>
-      <ul>
-        <li>
-          Nhấn chuột phải, chọn <code>Open with Live Server</code>. Sau khi thực
-          hiện sẽ xuất hiện 1 trang web với chữ <code>Hello world</code> trên
-          màn hình<br />
-          <img src="./image/open-with-live-server.png" alt="alt" /><br />
-          <img src="./image/live-server-web.png" alt="alt" />
-        </li>
-      </ul>
-      <p>❗ Một chút lưu ý:</p>
-      <ul>
-        <li>
-          Kết quả trang web ở trên là nhờ vào extension
-          <code>Live Server</code> đã cài ở buổi trước. Mỗi lần có sự thay đổi
-          trong file <code>.html</code>, <code>.css</code> hay
-          <code>.js</code>.<br />
-          Chỉ cần <code>Ctrl+S</code> lưu lại file thì trang web đang chạy live
-          server sẽ tự động reload lại với mã nguồn mới nhất của bạn. Tránh việc
-          phải mở file <code>index.html</code> thủ công trong folder<br />
-          Nếu như bạn nào chưa cài live server thì chưa thể thực hiện mở live
-          server được
-        </li>
-        <li>
-          Về cấu trúc cơ bản của HTML, các bạn thử xóa hết tất cả, gõ
-          <code>!</code> và nhấn <code>Enter</code> hoặc <code>Tap</code>. Một
-          cấu trúc cơ bản của HTML sẽ tự động được sinh ra trên màn hình. Hãy
-          thử để biết kết quả nhé~
-        </li>
-      </ul>
-      <p>
-        → Như vậy, các bạn đã biết cách tạo 1 file <code>.html</code> và chạy
-        <code>Live Server</code> để mở trang web của bạn. Chúng ta cùng tiếp tục
-        tìm hiểu các thẻ cơ bản HTML, đi qua nội dung từng thẻ, hãy copy chúng
-        và đặt vào trong <code>&lt;body&gt;Đặt ở đây&lt;/body&gt;</code> để biết
-        được kết quả hiển thị của nó sẽ như thế nào
-      </p>
-      <h5 id="21-thẻ-tiêu-đề-h1-h2-h3-h4-h5-h6">
-        2.1. Thẻ tiêu đề <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>,
-        <code>&lt;h3&gt;</code>, <code>&lt;h4&gt;</code>,
-        <code>&lt;h5&gt;</code>, <code>&lt;h6&gt;</code>
-      </h5>
-      <ul>
-        <li>
-          <p>Các thẻ này được sử dụng để định nghĩa tiêu đề.</p>
-        </li>
-        <li>
-          <p>Kích thước giảm dần từ h1 → h6</p>
-          <pre
-            data-role="codeBlock"
-            data-info="html"
-            class="language-html html"
-          ><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>Heading 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+</code></pre><p><img src="./image/base-html.png" alt="alt"></p>
+<ul>
+<li>Nhấn chuột phải, chọn <code>Open with Live Server</code>. Sau khi thực hiện sẽ xuất hiện 1 trang web với chữ <code>Hello world</code> trên màn hình<br>
+<img src="./image/open-with-live-server.png" alt="alt"><br>
+<img src="./image/live-server-web.png" alt="alt"></li>
+</ul>
+<p>❗ Một chút lưu ý:</p>
+<ul>
+<li>Kết quả trang web ở trên là nhờ vào extension <code>Live Server</code> đã cài ở buổi trước. Mỗi lần có sự thay đổi trong file <code>.html</code>, <code>.css</code> hay <code>.js</code>.<br>
+Chỉ cần <code>Ctrl+S</code> lưu lại file thì trang web đang chạy live server sẽ tự động reload lại với mã nguồn mới nhất của bạn. Tránh việc phải mở file <code>index.html</code> thủ công trong folder<br>
+Nếu như bạn nào chưa cài live server thì chưa thể thực hiện mở live server được</li>
+<li>Về cấu trúc cơ bản của HTML, các bạn thử xóa hết tất cả, gõ <code>!</code> và nhấn <code>Enter</code> hoặc <code>Tap</code>. Một cấu trúc cơ bản của HTML sẽ tự động được sinh ra trên màn hình. Hãy thử để biết kết quả nhé~</li>
+</ul>
+<p>→ Như vậy, các bạn đã biết cách tạo 1 file <code>.html</code> và chạy <code>Live Server</code> để mở trang web của bạn. Chúng ta cùng tiếp tục tìm hiểu các thẻ cơ bản HTML, đi qua nội dung từng thẻ, hãy copy chúng và đặt vào trong <code>&lt;body&gt;Đặt ở đây&lt;/body&gt;</code> để biết được kết quả hiển thị của nó sẽ như thế nào</p>
+<h5 id="21-thẻ-tiêu-đề-h1-h2-h3-h4-h5-h6">2.1. Thẻ tiêu đề <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, <code>&lt;h4&gt;</code>, <code>&lt;h5&gt;</code>, <code>&lt;h6&gt;</code> </h5>
+<ul>
+<li>
+<p>Các thẻ này được sử dụng để định nghĩa tiêu đề.</p>
+</li>
+<li>
+<p>Kích thước giảm dần từ h1 → h6</p>
+<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>Heading 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>Heading 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">&gt;</span></span>Heading 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span><span class="token punctuation">&gt;</span></span>Heading 4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h5</span><span class="token punctuation">&gt;</span></span>Heading 5<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h5</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h6</span><span class="token punctuation">&gt;</span></span>Heading 6<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h6</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
-        </li>
-        <li>
-          <p>
-            Nguồn chi tiết hơn: 👉
-            <a href="https://www.w3schools.com/HTML/html_headings.asp"
-              >Ở đây!</a
-            >
-          </p>
-        </li>
-      </ul>
-      <h5 id="22-thẻ-văn-bản-p">
-        2.2. Thẻ văn bản
-        <p></p>
-      </h5>
-      <ul>
-        <li>
-          <p>Được sử dụng để định nghĩa một đoạn văn bản</p>
-          <pre
-            data-role="codeBlock"
-            data-info="html"
-            class="language-html html"
-          ><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>This is a paragraph<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
-        </li>
-      </ul>
-      <h5 id="23-thẻ-liên-kết">2.3. Thẻ liên kết</h5>
-      <ul>
-        <li>
-          <p>Được sử dụng để định nghĩa một liên kết</p>
-          <pre
-            data-role="codeBlock"
-            data-info="html"
-            class="language-html html"
-          ><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://google.com<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Google<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
-        </li>
-        <li>
-          <p>
-            Trong thẻ liên kết có 1 attribute cần thiết đó là
-            <code>href</code> và đường dẫn sẽ đặt trong 2 dấu <code>" "</code>
-          </p>
-        </li>
-        <li>
-          <p>
-            Bên cạnh đó thẻ liên kết này cũng có 1 attribute là
-            <code>target</code> với 2 trong những giá trị như sau:
-          </p>
-          <ul>
-            <li>
-              <code>_self</code>: Mặc định target của thẻ liên kết sẽ là
-              <code>_self</code>. Khi đó đường liên kết đặt trong attribute
-              <code>href</code> sẽ được mở ngay tại trang web của mình
-            </li>
-            <li>
-              <code>_target</code>: Khi mở đường liên kết, một trang web sẻ được
-              mở ra tại tab mới.<br />
-              → Hãy thử cả hai giá trị trên để biết được kết quả.
-            </li>
-          </ul>
-        </li>
-        <li>
-          <p>
-            Gía trị của attribute <code>href</code> ngoài liên kết của 1 trang
-            web còn có thể là: Email, Số điện thoại hoặc là một phần nội dung
-            trên trang web của bạn
-          </p>
-        </li>
-        <li>
-          <p>
-            Nguồn chi tiết hơn: 👉
-            <a href="https://www.w3schools.com/HTML/html_links.asp">Ở đây!</a>
-          </p>
-        </li>
-      </ul>
-      <h5 id="24-thẻ-ảnh">2.4. Thẻ ảnh</h5>
-      <ul>
-        <li>
-          <p>Được sử dụng để chèn ảnh lên trang web</p>
-          <pre
-            data-role="codeBlock"
-            data-info="html"
-            class="language-html html"
-          ><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>image.jpg<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Image<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>500<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>600<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
-</code></pre>
-        </li>
-        <li>
-          <p>
-            Như các bạn có thể thấy, thẻ ảnh này là một
-            <code>Self Closing Tag</code>
-          </p>
-        </li>
-        <li>
-          <p>Có một số thuộc tính trong thẻ ảnh như sau:</p>
-          <ul>
-            <li><code>src</code>: đây là thuộc tính chứa đường dẫn của ảnh</li>
-            <li>
-              <code>alt</code>: đây là thuộc tính dùng để mô tả cho hình ảnh khi
-              nó bị lỗi không thể hiển thị
-            </li>
-            <li>
-              <code>width</code>: đây là thuộc tính thiết lập chiều rộng cho
-              hình ảnh
-            </li>
-            <li>
-              <code>height</code>: đây là thuộc tính thiết lập chiều cao cho
-              mình ảnh
-            </li>
-          </ul>
-        </li>
-        <li>
-          <p>Với đường dẫn của ảnh, có 3 cách như sau:</p>
-          <ul>
-            <li>
-              <p>
-                Cách 1 - Đường dẫn online: Đường dẫn của thuộc tính là một đường
-                link online của ảnh.<br />
-                Bạn có thể lấy link ảnh online bằng cách nhấn chuột phải vào 1
-                ảnh online và chọn <code>Copy Image Link</code>. Hãy đặt đoạn
-                html dưới đây vào body của bạn để biết được kết quả.
-              </p>
-              <pre
-                data-role="codeBlock"
-                data-info="html"
-                class="language-html html"
-              ><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span>
+</code></pre></li>
+<li>
+<p>Nguồn chi tiết hơn: 👉 <a href="https://www.w3schools.com/HTML/html_headings.asp">Ở đây!</a></p>
+</li>
+</ul>
+<h5 id="22-thẻ-văn-bản-p">2.2. Thẻ văn bản <p> </p></h5>
+<ul>
+<li>
+<p>Được sử dụng để định nghĩa một đoạn văn bản</p>
+<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>This is a paragraph<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre></li>
+</ul>
+<h5 id="23-thẻ-liên-kết">2.3. Thẻ liên kết </h5>
+<ul>
+<li>
+<p>Được sử dụng để định nghĩa một liên kết</p>
+<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://google.com<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Google<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+</code></pre></li>
+<li>
+<p>Trong thẻ liên kết có 1 attribute cần thiết đó là <code>href</code> và đường dẫn sẽ đặt trong 2 dấu <code>" "</code></p>
+</li>
+<li>
+<p>Bên cạnh đó thẻ liên kết này cũng có 1 attribute là <code>target</code> với 2 trong những giá trị như sau:</p>
+<ul>
+<li><code>_self</code>: Mặc định target của thẻ liên kết sẽ là <code>_self</code>. Khi đó đường liên kết đặt trong attribute <code>href</code> sẽ được mở ngay tại trang web của mình</li>
+<li><code>_target</code>: Khi mở đường liên kết, một trang web sẻ được mở ra tại tab mới.<br>
+→ Hãy thử cả hai giá trị trên để biết được kết quả.</li>
+</ul>
+</li>
+<li>
+<p>Gía trị của attribute <code>href</code> ngoài liên kết của 1 trang web còn có thể là: Email, Số điện thoại hoặc là một phần nội dung trên trang web của bạn</p>
+</li>
+<li>
+<p>Nguồn chi tiết hơn: 👉 <a href="https://www.w3schools.com/HTML/html_links.asp">Ở đây!</a></p>
+</li>
+</ul>
+<h5 id="24-thẻ-ảnh">2.4. Thẻ ảnh </h5>
+<ul>
+<li>
+<p>Được sử dụng để chèn ảnh lên trang web</p>
+<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>image.jpg<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Image<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>500<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>600<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+</code></pre></li>
+<li>
+<p>Như các bạn có thể thấy, thẻ ảnh này là một <code>Self Closing Tag</code></p>
+</li>
+<li>
+<p>Có một số thuộc tính trong thẻ ảnh như sau:</p>
+<ul>
+<li><code>src</code>: đây là thuộc tính chứa đường dẫn của ảnh</li>
+<li><code>alt</code>: đây là thuộc tính dùng để mô tả cho hình ảnh khi nó bị lỗi không thể hiển thị</li>
+<li><code>width</code>: đây là thuộc tính thiết lập chiều rộng cho hình ảnh</li>
+<li><code>height</code>: đây là thuộc tính thiết lập chiều cao cho mình ảnh</li>
+</ul>
+</li>
+<li>
+<p>Với đường dẫn của ảnh, có 3 cách như sau:</p>
+<ul>
+<li>
+<p>Cách 1 - Đường dẫn online: Đường dẫn của thuộc tính là một đường link online của ảnh.<br>
+Bạn có thể lấy link ảnh online bằng cách nhấn chuột phải vào 1 ảnh online và chọn <code>Copy Image Link</code>. Hãy đặt đoạn html dưới đây vào body của bạn để biết được kết quả.</p>
+<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span>
   <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://i.pinimg.com/originals/85/97/43/8597430660c7fec44b74cb3e695e7554.jpg<span class="token punctuation">"</span></span>
   <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>100<span class="token punctuation">"</span></span>
   <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>100<span class="token punctuation">"</span></span>
 <span class="token punctuation">/&gt;</span></span>
-</code></pre>
-              <p>
-                <img
-                  src="https://i.pinimg.com/originals/85/97/43/8597430660c7fec44b74cb3e695e7554.jpg"
-                  width="150"
-                  height="150"
-                />
-              </p>
-            </li>
-            <li>
-              <p>
-                Cách 2 - Đường dẫn tương đối: Đường dẫn của thuộc tính là một
-                đường link tới hình ảnh đặt trong folder của bạn tùy thuộc vào
-                vị trí tương đối của file HTML và ảnh.
-              </p>
-              <ul>
-                <li>
-                  <p>
-                    Nếu file ảnh nằm cùng cấp với file <code>.html</code>, tức
-                    cùng cấp, bạn chỉ cần ghi tên file ảnh:<br />
-                    Ví dụ như hình dưới đây có file <code>image.png</code> và
-                    file <code>index.html</code> cùng cấp<br />
-                    <img src="./image/image-1.png" alt="image" />
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    Nếu folder của bạn có cấu trúc như hình ảnh dưới đây:<br />
-                    <img src="./image/image-3.png" alt="image" /><br />
-                    Lúc này các bạn sử dụng <code>../</code> để quay lại thư mục
-                    cha chứa 2 folder <code>images</code> và <code>pages</code>,
-                    ở đây sẽ là thư mục <code>week-2</code>, sau đó tìm tới
-                    folder <code>images</code> → <code>image.png</code>
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    Nếu file ảnh nằm trong folder cùng cấp với file
-                    <code>index.html</code>:<br />
-                    <img src="./image/image-4.png" alt="image" /><br />
-                    Lúc này các bạn sử dụng <code>./</code> sẽ chỉ đến thư mục
-                    hiện tại chứa file <code>index.html</code>, tức folder
-                    <code>week-2</code>
-                  </p>
-                </li>
-              </ul>
-              <p>
-                → Và có kết quả như sau:<br />
-                <img src="./image/image-2.png" alt="image" /><br />
-                ❗Bạn có thể sử dụng nhiều lần <code>../</code>. Hãy thử viết nó
-                để biết kết quả như thế nào nhé.
-              </p>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <p>
-            Nguồn chi tiết hơn: 👉
-            <a href="https://www.w3schools.com/HTML/html_images.asp">Ở đây!</a>
-          </p>
-        </li>
-      </ul>
-      <h5 id="25-thẻ-danh-sách">2.5. Thẻ danh sách</h5>
-      <ul>
-        <li>
-          Được dùng để định nghĩa một danh sách không có thứ tự (unorder list)
-          và có thứ tự (order list)
-          <ul>
-            <li>
-              Không có thứ tự (unorder list)
-              <pre
-                data-role="codeBlock"
-                data-info="html"
-                class="language-html html"
-              ><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+</code></pre><p><img src="https://i.pinimg.com/originals/85/97/43/8597430660c7fec44b74cb3e695e7554.jpg" width="150" height="150"></p>
+</li>
+<li>
+<p>Cách 2 - Đường dẫn tương đối: Đường dẫn của thuộc tính là một đường link tới hình ảnh đặt trong folder của bạn tùy thuộc vào vị trí tương đối của file HTML và ảnh.</p>
+<ul>
+<li>
+<p>Nếu file ảnh nằm cùng cấp với file <code>.html</code>, tức cùng cấp, bạn chỉ cần ghi tên file ảnh:<br>
+Ví dụ như hình dưới đây có file <code>image.png</code> và file <code>index.html</code> cùng cấp<br>
+<img src="./image/image-1.png" alt="image"></p>
+</li>
+<li>
+<p>Nếu folder của bạn có cấu trúc như hình ảnh dưới đây:<br>
+<img src="./image/image-3.png" alt="image"><br>
+Lúc này các bạn sử dụng <code>../</code> để quay lại thư mục cha chứa 2 folder <code>images</code> và <code>pages</code>, ở đây sẽ là thư mục <code>week-2</code>, sau đó tìm tới folder <code>images</code> → <code>image.png</code></p>
+</li>
+<li>
+<p>Nếu file ảnh nằm trong folder cùng cấp với file <code>index.html</code>:<br>
+<img src="./image/image-4.png" alt="image"><br>
+Lúc này các bạn sử dụng <code>./</code> sẽ chỉ đến thư mục hiện tại chứa file <code>index.html</code>, tức folder <code>week-2</code></p>
+</li>
+</ul>
+<p>→ Và có kết quả như sau:<br>
+<img src="./image/image-2.png" alt="image"><br>
+❗Bạn có thể sử dụng nhiều lần <code>../</code>. Hãy thử viết nó để biết kết quả như thế nào nhé.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Nguồn chi tiết hơn: 👉 <a href="https://www.w3schools.com/HTML/html_images.asp">Ở đây!</a></p>
+</li>
+</ul>
+<h5 id="25-thẻ-danh-sách">2.5. Thẻ danh sách </h5>
+<ul>
+<li>Được dùng để định nghĩa một danh sách không có thứ tự (unorder list) và có thứ tự (order list)
+<ul>
+<li>Không có thứ tự (unorder list)<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Item 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Item 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Item 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
-            </li>
-            <li>
-              Có thứ tự (order list)
-              <pre
-                data-role="codeBlock"
-                data-info="html"
-                class="language-html html"
-              ><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span><span class="token punctuation">&gt;</span></span>
+</code></pre></li>
+<li>Có thứ tự (order list)<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Item 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Item 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Item 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ol</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
-              ❗Chú ý:
-            </li>
-            <li>
-              Thẻ <code>&lt;li&gt;</code> là các item phải nằm trong thẻ
-              <code>&lt;ul&gt;</code> hoặc <code>&lt;ol&gt;</code>
-            </li>
-          </ul>
-        </li>
-        <li>
-          Nguồn chi tiết hơn: 👉
-          <a href="https://www.w3schools.com/HTML/html_lists.asp">Ở đây!</a>
-        </li>
-      </ul>
-      <h5 id="26-thẻ-bảng">2.6. Thẻ bảng</h5>
-      <ul>
-        <li>
-          <p>
-            Được dùng để tổ chức các thông tin, dữ liệu thành một bảng có các
-            hàng và cột
-          </p>
-        </li>
-        <li>
-          <p>Cấu trúc cơ bản của một bảng trong HTML sẽ như sau:</p>
-          <pre
-            data-role="codeBlock"
-            data-info="html"
-            class="language-html html"
-          ><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span> <span class="token attr-name">border</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+</code></pre>❗Chú ý:</li>
+<li>Thẻ <code>&lt;li&gt;</code> là các item phải nằm trong thẻ <code>&lt;ul&gt;</code> hoặc <code>&lt;ol&gt;</code></li>
+</ul>
+</li>
+<li>Nguồn chi tiết hơn: 👉 <a href="https://www.w3schools.com/HTML/html_lists.asp">Ở đây!</a></li>
+</ul>
+<h5 id="26-thẻ-bảng">2.6. Thẻ bảng </h5>
+<ul>
+<li>
+<p>Được dùng để tổ chức các thông tin, dữ liệu thành một bảng có các hàng và cột</p>
+</li>
+<li>
+<p>Cấu trúc cơ bản của một bảng trong HTML sẽ như sau:</p>
+<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span> <span class="token attr-name">border</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">&gt;</span></span>Company<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">&gt;</span></span>Contact<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">&gt;</span></span>
@@ -1391,62 +321,30 @@
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>Mexico<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
-        </li>
-        <li>
-          <p>Phân tích cấu trúc trên ta có:</p>
-          <ul>
-            <li>
-              Thẻ <code>&lt;table&gt;</code> bọc ngoài cùng là thẻ quyết định
-              tạo nên một bảng
-            </li>
-            <li>
-              Có 1 thuộc tính là <code>border</code> được đặt trong thẻ mở của
-              thẻ <code>&lt;table&gt;</code> và đặt bằng <code>1</code> để tạo
-              viền cho bảng. Border càng lớn, viền càng dày
-            </li>
-            <li>
-              Thẻ <code>&lt;tr&gt;</code> dùng để định nghĩa hàng trong bảng
-            </li>
-            <li>
-              Thẻ <code>&lt;td&gt;</code> dùng để định nghĩa cột trong bảng
-            </li>
-            <li>
-              Thẻ <code>&lt;th&gt;</code> cũng tương tự như thẻ
-              <code>&lt;td&gt;</code> nhưng nó để định nghĩa các ô là tiêu đề.
-              Mặc định nội dung trong thẻ này sẽ được in đậm và căn giữa
-            </li>
-          </ul>
-        </li>
-        <li>
-          <p>Bên cạnh đó còn có khác thẻ khác như sau:</p>
-          <ul>
-            <li>
-              <code>&lt;thead&gt;</code>: Dùng để nhóm phần tiêu đề của bảng
-            </li>
-            <li><code>&lt;tbody&gt;</code>: Dùng để nhóm phần thân của bảng</li>
-            <li>
-              <code>&lt;tfoot&gt;</code>: Dùng để nhóm phân cuối, phân chân của
-              bảng<br />
-              → Mục đích của những thẻ này để giúp đoạn html xây dựng bảng cụ
-              thể, dễ nhìn hơn
-            </li>
-          </ul>
-        </li>
-        <li>
-          <p>
-            Đối với thẻ <code>&lt;td&gt;</code> và <code>&lt;th&gt;</code> còn
-            có 2 thuộc tính như sau:
-          </p>
-          <ul>
-            <li>
-              <code>colspan</code>: Thuộc tính này được dùng để gộp các cột với
-              giá trị là số cột muốn gộp
-              <pre
-                data-role="codeBlock"
-                data-info="html"
-                class="language-html html"
-              ><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span> <span class="token attr-name">border</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+</code></pre></li>
+<li>
+<p>Phân tích cấu trúc trên ta có:</p>
+<ul>
+<li>Thẻ <code>&lt;table&gt;</code> bọc ngoài cùng là thẻ quyết định tạo nên một bảng</li>
+<li>Có 1 thuộc tính là <code>border</code> được đặt trong thẻ mở của thẻ <code>&lt;table&gt;</code> và đặt bằng <code>1</code> để tạo viền cho bảng. Border càng lớn, viền càng dày</li>
+<li>Thẻ <code>&lt;tr&gt;</code> dùng để định nghĩa hàng trong bảng</li>
+<li>Thẻ <code>&lt;td&gt;</code> dùng để định nghĩa cột trong bảng</li>
+<li>Thẻ <code>&lt;th&gt;</code> cũng tương tự như thẻ <code>&lt;td&gt;</code> nhưng nó để định nghĩa các ô là tiêu đề. Mặc định nội dung trong thẻ này sẽ được in đậm và căn giữa</li>
+</ul>
+</li>
+<li>
+<p>Bên cạnh đó còn có khác thẻ khác như sau:</p>
+<ul>
+<li><code>&lt;thead&gt;</code>: Dùng để nhóm phần tiêu đề của bảng</li>
+<li><code>&lt;tbody&gt;</code>: Dùng để nhóm phần thân của bảng</li>
+<li><code>&lt;tfoot&gt;</code>: Dùng để nhóm phân cuối, phân chân của bảng<br>
+→ Mục đích của những thẻ này để giúp đoạn html xây dựng bảng cụ thể, dễ nhìn hơn</li>
+</ul>
+</li>
+<li>
+<p>Đối với thẻ <code>&lt;td&gt;</code> và <code>&lt;th&gt;</code> còn có 2 thuộc tính như sau:</p>
+<ul>
+<li><code>colspan</code>: Thuộc tính này được dùng để gộp các cột với giá trị là số cột muốn gộp<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span> <span class="token attr-name">border</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span> <span class="token attr-name">colspan</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">&gt;</span></span>Age<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">&gt;</span></span>
@@ -1462,16 +360,8 @@
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>57<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
-            </li>
-            <li>
-              <code>rowspan</code>: Thuộc tính này được dùng để gộp các hàng với
-              giá trị là số hàng muốn gộp
-              <pre
-                data-role="codeBlock"
-                data-info="html"
-                class="language-html html"
-              ><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span> <span class="token attr-name">border</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+</code></pre></li>
+<li><code>rowspan</code>: Thuộc tính này được dùng để gộp các hàng với giá trị là số hàng muốn gộp<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span> <span class="token attr-name">border</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">&gt;</span></span>Name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>Jill<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
@@ -1484,82 +374,46 @@
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>555-8745<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <p>
-            Nguồn tham khảo thêm: 👉
-            <a href="https://www.w3schools.com/HTML/html_tables.asp">Ở đây!</a>
-          </p>
-        </li>
-      </ul>
-      <h5 id="27-thẻ-form">2.7. Thẻ form</h5>
-      <ul>
-        <li>
-          <p>Được dùng để tạo ra 1 form gồm các trường nhập dữ liệu.</p>
-        </li>
-        <li>
-          <p>
-            Một form được tạo bởi thẻ <code>&lt;form&gt;</code>. Bên trong nó có
-            thể một trong những thẻ sau đây:
-          </p>
-          <ul>
-            <li>
-              <p>
-                <code>&lt;label&gt;</code>: Được sử dụng để định nghĩa một nhãn
-                cho một số thành phần của form<br />
-                Trong <code>&lt;label&gt;</code> có một thuộc tính là
-                <code>for</code> nên được gán giá trị bằng thuộc tính
-                <code>id</code> trong <code>&lt;input&gt;</code>,... để ràng
-                buộc chúng với nhau
-              </p>
-            </li>
-            <li>
-              <p>
-                <code>&lt;input&gt;</code>: Đây là thẻ được sử dụng phần lớn
-                trong form và nó cũng hiển thị theo nhiều cách dựa trên thuộc
-                tính <code>type</code> của nó. Có thể liệt kê một số
-                <code>type</code> như sau:
-              </p>
-              <ul>
-                <li>
-                  <code>text</code>: đây là <code>type</code> mặc định của ô
-                  nhập dữ liệu
-                  <pre
-                    data-role="codeBlock"
-                    data-info="html"
-                    class="language-html html"
-                  ><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">&gt;</span></span>
+</code></pre></li>
+</ul>
+</li>
+<li>
+<p>Nguồn tham khảo thêm: 👉 <a href="https://www.w3schools.com/HTML/html_tables.asp">Ở đây!</a></p>
+</li>
+</ul>
+<h5 id="27-thẻ-form">2.7. Thẻ form </h5>
+<ul>
+<li>
+<p>Được dùng để tạo ra 1 form gồm các trường nhập dữ liệu.</p>
+</li>
+<li>
+<p>Một form được tạo bởi thẻ <code>&lt;form&gt;</code>. Bên trong nó có thể một trong những thẻ sau đây:</p>
+<ul>
+<li>
+<p><code>&lt;label&gt;</code>: Được sử dụng để định nghĩa một nhãn cho một số thành phần của form</p>
+<ul>
+<li>Trong <code>&lt;label&gt;</code> có một thuộc tính là <code>for</code> nên được gán giá trị bằng thuộc tính <code>id</code> trong <code>&lt;input&gt;</code>,... để ràng buộc chúng với nhau.</li>
+<li>Chú ý khi code mỗi một <code>&lt;input&gt;</code> nên có một <code>&lt;label&gt;</code> đi kèm chứ nên được dùng ví dụ thẻ h1 hay p để thay label hoặc bỏ label.</li>
+</ul>
+</li>
+<li>
+<p><code>&lt;input&gt;</code>: Đây là thẻ được sử dụng phần lớn trong form và nó cũng hiển thị theo nhiều cách dựa trên thuộc tính <code>type</code> của nó. Có thể liệt kê một số <code>type</code> như sau:</p>
+<ul>
+<li><code>text</code>: đây là <code>type</code> mặc định của ô nhập dữ liệu<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fname<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>First name:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fname<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fname<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>lname<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Last name:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>lname<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>lname<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
-                </li>
-                <li>
-                  <code>password</code>:
-                  <pre
-                    data-role="codeBlock"
-                    data-info="html"
-                    class="language-html html"
-                  ><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">&gt;</span></span>
+</code></pre></li>
+<li><code>password</code>:<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>username<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Username:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>username<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>username<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>pwd<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Password:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>pwd<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>pwd<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
-                </li>
-                <li>
-                  <code>radio</code>:
-                  <pre
-                    data-role="codeBlock"
-                    data-info="html"
-                    class="language-html html"
-                  ><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">&gt;</span></span>
+</code></pre></li>
+<li><code>radio</code>:<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>html<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fav_language<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>HTML<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>html<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>HTML<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>css<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fav_language<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>CSS<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
@@ -1572,15 +426,8 @@
   <span class="token punctuation">/&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>javascript<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>JavaScript<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
-                </li>
-                <li>
-                  <code>checkbox</code>:
-                  <pre
-                    data-role="codeBlock"
-                    data-info="html"
-                    class="language-html html"
-                  ><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">&gt;</span></span>
+</code></pre></li>
+<li><code>checkbox</code>:<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>vehicle1<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>vehicle1<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Bike<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>vehicle1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> I have a bike<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>vehicle2<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>vehicle2<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Car<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
@@ -1588,159 +435,78 @@
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>vehicle3<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>vehicle3<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Boat<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>vehicle3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> I have a boat<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
-                  ...
-                </li>
-              </ul>
-            </li>
-            <li>
-              <p>
-                <code>&lt;select&gt;</code>: Tạo ra một danh sách drop-down:
-              </p>
-              <pre
-                data-role="codeBlock"
-                data-info="html"
-                class="language-html html"
-              ><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cars<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Choose a car:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+</code></pre>...</li>
+</ul>
+</li>
+<li>
+<p><code>&lt;select&gt;</code>: Tạo ra một danh sách drop-down:</p>
+<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cars<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Choose a car:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cars<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cars<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>volvo<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Volvo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>saab<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Saab<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fiat<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Fiat<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>audi<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Audi<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
-            </li>
-            <li>
-              <p>
-                <code>&lt;textarea&gt;</code>: Tạo ra một trường nhập có thể
-                nhập 1 đoạn văn nhiều dòng
-              </p>
-              <pre
-                data-role="codeBlock"
-                data-info="html"
-                class="language-html html"
-              ><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>textarea</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>message<span class="token punctuation">"</span></span> <span class="token attr-name">rows</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>10<span class="token punctuation">"</span></span> <span class="token attr-name">cols</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>30<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+</code></pre></li>
+<li>
+<p><code>&lt;textarea&gt;</code>: Tạo ra một trường nhập có thể nhập 1 đoạn văn nhiều dòng</p>
+<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>textarea</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>message<span class="token punctuation">"</span></span> <span class="token attr-name">rows</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>10<span class="token punctuation">"</span></span> <span class="token attr-name">cols</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>30<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
 The cat was playing in the garden.
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>textarea</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
-              <ul>
-                <li>
-                  <code>rows</code>: thiết lập số dòng trong
-                  <code>textarea</code>
-                </li>
-                <li>
-                  <code>cols</code>: thiết lập độ rộng của <code>textarea</code>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <p>
-                Nguồn chi tiết hơn: 👉
-                <a href="https://www.w3schools.com/html/html_form_elements.asp"
-                  >Ở đây!</a
-                >
-              </p>
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <h5 id="28-thẻ-button">2.8. Thẻ button</h5>
-      <ul>
-        <li>Dùng để định nghĩa một nút button có thể bấm được</li>
-      </ul>
-      <pre
-        data-role="codeBlock"
-        data-info="html"
-        class="language-html html"
-      ><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Click Me!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
-      <ul>
-        <li>
-          Nguồn chi tiết hơn: 👉
-          <a href="https://www.w3schools.com/tags/tag_button.asp"
-            ><button type="button">Click Me!</button></a
-          >
-        </li>
-      </ul>
-      <h5 id="29-thẻ-khối">2.9. Thẻ khối</h5>
-      <ul>
-        <li>Được sử dụng như một thẻ bọc, nhóm các thành phần HTML với nhau</li>
-        <li>
-          <code>&lt;div&gt;</code> mặc định là một <code>block element</code>,
-          tức là nó sẽ chiếm hết rộng của màn hình
-        </li>
-        <li>
-          <code>&lt;div&gt;</code> không có thuộc tính attribute, nhưng có thể
-          dùng <code>style</code>, <code>class</code>, <code>id</code>
-        </li>
-        <li>
-          <code>&lt;div&gt;</code> thường được sử dụng để nhóm các thành phần
-          HTML với nhau
-        </li>
-      </ul>
-      <pre
-        data-role="codeBlock"
-        data-info="html"
-        class="language-html html"
-      ><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token hexcode color">#FFF4A3</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span>
+</code></pre><ul>
+<li><code>rows</code>: thiết lập số dòng trong <code>textarea</code></li>
+<li><code>cols</code>: thiết lập độ rộng của <code>textarea</code></li>
+</ul>
+</li>
+<li>
+<p>Nguồn chi tiết hơn: 👉 <a href="https://www.w3schools.com/html/html_form_elements.asp">Ở đây!</a></p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="28-thẻ-button">2.8. Thẻ button </h5>
+<ul>
+<li>Dùng để định nghĩa một nút button có thể bấm được</li>
+</ul>
+<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Click Me!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+</code></pre><ul>
+<li>Nguồn chi tiết hơn: 👉 <a href="https://www.w3schools.com/tags/tag_button.asp"><button type="button">Click Me!</button></a></li>
+</ul>
+<h5 id="29-thẻ-khối">2.9. Thẻ khối </h5>
+<ul>
+<li>Được sử dụng như một thẻ bọc, nhóm các thành phần HTML với nhau</li>
+<li><code>&lt;div&gt;</code> mặc định là một <code>block element</code>, tức là nó sẽ chiếm hết rộng của màn hình</li>
+<li><code>&lt;div&gt;</code> không có thuộc tính attribute, nhưng có thể dùng <code>style</code>, <code>class</code>, <code>id</code></li>
+<li><code>&lt;div&gt;</code> thường được sử dụng để nhóm các thành phần HTML với nhau</li>
+</ul>
+<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token hexcode color">#FFF4A3</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>London<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>London is the capital city of England.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>London has over 13 million inhabitants.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
-      <ul>
-        <li>
-          Nguồn chi tiết hơn: 👉
-          <a href="https://www.w3schools.com/html/html_div.asp">Ở đây!</a>
-        </li>
-      </ul>
-      <p>❗❗❗ Lưu ý:</p>
-      <ul>
-        <li>
-          Bên cạnh những thẻ cơ bản như ở trên, trong HTML còn có rất nhiều thẻ
-          khác, các bạn phải chủ động tìm hiểu xem nó như thế nào và các bạn có
-          thể tham khảo 👉
-          <a href="https://www.w3schools.com/html/default.asp">Ở đây!</a>
-        </li>
-        <li>Cách tìm kiếm trên gg: <code>tên thẻ</code> + tag in html</li>
-      </ul>
-      <h2 id="iii-semantic-html">III. Semantic HTML</h2>
-      <ul>
-        <li>
-          <p>
-            Semantic HTML hay còn biết đến là thẻ ngữ nghĩa trong HTML, giúp
-            định nghĩa các thành phần cụ thể, rõ ràng hơn, xác định được mục
-            đích, chức năng của chúng là để làm gì. Ví dụ như sau:
-          </p>
-          <ul>
-            <li>
-              Với <b><code>non-semantic</code></b> ta có thẻ
-              <code>&lt;div&gt;</code> hay <code>&lt;span&gt;</code>
-            </li>
-            <li>
-              Với <b><code>semantic</code></b> ta có thẻ như
-              <code>&lt;form&gt;</code> hay <code>&lt;table&gt;</code>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <p>
-            Chúng ta cũng có một số thẻ khác để định nghĩa các thành phần trong
-            HTML như sau:
-          </p>
-          <ul>
-            <li>
-              <p>
-                <code>&lt;header&gt;</code>: Đại diện cho phần đầu của một tài
-                liệu hoặc một phần của tài liệu. Nó thường chứa nội dung giới
-                thiệu hoặc các liên kết điều hướng như logo, tiêu đề, hoặc thanh
-                điều hướng chính.
-              </p>
-              <pre
-                data-role="codeBlock"
-                data-info="html"
-                class="language-html html"
-              ><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">&gt;</span></span>
+</code></pre><ul>
+<li>Nguồn chi tiết hơn: 👉 <a href="https://www.w3schools.com/html/html_div.asp">Ở đây!</a></li>
+</ul>
+<p>❗❗❗ Lưu ý:</p>
+<ul>
+<li>Bên cạnh những thẻ cơ bản như ở trên, trong HTML còn có rất nhiều thẻ khác, các bạn phải chủ động tìm hiểu xem nó như thế nào và các bạn có thể tham khảo 👉 <a href="https://www.w3schools.com/html/default.asp">Ở đây!</a></li>
+<li>Cách tìm kiếm trên gg: <code>tên thẻ</code> + tag in html</li>
+</ul>
+<h2 id="iii-semantic-html">III. Semantic HTML </h2>
+<ul>
+<li>
+<p>Semantic HTML hay còn biết đến là thẻ ngữ nghĩa trong HTML, giúp định nghĩa các thành phần cụ thể, rõ ràng hơn, xác định được mục đích, chức năng của chúng là để làm gì. Ví dụ như sau:</p>
+<ul>
+<li>Với <b><code>non-semantic</code></b> ta có thẻ <code>&lt;div&gt;</code> hay <code>&lt;span&gt;</code></li>
+<li>Với <b><code>semantic</code></b> ta có thẻ như <code>&lt;form&gt;</code> hay <code>&lt;table&gt;</code></li>
+</ul>
+</li>
+<li>
+<p>Chúng ta cũng có một số thẻ khác để định nghĩa các thành phần trong HTML như sau:</p>
+<ul>
+<li>
+<p><code>&lt;header&gt;</code>: Đại diện cho phần đầu của một tài liệu hoặc một phần của tài liệu. Nó thường chứa nội dung giới thiệu hoặc các liên kết điều hướng như logo, tiêu đề, hoặc thanh điều hướng chính.</p>
+<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>Welcome to My Blog<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
@@ -1750,95 +516,83 @@ The cat was playing in the garden.
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
-            </li>
-            <li>
-              <p>
-                <code>&lt;nav&gt;</code>: Đại diện cho một phần trên trang chứa
-                các liên kết điều hướng. Nó thường chứa các menu hoặc danh sách
-                liên kết dẫn đến các phần khác nhau trong website.
-              </p>
-              <pre
-                data-role="codeBlock"
-                data-info="html"
-                class="language-html html"
-              ><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span><span class="token punctuation">&gt;</span></span>
+</code></pre></li>
+<li>
+<p><code>&lt;nav&gt;</code>: Đại diện cho một phần trên trang chứa các liên kết điều hướng. Nó thường chứa các menu hoặc danh sách liên kết dẫn đến các phần khác nhau trong website.</p>
+<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#services<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Our Services<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#portfolio<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Portfolio<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#contact<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Contact Us<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
-            </li>
-            <li>
-              <p>
-                <code>&lt;footer&gt;</code>: Đại diện cho phần cuối của một tài
-                liệu hoặc một phần của tài liệu. Nó thường chứa thông tin về tác
-                giả, bản quyền, liên kết đến chính sách bảo mật, hoặc thông tin
-                liên hệ.
-              </p>
-              <pre
-                data-role="codeBlock"
-                data-info="html"
-                class="language-html html"
-              ><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">&gt;</span></span>
+</code></pre></li>
+<li>
+<p><code>&lt;main&gt;</code>: Đại diện cho phần nội dung chính của tài liệu.</p>
+</li>
+<li>
+<p><code>&lt;footer&gt;</code>: Đại diện cho phần cuối của một tài liệu hoặc một phần của tài liệu. Nó thường chứa thông tin về tác giả, bản quyền, liên kết đến chính sách bảo mật, hoặc thông tin liên hệ.</p>
+<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token entity named-entity" title="©">&amp;copy;</span> 2024 My Website. All Rights Reserved.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#privacy-policy<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Privacy Policy<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span> |
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#terms<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Terms of Service<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
-            </li>
-            <li>
-              <p>
-                <code>&lt;aside&gt;</code>: Đại diện cho nội dung phụ liên quan
-                đến nội dung chính của tài liệu. Thường được sử dụng cho
-                sidebar, hiển thị thông tin bổ sung như quảng cáo, danh sách bài
-                viết nổi bật, hoặc thông tin liên hệ.
-              </p>
-            </li>
-            <li>
-              <p>
-                <code>&lt;section&gt;</code>: Đại diện cho một phần hoặc một
-                phân đoạn nội dung có liên quan trong tài liệu. Nó thường được
-                dùng để nhóm các nội dung có cùng một chủ đề hoặc chức năng cụ
-                thể.
-              </p>
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <p>
-        ❗❗❗ Giải thích những thẻ trên có vẻ dài dòng và khó hiểu nhưng những
-        thẻ này cũng không khác gì so với thẻ <code>&lt;div&gt;</code> được thêm
-        thuộc tính <code>id="header"</code> hoặc <code>class="header"</code>.
-        Tuy nhiên với các thẻ ngữ nghĩa trên sẽ giúp đoạn HTML sẽ dễ đọc hơn và
-        hiểu được nội dung bên trong nó là gì
-      </p>
-      <h2 id="iv-tò-mò">IV. Tò mò!</h2>
-      <ol>
-        <li>
-          Thẻ <code>&lt;p&gt;</code> và <code>&lt;div&gt;</code> đều là
-          <code>block element</code> chiếm hết chiều rộng của màn hình. Nó cũng
-          dùng để chứa nội dung. Vậy thì tại sao không dùng thẻ
-          <code>&lt;p&gt;</code> để bọc các nội dung
-        </li>
-        <li>
-          Tại sao các ô input phải đặt trong thẻ <code>&lt;form&gt;</code>, đặt
-          ngoài có xảy ra gì không?
-        </li>
-        <li>
-          Tại sao với các input type <code>radio</code> thì lại có thuộc tính
-          <code>name</code> giống nhau, còn <code>checkbox</code> thì lại khác?
-        </li>
-        <li>
-          Tại sao thuộc tính <code>for</code> trong label nên có giá trị là
-          <code>id</code> của thẻ <code>&lt;input&gt;</code> hay
-          <code>&lt;select&gt;</code>
-        </li>
-      </ol>
-    </div>
-  </body>
-</html>
+</code></pre></li>
+<li>
+<p><code>&lt;aside&gt;</code>: Đại diện cho nội dung phụ liên quan đến nội dung chính của tài liệu. Thường được sử dụng cho sidebar, hiển thị thông tin bổ sung như quảng cáo, danh sách bài viết nổi bật, hoặc thông tin liên hệ.</p>
+</li>
+<li>
+<p><code>&lt;section&gt;</code>: Đại diện cho một phần hoặc một phân đoạn nội dung có liên quan trong tài liệu. Nó thường được dùng để nhóm các nội dung có cùng một chủ đề hoặc chức năng cụ thể.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Ví dụ áp dụng:</p>
+</li>
+</ul>
+<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>Logo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Home<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>About<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Services<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Contact<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>Section 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Content for Section 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>Section 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Content for Section 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token entity named-entity" title="©">&amp;copy;</span> 2023 Your Company. All rights reserved.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">&gt;</span></span>
+</code></pre><p>❗❗❗ Giải thích những thẻ trên có vẻ dài dòng và khó hiểu nhưng những thẻ này cũng không khác gì so với thẻ <code>&lt;div&gt;</code> được thêm thuộc tính <code>id="header"</code> hoặc <code>class="header"</code>. Tuy nhiên với các thẻ ngữ nghĩa trên sẽ giúp đoạn HTML sẽ dễ đọc hơn và hiểu được nội dung bên trong nó là gì</p>
+<h2 id="iv-tò-mò">IV. Tò mò! </h2>
+<ol>
+<li>Thẻ <code>&lt;p&gt;</code> và <code>&lt;div&gt;</code> đều là <code>block element</code> chiếm hết chiều rộng của màn hình. Nó cũng dùng để chứa nội dung. Vậy thì tại sao không dùng thẻ <code>&lt;p&gt;</code> để bọc các nội dung</li>
+<li>Tại sao các ô input phải đặt trong thẻ <code>&lt;form&gt;</code>, đặt ngoài có xảy ra gì không?</li>
+<li>Tại sao với các input type <code>radio</code> thì lại có thuộc tính <code>name</code> giống nhau, còn <code>checkbox</code> thì lại khác?</li>
+<li>Tại sao thuộc tính <code>for</code> trong label nên có giá trị là <code>id</code> của thẻ <code>&lt;input&gt;</code> hay <code>&lt;select&gt;</code></li>
+</ol>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
