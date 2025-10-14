@@ -1,4 +1,4 @@
-# HIT16-WEB-PRIVATE-2025 - WEEK 1
+# HIT15-WEB-PRIVATE-2024 - WEEK 1
 
 ---
 
@@ -203,9 +203,8 @@ b. Liên kết Git và Github
 
 4. Github Page
 
-   - Đầu tiên hãy vào trang [html này](https://github.com/txt1stparkuor/hit-web-private/blob/master/week-2/bai2/index.html) này
-   - Chọn download raw file để tải index.html về máy
-   ![alt text](image.png)
+   - Đầu tiên hãy vào trang [html này](https://raw.githubusercontent.com/kang0408/test/refs/heads/master/week-1/index.html) này
+   - Chuột phải chọn `Save as` để tải file `index.html` về máy
    - Tạo 1 folder `week-1` trong folder bạn vừa tạo, đặt file `index.html` vừa tải về vào đó và đẩy folder `week-1` lên repo trên github theo hướng dẫn như trên.
      Kết quả thành công khi trên repo có 1 folder `week-1`, khi bấm vào nó sẽ có 1 file `index.html`
 
