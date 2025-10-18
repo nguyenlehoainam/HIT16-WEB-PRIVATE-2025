@@ -98,49 +98,27 @@
 <li>Mục đích: Tạo ra các thành phần, phần tử trong trang web</li>
 </ul>
 <h3 id="2-các-thẻ-cơ-bản">2. Các thẻ cơ bản </h3>
-<p>Trước khi bắt đầu tìm hiểu các thẻ cơ bản, các bạn hãy thực hiện theo các bước sau đây để có thể mở thư mục <code>HIT15_WEB_PRIVATE</code> trong VSCode</p>
+<h4 id="20-một-số-cài-đặt-quan-trọng-cho-ide-vscode">2.0 Một số cài đặt quan trọng cho IDE VSCode </h4>
 <ul>
 <li>
-<p>B1: Mở VSCode</p>
+<p>B1: Bấm Crtl+,  (Crtl+ dấu phẩy cùng lúc) sẽ hiện ra tab settings như trong ảnh<br>
+<img src="image.png" alt="alt text"></p>
 </li>
 <li>
-<p>B2:</p>
+<p>B2: Tra auto save trên thanh tìm kiếm, chuyển auto save từ off sang afterDelay<br>
+<img src="image-1.png" alt="alt text"></p>
+</li>
+<li>
+<p>Phần này thì không bắt buộc nha, nhưng nên cài nha:<br>
+<img src="image-3.png" alt="alt text"></p>
 <ul>
-<li>
-<p>Chọn <code>File</code> → Chọn <code>Add Folder to Workspace..</code>.<br>
-<img src="./image/add-workspace.png" alt="add folder to workspace"></p>
-</li>
-<li>
-<p>Một cửa sổ chọn thư mục hiện lên. Tìm đến chọn thư mục <code>HIT15_WEB_PRIVATE</code> và nhấn <code>Add</code></p>
-</li>
-<li>
-<p>Nếu chưa thấy cửa sổ như sau, hãy nhìn qua hình thứ hai và bấm vào icon được gạch đỏ để thấy được folder <code>HIT15_WEB_PRIVATE</code><br>
-<img src="./image/explorer.png" alt="explorer"></p>
-<p><img src="./image/open-explorer.png" alt="open explorer"></p>
-</li>
+<li>Mọi người cài Material Icon Theme để các file trong vscode nó nhìn đẹp hơn<br>
+<img src="image-4.png" alt="alt text"></li>
+<li>Và cài Prettier để format code nha (phím tắt format Alt+Shift+F)</li>
 </ul>
 </li>
 </ul>
-<p>Nếu các bạn đã thêm được thư mục trên vào workspace, hãy tiếp tục thực hiện theo các bước dưới đây để tạo ra thư mục <code>week-2</code> và file <code>index.html</code> đầu tiên:</p>
-<ul>
-<li>B1: Tạo thư mục <code>week-2</code>
-<ul>
-<li>Click vào thư mục <code>HIT15_WEB_PRIVATE</code><br>
-<img src="./image/click-folder.png" alt="alt"></li>
-<li>Click vào icon được gạch đỏ, đặt tên <code>week-2</code> và nhấn enter<br>
-<img src="./image/add-folder.png" alt="alt"><br>
-<img src="./image/add-folder-result.png" alt="alt"></li>
-<li>Tương tự như trên, click vào thư mục <code>week-2</code>, tiếp tục click vào icon được gạch đỏ, đặt tên <code>index.html</code> và nhấn enter<br>
-<img src="./image/add-file.png" alt="alt"><br>
-<img src="./image/add-file-result.png" alt="alt"></li>
-</ul>
-</li>
-</ul>
-<p>Các bước ở trên là cách thêm 1 folder vào workspace, cách tạo folder, tạo file trong VSCode. Lúc này hãy nhìn sang bên phải chính là phần editor của VSCode.<br>
-<img src="./image/full-workspace.png" alt="alt"></p>
-<ul>
-<li>Copy đoạn code cấu trúc cơ bản sau đây vào phần editor</li>
-</ul>
+<p>-Copy đoạn code sau đây</p>
 <pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
@@ -162,11 +140,16 @@
 <p>❗ Một chút lưu ý:</p>
 <ul>
 <li>Kết quả trang web ở trên là nhờ vào extension <code>Live Server</code> đã cài ở buổi trước. Mỗi lần có sự thay đổi trong file <code>.html</code>, <code>.css</code> hay <code>.js</code>.<br>
-Chỉ cần <code>Ctrl+S</code> lưu lại file thì trang web đang chạy live server sẽ tự động reload lại với mã nguồn mới nhất của bạn. Tránh việc phải mở file <code>index.html</code> thủ công trong folder<br>
+Chỉ cần <code>Ctrl+S</code> lưu lại file thì trang web đang chạy live server sẽ tự động reload lại với mã nguồn mới nhất của bạn. Tránh việc phải mở file <code>index.html</code> thủ công trong folder. Nếu đã cài auto save như ở trên thì ko cần bấm Ctrl+S.<br>
 Nếu như bạn nào chưa cài live server thì chưa thể thực hiện mở live server được</li>
 <li>Về cấu trúc cơ bản của HTML, các bạn thử xóa hết tất cả, gõ <code>!</code> và nhấn <code>Enter</code> hoặc <code>Tap</code>. Một cấu trúc cơ bản của HTML sẽ tự động được sinh ra trên màn hình. Hãy thử để biết kết quả nhé~</li>
 </ul>
 <p>→ Như vậy, các bạn đã biết cách tạo 1 file <code>.html</code> và chạy <code>Live Server</code> để mở trang web của bạn. Chúng ta cùng tiếp tục tìm hiểu các thẻ cơ bản HTML, đi qua nội dung từng thẻ, hãy copy chúng và đặt vào trong <code>&lt;body&gt;Đặt ở đây&lt;/body&gt;</code> để biết được kết quả hiển thị của nó sẽ như thế nào</p>
+<ul>
+<li>Khi học html, sẽ cần học 2 thứ, phải biết một số thẻ thông dụng dùng để code, và tổ chức các thẻ đó như thế nào trong code.</li>
+<li>Đa số các thẻ đều là viết tắt tiếng anh, muốn nhớ nhanh thì cần nhớ thẻ ấy viết tắt cho cái gì, ý nghĩa.</li>
+<li>Ví dụ: h1-heading, p-paragraph, a-anchor, img-image,...</li>
+</ul>
 <h5 id="21-thẻ-tiêu-đề-h1-h2-h3-h4-h5-h6">2.1. Thẻ tiêu đề <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, <code>&lt;h4&gt;</code>, <code>&lt;h5&gt;</code>, <code>&lt;h6&gt;</code> </h5>
 <ul>
 <li>

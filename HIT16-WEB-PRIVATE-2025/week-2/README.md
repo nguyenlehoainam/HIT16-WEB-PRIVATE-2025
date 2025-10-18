@@ -72,36 +72,19 @@
 - Mục đích: Tạo ra các thành phần, phần tử trong trang web
 
 ### 2. Các thẻ cơ bản
+#### 2.0 Một số cài đặt quan trọng cho IDE VSCode
+- B1: Bấm Crtl+,  (Crtl+ dấu phẩy cùng lúc) sẽ hiện ra tab settings như trong ảnh
+![alt text](image.png)
+- B2: Tra auto save trên thanh tìm kiếm, chuyển auto save từ off sang afterDelay
+![alt text](image-1.png)
 
-Trước khi bắt đầu tìm hiểu các thẻ cơ bản, các bạn hãy thực hiện theo các bước sau đây để có thể mở thư mục `HIT15_WEB_PRIVATE` trong VSCode
+- Phần này thì không bắt buộc nha, nhưng nên cài nha:
+![alt text](image-3.png)
+  - Mọi người cài Material Icon Theme để các file trong vscode nó nhìn đẹp hơn
+  ![alt text](image-4.png)
+  - Và cài Prettier để format code nha (phím tắt format Alt+Shift+F)
 
-- B1: Mở VSCode
-- B2:
-
-  - Chọn `File` → Chọn `Add Folder to Workspace..`.
-    ![add folder to workspace](./image/add-workspace.png)
-  - Một cửa sổ chọn thư mục hiện lên. Tìm đến chọn thư mục `HIT15_WEB_PRIVATE` và nhấn `Add`
-  - Nếu chưa thấy cửa sổ như sau, hãy nhìn qua hình thứ hai và bấm vào icon được gạch đỏ để thấy được folder `HIT15_WEB_PRIVATE`
-    ![explorer](./image/explorer.png)
-
-    ![open explorer](./image/open-explorer.png)
-
-Nếu các bạn đã thêm được thư mục trên vào workspace, hãy tiếp tục thực hiện theo các bước dưới đây để tạo ra thư mục `week-2` và file `index.html` đầu tiên:
-
-- B1: Tạo thư mục `week-2`
-  - Click vào thư mục `HIT15_WEB_PRIVATE`
-    ![alt](./image/click-folder.png)
-  - Click vào icon được gạch đỏ, đặt tên `week-2` và nhấn enter
-    ![alt](./image/add-folder.png)
-    ![alt](./image/add-folder-result.png)
-  - Tương tự như trên, click vào thư mục `week-2`, tiếp tục click vào icon được gạch đỏ, đặt tên `index.html` và nhấn enter
-    ![alt](./image/add-file.png)
-    ![alt](./image/add-file-result.png)
-
-Các bước ở trên là cách thêm 1 folder vào workspace, cách tạo folder, tạo file trong VSCode. Lúc này hãy nhìn sang bên phải chính là phần editor của VSCode.
-![alt](./image/full-workspace.png)
-
-- Copy đoạn code cấu trúc cơ bản sau đây vào phần editor
+-Copy đoạn code sau đây 
 
 ```html
 <!DOCTYPE html>
@@ -127,11 +110,17 @@ Các bước ở trên là cách thêm 1 folder vào workspace, cách tạo fold
 ❗ Một chút lưu ý:
 
 - Kết quả trang web ở trên là nhờ vào extension `Live Server` đã cài ở buổi trước. Mỗi lần có sự thay đổi trong file `.html`, `.css` hay `.js`.
-  Chỉ cần `Ctrl+S` lưu lại file thì trang web đang chạy live server sẽ tự động reload lại với mã nguồn mới nhất của bạn. Tránh việc phải mở file `index.html` thủ công trong folder
+  Chỉ cần `Ctrl+S` lưu lại file thì trang web đang chạy live server sẽ tự động reload lại với mã nguồn mới nhất của bạn. Tránh việc phải mở file `index.html` thủ công trong folder. Nếu đã cài auto save như ở trên thì ko cần bấm Ctrl+S.
   Nếu như bạn nào chưa cài live server thì chưa thể thực hiện mở live server được
 - Về cấu trúc cơ bản của HTML, các bạn thử xóa hết tất cả, gõ `!` và nhấn `Enter` hoặc `Tap`. Một cấu trúc cơ bản của HTML sẽ tự động được sinh ra trên màn hình. Hãy thử để biết kết quả nhé~
 
 → Như vậy, các bạn đã biết cách tạo 1 file `.html` và chạy `Live Server` để mở trang web của bạn. Chúng ta cùng tiếp tục tìm hiểu các thẻ cơ bản HTML, đi qua nội dung từng thẻ, hãy copy chúng và đặt vào trong `<body>Đặt ở đây</body>` để biết được kết quả hiển thị của nó sẽ như thế nào
+
+- Khi học html, sẽ cần học 2 thứ, phải biết một số thẻ thông dụng dùng để code, và tổ chức các thẻ đó như thế nào trong code.
+- Đa số các thẻ đều là viết tắt tiếng anh, muốn nhớ nhanh thì cần nhớ thẻ ấy viết tắt cho cái gì, ý nghĩa.
+ - Ví dụ: h1-heading, p-paragraph, a-anchor, img-image,...
+
+
 
 ##### 2.1. Thẻ tiêu đề `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, `<h6>`
 
