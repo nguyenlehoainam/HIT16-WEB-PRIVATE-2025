@@ -554,13 +554,6 @@ Ví dụ:
 ```
 
 ```css
-:root {
-  --font-size-h1: 2.25rem; /* 36px */
-  --font-size-h2: 1.625rem; /* 26px */
-  --font-size-body: 1rem; /* 16px */
-  --font-size-small: 0.875rem; /* 14px */
-}
-
 .main-layout {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
