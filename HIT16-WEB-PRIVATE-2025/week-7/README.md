@@ -410,7 +410,7 @@ Media queries như một câu lệnh if, "nếu mà kích cỡ màn hình >=36px
 - **Ví dụ:**
 
 ```css
-@media (width <=768px) {
+@media (width <= 768px) {
   .container {
     grid-template-columns: 1fr; /* Một cột duy nhất trên màn hình nhỏ */
   }
@@ -429,7 +429,7 @@ Media queries như một câu lệnh if, "nếu mà kích cỡ màn hình >=36px
 
 ```css
 /* Màn hình nhỏ */
-@media (width <=575px) {
+@media (width <= 575px) {
   .container {
     grid-template-columns: 1fr;
   }
@@ -443,7 +443,7 @@ Media queries như một câu lệnh if, "nếu mà kích cỡ màn hình >=36px
 }
 
 /* Màn hình lớn */
-@media (width >=768px) {
+@media (width >= 768px) {
   .container {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -472,14 +472,14 @@ Ví dụ:
 }
 
 /* Responsive: màn hình nhỏ */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 /* Responsive: màn hình rất nhỏ */
-@media (max-width: 480px) {
+@media (width <= 480px) {
   .container {
     grid-template-columns: 1fr;
   }
@@ -600,7 +600,7 @@ small {
 /* ------------------------------------------------------------------ */
 
 /* --- Dành cho máy tính bảng (Tablet) và lớn hơn --- */
-@media (min-width: 768px) {
+@media (width >= 768px) {
   :root {
     /* Chúng ta chỉ cần định nghĩa lại giá trị cho các biến cần thay đổi */
     --font-size-h1: 3rem; /* 48px */
@@ -610,7 +610,7 @@ small {
 }
 
 /* --- Dành cho máy tính để bàn (Desktop) và lớn hơn --- */
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
   :root {
     /* Cập nhật giá trị một lần nữa cho màn hình lớn */
     --font-size-h1: 4rem; /* 64px */
