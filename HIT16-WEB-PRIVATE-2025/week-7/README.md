@@ -198,6 +198,179 @@ Sử dụng `grid-template-areas` để đặt tên cho các vùng trong Grid:
 ```
 
 !!! ::: Ngoài ra, còn có sử dụng `align-items`, `justify-items`, `align-content`, `justify-content`, `align-self`, `justify-self` để căn chỉnh vị trí của các ô trong grid.
+!!! ::: Thuộc tính items căn chỉnh các item trong cell (ô grid). Còn thuộc tính content coi toàn bộ item là 1 khối và căn chỉnh nó.
+
+##### 6. Một số layout với grid
+
+- Khi muốn footer ở phía cuối trang nhưng main chưa có nhiều nội dung
+  ![alt text](image-1.png)
+
+```html
+<div class="main-layout">
+  <header>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus et
+      blanditiis iusto ex inventore in.
+    </p>
+  </header>
+  <main>
+    <div class="container">
+      <h1 class="title">This page does not have much content.</h1>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
+        asperiores reiciendis suscipit sapiente aut. Quia laborum veritatis
+        dolor aperiam itaque.
+      </p>
+    </div>
+  </main>
+  <footer>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit,
+      dignissimos.
+    </p>
+  </footer>
+</div>
+```
+
+```css
+header,
+footer {
+  background-color: rgba(0, 0, 255, 0.723);
+  color: white;
+  padding: 1rem;
+}
+.container {
+  color: white;
+}
+.main-layout {
+  border: 3px solid limegreen;
+  height: 100vh; /* Fallback for older browsers */
+  height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+header {
+  font-size: 1.5rem;
+  text-align: center;
+}
+```
+
+- Khi muốn stack (chồng) nội dung, ví dụ chữ trên ảnh nhưng không muốn dùng positon.
+
+!!! ::: Điểm lợi là có thể dùng justify-content, align-content, justify-items,... để căn chỉnh. Nhưng không nên dùng nếu cần di chuyển nội dung một khoảng px nào đó mà hãy dùng position.
+
+![alt text](image-3.png)
+
+```css
+header {
+  color: white;
+  justify-items: center;
+  align-items: center;
+}
+.stack {
+  display: grid;
+}
+.stack > * {
+  grid-row: 1/-1;
+  grid-column: 1/-1;
+}
+```
+
+!!! ::: grid-row: 1/-1; grid-column: 1/-1; khiến cho các item trong grid chiếm toàn bộ các ô => Các item đều chiếm toàn bộ thì sẽ chồng lên nhau.
+
+- Dùng trong các biểu mẫu form
+
+```html
+<h1>Thông tin liên hệ</h1>
+<form class="form">
+  <!-- Input 1: Text -->
+  <div class="form-group">
+    <label for="fullName">Họ và Tên:</label>
+    <input
+      type="text"
+      id="fullName"
+      name="fullName"
+      placeholder="Nhập họ và tên của bạn"
+      required
+    />
+  </div>
+
+  <!-- Input 2: Email -->
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="ví dụ: email@example.com"
+      required
+    />
+  </div>
+
+  <!-- Input 3: Password -->
+  <div class="form-group">
+    <label for="password">Mật khẩu:</label>
+    <input type="password" id="password" name="password" required />
+  </div>
+
+  <!-- Input 4: Telephone -->
+  <div class="form-group">
+    <label for="phone">Số điện thoại:</label>
+    <input type="tel" id="phone" name="phone" placeholder="0123-456-789" />
+  </div>
+
+  <!-- Input 5: Date -->
+  <div class="form-group">
+    <label for="birthdate">Ngày sinh:</label>
+    <input type="date" id="birthdate" name="birthdate" />
+  </div>
+
+  <div class="form-group">
+    <label for="address">Địa chỉ:</label>
+    <input type="text" id="address" name="address" />
+  </div>
+
+  <!-- Text Area -->
+  <div class="form-group form-group--full-width">
+    <label for="message">Lời nhắn:</label>
+    <textarea
+      id="message"
+      name="message"
+      rows="5"
+      placeholder="Để lại lời nhắn của bạn ở đây..."
+    ></textarea>
+  </div>
+
+  <!-- Submit Button -->
+  <button type="submit">Gửi thông tin</button>
+</form>
+```
+
+```css
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.form-group {
+  display: grid;
+}
+.form-group input,
+textarea {
+  padding: 0.25rem 0.5rem;
+}
+.form-group--full-width {
+  grid-column: 1/-1;
+}
+.form button {
+  grid-column: 1/-1;
+  justify-self: center;
+  padding: 0.25rem 0.5rem;
+}
+```
+
+![alt text](image-4.png)
 
 ---
 
@@ -207,9 +380,12 @@ Sử dụng `grid-template-areas` để đặt tên cho các vùng trong Grid:
 
 Responsive Web Design (RWD) đảm bảo giao diện hoạt động tốt trên mọi thiết bị bằng cách sử dụng layout và styling linh hoạt.
 
+
 #### **1. Cách thức hoạt động**
 
-- Sử dụng các đơn vị đo lường linh hoạt như `%`, `em`, `rem`, ...
+- Sử dụng các đơn vị đo lường linh hoạt như `%`, `em`, `rem`, ... cho các thuộc tính:
+
+  - rem cho font-size, padding, margin, gap,..
 
 - Sử dụng Media Queries để thay đổi layout, font-size, màu sắc, ...
 
@@ -222,15 +398,19 @@ Sử dụng Media Queries để thay đổi layout dựa trên kích thước m�
 - **Cú pháp**:
 
 ```css
-@media screen and (max-width: value) {
+@media (36px <= width <= 1096px) {
   /* CSS properties */
 }
 ```
 
+Media queries như một câu lệnh if, "nếu mà kích cỡ màn hình >=36px và <=1096px thì thêm nhưng thuộc tính sau đây vào các class sau".
+
+!!! ::: Chú ý là dấu "<=" phải tách ra khỏi width, như thế này là sai width<=1024px.
+
 - **Ví dụ:**
 
 ```css
-@media screen and (max-width: 768px) {
+@media (width <=768px) {
   .container {
     grid-template-columns: 1fr; /* Một cột duy nhất trên màn hình nhỏ */
   }
@@ -249,21 +429,21 @@ Sử dụng Media Queries để thay đổi layout dựa trên kích thước m�
 
 ```css
 /* Màn hình nhỏ */
-@media (max-width: 576px) {
+@media (width <=575px) {
   .container {
     grid-template-columns: 1fr;
   }
 }
 
 /* Màn hình trung bình */
-@media (min-width: 577px) and (max-width: 768px) {
+@media (576px <= width <= 767px) {
   .container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 /* Màn hình lớn */
-@media (min-width: 769px) {
+@media (width >=768px) {
   .container {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -311,3 +491,140 @@ Ví dụ:
 - Màn hình lớn: Hiển thị 3 cột.
 - Màn hình trung bình: Hiển thị 2 cột.
 - Màn hình nhỏ: Hiển thị 1 cột.
+
+##### 3.1 Reponsive với grid không cần media queries
+
+```html
+<div class="parent">
+  <div class="child">1</div>
+  <div class="child">2</div>
+  <div class="child">3</div>
+  <div class="child">4</div>
+  <div class="child">5</div>
+  <div class="child">6</div>
+  <div class="child">7</div>
+  <div class="child">8</div>
+</div>
+```
+
+```css
+.parent {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+  border: 3px dashed black;
+  padding: 0.25rem;
+}
+.child {
+  padding: 1rem;
+  border-radius: 0.25rem;
+  background-color: rgba(172, 255, 47, 0.716);
+}
+```
+
+- Cái này được sử dụng khá nhiều, cứ thấy nếu mà hiển thị nhiều item như trong ảnh là dùng.
+- Giải thích:
+  - repeat(auto-fit, ...): Hãy tạo ra nhiều cột nhất có thể trên một hàng. Nếu còn thừa không gian, hãy kéo giãn các cột hiện có để lấp đầy khoảng trống đó.
+  - minmax(..., 1fr): Mỗi cột sẽ có kích thước linh hoạt:
+    - Tối thiểu là min(250px, 100%): Cột phải rộng ít nhất 250px. Tuy nhiên, nếu khung chứa hẹp hơn 250px, thì cột sẽ chỉ rộng 100% (bằng chiều rộng khung chứa) để không bị tràn ra ngoài.
+    - Tối đa là 1fr: Các cột sẽ chia đều nhau phần không gian còn lại trên hàng.
+- Tóm gọn, khi áp dụng chỉ cần thay đổi kích thước nhỏ nhất của một cột là 250px thành giá trị mong muốn.
+
+![alt text](image.png)
+
+#### 4. Reponsive nhanh và dễ bảo trì hơn với css variables
+
+```html
+<div class="main-layout">
+  <header>
+    <h1>Tiêu đề Responsive</h1>
+    <h2>Một tiêu đề phụ đơn giản, rõ ràng.</h2>
+  </header>
+
+  <main>
+    <p>
+      Cỡ chữ của đoạn văn này được kiểm soát bởi một biến CSS duy nhất. Khi kích
+      thước màn hình thay đổi, biến đó sẽ được cập nhật trong media query, và
+      văn bản này sẽ tự động thay đổi kích thước theo. Điều này giữ cho code CSS
+      của chúng ta sạch sẽ và dễ quản lý.
+    </p>
+    <small>Dòng chữ nhỏ này cũng thay đổi kích thước.</small>
+  </main>
+</div>
+```
+
+```css
+:root {
+  --font-size-h1: 2.25rem; /* 36px */
+  --font-size-h2: 1.625rem; /* 26px */
+  --font-size-body: 1rem; /* 16px */
+  --font-size-small: 0.875rem; /* 14px */
+}
+
+.main-layout {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  color: #333;
+  font-size: var(--font-size-body);
+  padding: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+:root {
+  --font-size-h1: 2.25rem; /* 36px */
+  --font-size-h2: 1.625rem; /* 26px */
+  --font-size-body: 1rem; /* 16px */
+  --font-size-small: 0.875rem; /* 14px */
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  color: #111;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  color: #111;
+  line-height: 1.3;
+  font-weight: 400;
+}
+
+small {
+  font-size: var(--font-size-small);
+}
+
+/* ------------------------------------------------------------------ */
+/* 3. LOGIC RESPONSIVE: ĐỊNH NGHĨA LẠI BIẾN TRONG MEDIA QUERY         */
+/* ------------------------------------------------------------------ */
+
+/* --- Dành cho máy tính bảng (Tablet) và lớn hơn --- */
+@media (min-width: 768px) {
+  :root {
+    /* Chúng ta chỉ cần định nghĩa lại giá trị cho các biến cần thay đổi */
+    --font-size-h1: 3rem; /* 48px */
+    --font-size-h2: 1.875rem; /* 30px */
+    --font-size-body: 1.125rem; /* 18px */
+  }
+}
+
+/* --- Dành cho máy tính để bàn (Desktop) và lớn hơn --- */
+@media (min-width: 1024px) {
+  :root {
+    /* Cập nhật giá trị một lần nữa cho màn hình lớn */
+    --font-size-h1: 4rem; /* 64px */
+    --font-size-h2: 2.25rem; /* 36px */
+    --font-size-body: 1.2rem; /* 19.2px */
+    --font-size-small: 1rem; /* 16px */
+  }
+}
+```
+
+
+#### 5. Một số tips khi reponsive
+
+- Hạn chế set width, height cứng nhiều nhất có thể (nếu bắt buộc thì có thể dùng min-height) cho các thẻ ngoại trừ thẻ có kích cỡ nhỏ như icon
+  - Thay vào đó hãy dùng flexbox, grid để cho để các thẻ div, h1,... có width và height mong muốn
+
+- Khi reponsive và dùng dev tool để test thì hãy làm với tiêu chí là cái gì nhìn xấu thì mình thêm thuộc tính cho nó vào media queries để đẹp hơn thì sẽ tốn ít thời gian, tập trung vào 1 số thẻ thôi.

@@ -24,6 +24,12 @@
 
 ## I. CSS Selector
 
+Ở tuần trước chùng ta đã học các thuộc tính để thay đổi HTML về màu sắc, cỡ chữ, vị trí,...
+
+Nhưng mà với cách chọn phần tử HTML để thêm thuộc tính như tuần trước thì sẽ khá là bất tiện
+
+Vậy nên tuần nay ta sẽ học cách để chọn được đúng phần tử HTML mà ta mong muốn thông qua **CSS Selector**.
+
 **CSS Selector** là cách chúng ta chọn phần tử HTML để áp dụng CSS
 
 ![desc](./images/css-selector.png)
@@ -425,10 +431,20 @@ Thứ tự ưu tiên trong CSS (CSS specificity) là quy tắc quyết định t
 ![bem](./images/bem.png)
 
 ## V. Nhúng Icon, nhúng font
+1. Nhúng icon
+- Truy cập trang web https://cdnjs.com/libraries/font-awesome
 
-Nội dung này hãy liên hệ tới các anh, chị Support để được hướng dẫn nhoa mấy đứa ~
+![](./images/buoi4-17.png)
 
-Hê hê hê! 😘
+- Truy cập trang web https://fontawesome.com/search?ic=free&o=r để tra icon
+
+![](./images/buoi4-16.png)
+2. Nhúng font
+
+- Truy cập https://fonts.google.com/
+
+- Nội dung này hãy liên hệ tới các anh, chị Support để được hướng dẫn nhoa~
+
 
 ## VI. Tò mò tò vò!
 

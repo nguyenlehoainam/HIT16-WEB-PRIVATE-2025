@@ -26,6 +26,9 @@
 
 - CSS (Cascading Style Sheets) là ngôn ngữ dùng để mô tả cách hiển thị của các phần tử HTML trên trang web.
 - Nó quyết định về bố cục, màu sắc, kiểu chữ, kích thước, khoảng cách giữa các phần tử, v.v. CSS giúp trang web trông trực quan và dễ nhìn hơn.
+- Trong CSS có hai thứ như HTML cần phải nắm chắc: các thuộc tính CSS, cách chọn phần tử HTML để thêm thuộc tính CSS (sẽ được dạy ở tuần sau).
+- Thực tế, không thể nhớ hết thuộc tính CSS được, nhưng phải hiểu rõ là mình muốn phần tử HTML nó như thế nào, nó màu gì, nó kích thước ntn, vị trí ra sao...
+  - Từ mong muốn ấy có thể dùng AI hoặc tra mạng để biết thuộc tính CSS tương ứng. Dần sẽ nhớ thôi 🍳
 
 ## II. Comment trong CSS
 

@@ -365,6 +365,71 @@
 <li><code>transition: background-color 0.5s ease</code>: Tạo hiệu ứng chuyển đổi màu nền trong 0.5 giây.</li>
 <li>Khi di chuột qua phần tử <code>.transition-box</code>, màu nền sẽ thay đổi từ <code>lightblue</code> sang <code>lightgreen</code> một cách mượt mà.</li>
 </ul>
+<h3 id="4-một-số-thuộc-tính-css-thường-đi-kèm-cùng-transition">4. Một số thuộc tính CSS thường đi kèm cùng transition </h3>
+<h4 id="41-transform-tác-động-đến-thẻ">4.1 Transform (tác động đến thẻ) </h4>
+<ul>
+<li>
+<p>translate() : Di chuyển một thẻ</p>
+<ul>
+<li>Hàm này di chuyển một phần tử từ vị trí hiện tại - của nó dọc theo trục X (ngang) và Y (dọc).</li>
+<li>translateX(giá_trị): Di chuyển theo chiều ngang.</li>
+<li>translateY(giá_trị): Di chuyển theo chiều dọc.</li>
+<li>translate(giá_trị_x, giá_trị_y): Viết tắt cho cả hai.</li>
+</ul>
+<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>parent<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>child<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>I'm centered!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre><pre data-role="codeBlock" data-info="css" class="language-css css"><code><span class="token selector"><span class="token class">.parent</span></span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">200</span><span class="token unit">px</span><span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token unit">px</span> solid <span class="token hexcode color">#ccc</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.child</span></span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">50</span><span class="token unit">%</span><span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> <span class="token number">50</span><span class="token unit">%</span><span class="token punctuation">;</span>
+  <span class="token comment">/* Lùi lại 50% so với chiều rộng và chiều cao của CHÍNH NÓ */</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span><span class="token number">-50</span><span class="token unit">%</span><span class="token punctuation">,</span> <span class="token number">-50</span><span class="token unit">%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token hexcode color">#3498db</span><span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">20</span><span class="token unit">px</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p><img src="image.png" alt="alt text"></p>
+</li>
+<li>
+<p>scale() — Co giãn (Phóng to/Thu nhỏ) một thẻ</p>
+<ul>
+<li>Hàm này làm cho một phần tử lớn hơn hoặc nhỏ hơn.</li>
+<li>scaleX(giá_trị): Chỉ co giãn chiều rộng.</li>
+<li>scaleY(giá_trị): Chỉ co giãn chiều cao.</li>
+<li>scale(giá_trị): Co giãn đều cả chiều rộng và chiều cao.</li>
+<li>scale(giá_trị_x, giá_trị_y): Co giãn chiều rộng và cao một cách độc lập.</li>
+</ul>
+<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>scale-button<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Phóng to!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+</code></pre><pre data-role="codeBlock" data-info="css" class="language-css css"><code><span class="token selector"><span class="token class">.scale-button</span></span> <span class="token punctuation">{</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> transform <span class="token number">0.2</span><span class="token unit">s</span> ease-out<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.scale-button</span><span class="token pseudo-class">:hover</span></span> <span class="token punctuation">{</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">scale</span><span class="token punctuation">(</span><span class="token number">1.1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* Lớn hơn 10% */</span>
+<span class="token punctuation">}</span>
+</code></pre></li>
+</ul>
+<h4 id="42-color-opacity-bề-ngoài-của-thẻ">4.2 Color, Opacity,... (bề ngoài của thẻ) </h4>
+<ul>
+<li>
+<p>Color, background-color, border-color, border-radius,..</p>
+</li>
+<li>
+<p>Opacity: giá trị từ 0 -&gt; 1</p>
+<ul>
+<li>0 là tàng hình</li>
+<li>1 là nguyên hình</li>
+</ul>
+</li>
+<li>
+<p>Một số thuộc tính khác như box-shadow, filter mọi người có thể tìm hiểu nếu muốn biết thêm nha</p>
+</li>
+</ul>
+<p><img src="image-1.png" alt="alt text"></p>
 <hr>
 <h3 id="tổng-kết-so-sánh-giữa-css-transition-và-css-animation"><strong>Tổng kết so sánh giữa CSS Transition và CSS Animation</strong> </h3>
 <table>

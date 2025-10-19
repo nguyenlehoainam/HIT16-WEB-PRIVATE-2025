@@ -452,6 +452,73 @@ CSS:
 - `transition: background-color 0.5s ease`: Tạo hiệu ứng chuyển đổi màu nền trong 0.5 giây.
 - Khi di chuột qua phần tử `.transition-box`, màu nền sẽ thay đổi từ `lightblue` sang `lightgreen` một cách mượt mà.
 
+### 4. Một số thuộc tính CSS thường đi kèm cùng transition
+
+#### 4.1 Transform (tác động đến thẻ)
+
+- translate() : Di chuyển một thẻ
+
+  - Hàm này di chuyển một phần tử từ vị trí hiện tại - của nó dọc theo trục X (ngang) và Y (dọc).
+  - translateX(giá_trị): Di chuyển theo chiều ngang.
+  - translateY(giá_trị): Di chuyển theo chiều dọc.
+  - translate(giá_trị_x, giá_trị_y): Viết tắt cho cả hai.
+
+  ```html
+  <div class="parent">
+    <div class="child">I'm centered!</div>
+  </div>
+  ```
+
+  ```css
+  .parent {
+    position: relative;
+    height: 200px;
+    border: 1px solid #ccc;
+  }
+  .child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* Lùi lại 50% so với chiều rộng và chiều cao của CHÍNH NÓ */
+    transform: translate(-50%, -50%);
+    background: #3498db;
+    padding: 20px;
+  }
+  ```
+
+  ![alt text](image.png)
+
+- scale() — Co giãn (Phóng to/Thu nhỏ) một thẻ
+  - Hàm này làm cho một phần tử lớn hơn hoặc nhỏ hơn.
+  - scaleX(giá_trị): Chỉ co giãn chiều rộng.
+  - scaleY(giá_trị): Chỉ co giãn chiều cao.
+  - scale(giá_trị): Co giãn đều cả chiều rộng và chiều cao.
+  - scale(giá_trị_x, giá_trị_y): Co giãn chiều rộng và cao một cách độc lập.
+  ```html
+  <button class="scale-button">Phóng to!</button>
+  ```
+  ```css
+  .scale-button {
+    transition: transform 0.2s ease-out;
+  }
+  .scale-button:hover {
+    transform: scale(1.1); /* Lớn hơn 10% */
+  }
+  ```
+
+
+#### 4.2 Color, Opacity,... (bề ngoài của thẻ)
+
+- Color, background-color, border-color, border-radius,..
+
+- Opacity: giá trị từ 0 -> 1
+  - 0 là tàng hình
+  - 1 là nguyên hình
+
+- Một số thuộc tính khác như box-shadow, filter mọi người có thể tìm hiểu nếu muốn biết thêm nha
+
+![alt text](image-1.png)
+
 ---
 
 ### **Tổng kết so sánh giữa CSS Transition và CSS Animation**
