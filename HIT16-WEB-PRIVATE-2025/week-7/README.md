@@ -625,6 +625,6 @@ small {
 #### 5. Một số tips khi reponsive
 
 - Hạn chế set width, height cứng nhiều nhất có thể (nếu bắt buộc thì có thể dùng min-height) cho các thẻ ngoại trừ thẻ có kích cỡ nhỏ như icon
-  - Thay vào đó hãy dùng flexbox, grid để cho để các thẻ div, h1,... có width và height mong muốn
+  - Thay vào đó hãy dùng flexbox, grid để cho các thẻ div, h1,... có width và height mong muốn
 
 - Khi reponsive và dùng dev tool để test thì hãy làm với tiêu chí là cái gì nhìn xấu thì mình thêm thuộc tính cho nó vào media queries để đẹp hơn thì sẽ tốn ít thời gian, tập trung vào 1 số thẻ thôi.
