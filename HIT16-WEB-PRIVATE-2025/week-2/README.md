@@ -317,7 +317,7 @@
 
   - `<label>`: Được sử dụng để định nghĩa một nhãn cho một số thành phần của form
     - Trong `<label>` có một thuộc tính là `for` nên được gán giá trị bằng thuộc tính `id` trong `<input>`,... để ràng buộc chúng với nhau.
-    - Chú ý khi code mỗi một `<input>` nên có một `<label>` đi kèm chứ nên được dùng ví dụ thẻ h1 hay p để thay label hoặc bỏ label.
+    - Chú ý khi code mỗi một `<input>` nên có một `<label>` đi kèm chứ không được dùng ví dụ thẻ h1 hay p để thay label hoặc bỏ label.
   - `<input>`: Đây là thẻ được sử dụng phần lớn trong form và nó cũng hiển thị theo nhiều cách dựa trên thuộc tính `type` của nó. Có thể liệt kê một số `type` như sau:
 
     - `text`: đây là `type` mặc định của ô nhập dữ liệu
