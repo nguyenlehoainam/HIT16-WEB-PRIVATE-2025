@@ -26,7 +26,7 @@
       
 <h1 id="hit16-web-private-2025---week-7">HIT16-WEB-PRIVATE-2025 - WEEK 7 </h1>
 <hr>
-<h2 id="homereadmehtml"><a href="../README.html">Home</a> </h2>
+<h2 id="homereadmehtml"><a href="../../README.html">Home</a> </h2>
 <hr>
 <h2 id="nội-dung">Nội dung </h2>
 <h2 id="i-tổng-quan-css-gridi-tổng-quan-về-css-grid"><a href="#i-t%E1%BB%95ng-quan-v%E1%BB%81-css-grid">I. Tổng quan CSS Grid</a> </h2>
@@ -391,7 +391,7 @@ textarea</span> <span class="token punctuation">{</span>
 <ul>
 <li><strong>Ví dụ:</strong></li>
 </ul>
-<pre data-role="codeBlock" data-info="css" class="language-css css"><code><span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span>width &lt;=<span class="token number">768</span><span class="token unit">px</span><span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+<pre data-role="codeBlock" data-info="css" class="language-css css"><code><span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span>width &lt;= <span class="token number">768</span><span class="token unit">px</span><span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
   <span class="token selector"><span class="token class">.container</span></span> <span class="token punctuation">{</span>
     <span class="token property">grid-template-columns</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token unit">fr</span><span class="token punctuation">;</span> <span class="token comment">/* Một cột duy nhất trên màn hình nhỏ */</span>
   <span class="token punctuation">}</span>
@@ -412,7 +412,7 @@ textarea</span> <span class="token punctuation">{</span>
 </li>
 </ul>
 <pre data-role="codeBlock" data-info="css" class="language-css css"><code><span class="token comment">/* Màn hình nhỏ */</span>
-<span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span>width &lt;=<span class="token number">575</span><span class="token unit">px</span><span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+<span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span>width &lt;= <span class="token number">575</span><span class="token unit">px</span><span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
   <span class="token selector"><span class="token class">.container</span></span> <span class="token punctuation">{</span>
     <span class="token property">grid-template-columns</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token unit">fr</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
@@ -426,7 +426,7 @@ textarea</span> <span class="token punctuation">{</span>
 <span class="token punctuation">}</span>
 
 <span class="token comment">/* Màn hình lớn */</span>
-<span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span>width &gt;=<span class="token number">768</span><span class="token unit">px</span><span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+<span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span>width &gt;= <span class="token number">768</span><span class="token unit">px</span><span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
   <span class="token selector"><span class="token class">.container</span></span> <span class="token punctuation">{</span>
     <span class="token property">grid-template-columns</span><span class="token punctuation">:</span> <span class="token function">repeat</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token unit">fr</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
@@ -446,14 +446,14 @@ textarea</span> <span class="token punctuation">{</span>
 <span class="token punctuation">}</span>
 
 <span class="token comment">/* Responsive: màn hình nhỏ */</span>
-<span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> <span class="token number">768</span><span class="token unit">px</span><span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+<span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span>width &lt;= <span class="token number">768</span><span class="token unit">px</span><span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
   <span class="token selector"><span class="token class">.container</span></span> <span class="token punctuation">{</span>
     <span class="token property">grid-template-columns</span><span class="token punctuation">:</span> <span class="token function">repeat</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token unit">fr</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 
 <span class="token comment">/* Responsive: màn hình rất nhỏ */</span>
-<span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> <span class="token number">480</span><span class="token unit">px</span><span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+<span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span>width &lt;= <span class="token number">480</span><span class="token unit">px</span><span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
   <span class="token selector"><span class="token class">.container</span></span> <span class="token punctuation">{</span>
     <span class="token property">grid-template-columns</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token unit">fr</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
@@ -520,14 +520,7 @@ textarea</span> <span class="token punctuation">{</span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>small</span><span class="token punctuation">&gt;</span></span>Dòng chữ nhỏ này cũng thay đổi kích thước.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>small</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-</code></pre><pre data-role="codeBlock" data-info="css" class="language-css css"><code><span class="token selector"><span class="token pseudo-class">:root</span></span> <span class="token punctuation">{</span>
-  <span class="token variable">--font-size-h1</span><span class="token punctuation">:</span> <span class="token number">2.25</span><span class="token unit">rem</span><span class="token punctuation">;</span> <span class="token comment">/* 36px */</span>
-  <span class="token variable">--font-size-h2</span><span class="token punctuation">:</span> <span class="token number">1.625</span><span class="token unit">rem</span><span class="token punctuation">;</span> <span class="token comment">/* 26px */</span>
-  <span class="token variable">--font-size-body</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token unit">rem</span><span class="token punctuation">;</span> <span class="token comment">/* 16px */</span>
-  <span class="token variable">--font-size-small</span><span class="token punctuation">:</span> <span class="token number">0.875</span><span class="token unit">rem</span><span class="token punctuation">;</span> <span class="token comment">/* 14px */</span>
-<span class="token punctuation">}</span>
-
-<span class="token selector"><span class="token class">.main-layout</span></span> <span class="token punctuation">{</span>
+</code></pre><pre data-role="codeBlock" data-info="css" class="language-css css"><code><span class="token selector"><span class="token class">.main-layout</span></span> <span class="token punctuation">{</span>
   <span class="token property">font-family</span><span class="token punctuation">:</span> system-ui<span class="token punctuation">,</span> -apple-system<span class="token punctuation">,</span> BlinkMacSystemFont<span class="token punctuation">,</span> <span class="token string">"Segoe UI"</span><span class="token punctuation">,</span> Roboto<span class="token punctuation">,</span>
     <span class="token string">"Helvetica Neue"</span><span class="token punctuation">,</span> Arial<span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span>
   <span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode color">#333</span><span class="token punctuation">;</span>
@@ -566,7 +559,7 @@ textarea</span> <span class="token punctuation">{</span>
 <span class="token comment">/* ------------------------------------------------------------------ */</span>
 
 <span class="token comment">/* --- Dành cho máy tính bảng (Tablet) và lớn hơn --- */</span>
-<span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> <span class="token number">768</span><span class="token unit">px</span><span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+<span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span>width &gt;= <span class="token number">768</span><span class="token unit">px</span><span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
   <span class="token selector"><span class="token pseudo-class">:root</span></span> <span class="token punctuation">{</span>
     <span class="token comment">/* Chúng ta chỉ cần định nghĩa lại giá trị cho các biến cần thay đổi */</span>
     <span class="token variable">--font-size-h1</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token unit">rem</span><span class="token punctuation">;</span> <span class="token comment">/* 48px */</span>
@@ -576,7 +569,7 @@ textarea</span> <span class="token punctuation">{</span>
 <span class="token punctuation">}</span>
 
 <span class="token comment">/* --- Dành cho máy tính để bàn (Desktop) và lớn hơn --- */</span>
-<span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> <span class="token number">1024</span><span class="token unit">px</span><span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+<span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span>width &gt;= <span class="token number">1024</span><span class="token unit">px</span><span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
   <span class="token selector"><span class="token pseudo-class">:root</span></span> <span class="token punctuation">{</span>
     <span class="token comment">/* Cập nhật giá trị một lần nữa cho màn hình lớn */</span>
     <span class="token variable">--font-size-h1</span><span class="token punctuation">:</span> <span class="token number">4</span><span class="token unit">rem</span><span class="token punctuation">;</span> <span class="token comment">/* 64px */</span>
@@ -590,7 +583,7 @@ textarea</span> <span class="token punctuation">{</span>
 <li>
 <p>Hạn chế set width, height cứng nhiều nhất có thể (nếu bắt buộc thì có thể dùng min-height) cho các thẻ ngoại trừ thẻ có kích cỡ nhỏ như icon</p>
 <ul>
-<li>Thay vào đó hãy dùng flexbox, grid để cho để các thẻ div, h1,... có width và height mong muốn</li>
+<li>Thay vào đó hãy dùng flexbox, grid để cho các thẻ div, h1,... có width và height mong muốn</li>
 </ul>
 </li>
 <li>
