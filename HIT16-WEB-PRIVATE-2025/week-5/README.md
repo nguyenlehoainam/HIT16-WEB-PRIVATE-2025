@@ -221,7 +221,7 @@ Flexbox là một công cụ mạnh mẽ trong CSS giúp căn chỉnh, sắp x�
 ![alt text](image-3.png)
 ![alt text](image-4.png)
 - Layout có content và sidebar
-![alt text](image-5.png)
+![alt text](image-9.png)
 - Navigation bar ở đầu trang
   - Cách 1![alt text](image-7.png)
   - Cách 2(nên dùng hơn)
