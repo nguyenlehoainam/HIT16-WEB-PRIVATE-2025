@@ -284,10 +284,13 @@ nums<span class="token punctuation">[</span><span class="token number">0</span><
 <span class="token comment">// const không cho phép thay đổi giá trị</span>
 <span class="token keyword keyword-const">const</span> z <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
 z <span class="token operator">=</span> <span class="token number">30</span><span class="token punctuation">;</span> <span class="token comment">// Lỗi: Assignment to constant variable</span>
-</code></pre><hr>
+</code></pre><ul>
+<li>Dùng const theo mặc định, nếu cần gán lại giá trị cho biến thì dùng let, và cố gắng tránh dùng var.</li>
+</ul>
+<hr>
 <h2 id="iv-hoisting-và-scope"><strong>IV. Hoisting và Scope</strong> </h2>
 <h4 id="1-ví-dụ-về-hoisting"><strong>1. Ví dụ về Hoisting</strong> </h4>
-<p>Hoisting là cơ chế đưa khai báo biến/hàm lên đầu phạm vi trước khi thực thi.</p>
+<p>Hoisting là cơ chế đưa khai báo biến/hàm lên đầu phạm vi trước khi thực thi. (chỉ có phần khai báo được đưa lên, còn giá trị được khởi tạo thì không)</p>
 <ul>
 <li>Với <strong><code>var</code></strong>, biến được khởi tạo với giá trị <code>undefined</code>.</li>
 <li>Với <strong><code>let</code>/<code>const</code></strong>, biến không thể được truy cập trước khi khai báo.</li>
@@ -296,6 +299,12 @@ z <span class="token operator">=</span> <span class="token number">30</span><spa
 <pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token comment">// Hoisting với var</span>
 <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// undefined</span>
 <span class="token keyword keyword-var">var</span> a <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+<span class="token comment">/*
+điều này tương đương với
+var a;
+console.log(a);
+a=5;
+*/</span>
 
 <span class="token comment">// Hoisting với let và const</span>
 <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Lỗi: Cannot access 'b' before initialization</span>
@@ -493,11 +502,24 @@ Biến khai báo trong khối <code>{ }</code> chỉ tồn tại trong khối đ
 <h3 id="vi-toán-tử-operators"><strong>VI. Toán tử (Operators)</strong> </h3>
 <h4 id="1-các-loại-toán-tử"><strong>1. Các loại toán tử</strong> </h4>
 <ul>
-<li><strong>Arithmetic Operators (Toán tử số học)</strong>: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code>, <code>**</code> (lũy thừa).</li>
-<li><strong>Assignment Operators (Toán tử gán)</strong>: <code>=,</code> <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, ...</li>
-<li><strong>Comparison Operators (Toán tử so sánh)</strong>: <code>==</code>, <code>===</code>, <code>!=</code>, <code>!==</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>.</li>
-<li><strong>Logical Operators (Toán tử logic)</strong>: <code>&amp;&amp;</code>, <code>||</code>, <code>!</code>.</li>
-<li><strong>Ternary Operator (Toán tử 3 ngôi)</strong>: <code>condition ? expr1 : expr2</code>.</li>
+<li>
+<p><strong>Arithmetic Operators (Toán tử số học)</strong>: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code>, <code>**</code> (lũy thừa).</p>
+</li>
+<li>
+<p><strong>Assignment Operators (Toán tử gán)</strong>: <code>=,</code> <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, ...</p>
+</li>
+<li>
+<p><strong>Comparison Operators (Toán tử so sánh)</strong>: <code>==</code>, <code>===</code>, <code>!=</code>, <code>!==</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>.</p>
+</li>
+<li>
+<p><strong>Logical Operators (Toán tử logic)</strong>: <code>&amp;&amp;</code>, <code>||</code>, <code>!</code>.</p>
+</li>
+<li>
+<p><strong>Ternary Operator (Toán tử 3 ngôi)</strong>: <code>condition ? expr1 : expr2</code>.</p>
+</li>
+<li>
+<p>Đối với Logical Operators (Toán tử logic), mn nên tìm hiểu thêm các giá trị truthy và falsy kết hợp &amp;&amp; và ||.</p>
+</li>
 </ul>
 <h4 id="2-so-sánh--và-"><strong>2. So sánh <code>==</code> và <code>===</code></strong> </h4>
 <table>
