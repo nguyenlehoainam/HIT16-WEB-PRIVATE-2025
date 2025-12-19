@@ -499,6 +499,8 @@ console.log(reversed); // "olleH"
   array.sort(compareFunction);
   ```
   - `compareFunction`: Hàm so sánh tùy chọn để xác định thứ tự (nếu không có, mảng sẽ được sắp xếp theo thứ tự chuỗi mặc định).
+  - `compareFunction`: ra âm thì số đầu tiên đứng trước, số 2 đứng sau, dương thì ngược lại, 0 thì không thay đổi.
+
 - **Ví dụ**:
   ```javascript
   const arr = [4, 2, 3, 1];
@@ -519,6 +521,30 @@ console.log(numbers);
 - Tại sao lại a - b?
   - Nếu a = 5, b = 20 -> 5 - 20 = -15 (Số âm) -> Máy hiểu a nhỏ hơn b -> Đứng trước.
   - Nếu a = 100, b = 20 -> 100 - 20 = 80 (Số dương) thì máy hiểu a lớn hơn b -> Đứng sau.
+
+!!! . Mặc định khi dùng so sánh string nên dùng hàm localCompare vì nó chính xác tuyệt đối cho mọi ngôn ngữ, hỗ trợ so sánh số trong chuỗi.
+    So sánh String bình thường sẽ theo mã ASCII dẫn đến Sai thứ tự Hoa/Thường, Sai số (10 < 2), Sai Tiếng Việt/Ký tự có dấu.
+    Cú pháp: chuỗi1.localeCompare(chuỗi2, ngôn_ngữ, tùy_chọn);
+    arr.sort((a, b) => a.localeCompare(b));
+```js
+const names = ["apple", "Banana", "cherry"];
+names.sort();
+
+console.log(names); 
+// Kết quả: ['Banana', 'apple', 'cherry']
+// Banana bắt đầu bằng B phải đứng giữa A và C.
+// Lý do ASCII: 'B' (66) nhỏ hơn 'a' (97).
+```
+```js
+// Cách sai (So sánh thường)
+const arr = ["Én", "Đào", "Dũng"];
+arr.sort(); 
+console.log(arr); // Kết quả: ["Dũng", "Én", "Đào"] (Sai: Đào đứng sau Én vì chữ Đ có mã lớn)
+
+// Cách đúng (Dùng localeCompare)
+arr.sort((a, b) => a.localeCompare(b, 'vi')); 
+console.log(arr); // Kết quả: ["Dũng", "Đào", "Én"] (Đúng chuẩn Tiếng Việt)
+```
 
 **12. shift()**
 
