@@ -582,14 +582,23 @@ console.log(reversed); // "olleH"
 </ul>
 <p><strong>11. sort()</strong></p>
 <ul>
-<li>Sắp xếp các phần tử trong mảng theo thứ tự.</li>
-<li>Thay đổi mảng ban đầu, trả về mảng đã được sắp xếp.</li>
-<li><strong>Cú pháp</strong>:<pre data-role="codeBlock" data-info="js" class="language-javascript js"><code>array<span class="token punctuation">.</span><span class="token method function property-access">sort</span><span class="token punctuation">(</span>compareFunction<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<li>
+<p>Sắp xếp các phần tử trong mảng theo thứ tự.</p>
+</li>
+<li>
+<p>Thay đổi mảng ban đầu, trả về mảng đã được sắp xếp.</p>
+</li>
+<li>
+<p><strong>Cú pháp</strong>:</p>
+<pre data-role="codeBlock" data-info="js" class="language-javascript js"><code>array<span class="token punctuation">.</span><span class="token method function property-access">sort</span><span class="token punctuation">(</span>compareFunction<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre><ul>
 <li><code>compareFunction</code>: Hàm so sánh tùy chọn để xác định thứ tự (nếu không có, mảng sẽ được sắp xếp theo thứ tự chuỗi mặc định).</li>
+<li><code>compareFunction</code>: ra âm thì số đầu tiên đứng trước, số 2 đứng sau, dương thì ngược lại, 0 thì không thay đổi.</li>
 </ul>
 </li>
-<li><strong>Ví dụ</strong>:<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token keyword keyword-const">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<li>
+<p><strong>Ví dụ</strong>:</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token keyword keyword-const">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 arr<span class="token punctuation">.</span><span class="token method function property-access">sort</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> a <span class="token operator">-</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Sắp xếp theo thứ tự tăng dần</span>
 <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [1, 2, 3, 4]</span>
 </code></pre></li>
@@ -615,7 +624,28 @@ numbers<span class="token punctuation">.</span><span class="token method functio
 </ul>
 </li>
 </ul>
-<p><strong>12. shift()</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Mặc định khi dùng so sánh string nên dùng hàm localCompare vì nó chính xác tuyệt đối cho mọi ngôn ngữ, hỗ trợ so sánh số trong chuỗi.</p>
+<p>So sánh String bình thường sẽ theo mã ASCII dẫn đến Sai thứ tự Hoa/Thường, Sai số (10 &lt; 2), Sai Tiếng Việt/Ký tự có dấu.<br>
+Cú pháp: chuỗi1.localeCompare(chuỗi2, ngôn_ngữ, tùy_chọn);<br>
+arr.sort((a, b) =&gt; a.localeCompare(b));</p>
+</div>
+<pre data-role="codeBlock" data-info="js" class="language-javascript js"><code><span class="token keyword keyword-const">const</span> names <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"apple"</span><span class="token punctuation">,</span> <span class="token string">"Banana"</span><span class="token punctuation">,</span> <span class="token string">"cherry"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+names<span class="token punctuation">.</span><span class="token method function property-access">sort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>names<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token comment">// Kết quả: ['Banana', 'apple', 'cherry']</span>
+<span class="token comment">// Banana bắt đầu bằng B phải đứng giữa A và C.</span>
+<span class="token comment">// Lý do ASCII: 'B' (66) nhỏ hơn 'a' (97).</span>
+</code></pre><pre data-role="codeBlock" data-info="js" class="language-javascript js"><code><span class="token comment">// Cách sai (So sánh thường)</span>
+<span class="token keyword keyword-const">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Én"</span><span class="token punctuation">,</span> <span class="token string">"Đào"</span><span class="token punctuation">,</span> <span class="token string">"Dũng"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+arr<span class="token punctuation">.</span><span class="token method function property-access">sort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Kết quả: ["Dũng", "Én", "Đào"] (Sai: Đào đứng sau Én vì chữ Đ có mã lớn)</span>
+
+<span class="token comment">// Cách đúng (Dùng localeCompare)</span>
+arr<span class="token punctuation">.</span><span class="token method function property-access">sort</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> a<span class="token punctuation">.</span><span class="token method function property-access">localeCompare</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span> <span class="token string">'vi'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Kết quả: ["Dũng", "Đào", "Én"] (Đúng chuẩn Tiếng Việt)</span>
+</code></pre><p><strong>12. shift()</strong></p>
 <ul>
 <li>Loại bỏ phần tử đầu tiên khỏi mảng.</li>
 <li>Thay đổi mảng ban đầu, trả về phần tử bị loại bỏ.</li>
