@@ -18,8 +18,8 @@
 
 - Function hay hàm là một khối các câu lệnh được định nghĩa để thực hiện một nhiệm vụ hay một hành động cụ thể nào đó
 - Hàm phục vụ những mục đích sau:
-  - **Tái sử dụng mã**: Thay vì viết lặp lại cùng một đoạn mã nhiều lần, chúng ta chỉ cần định nghĩa hàm một lần và gọi lại khi cần 👉 tiết kiệm được thời gian và công sức
-  - **Tổ chức mã tốt hơn**: Việc chia chương trình thành các đoạn mã nhỏ sẽ giúp đọc hiểu, quản lý và bảo trì chương trình dễ dàng hơn
+  - Tái sử dụng mã
+  - Việc chia chương trình thành các đoạn mã nhỏ sẽ giúp đọc hiểu, bảo trì chương trình dễ dàng hơn
 - **Cú pháp**:
 
 ```js
@@ -62,7 +62,7 @@ function factorial(n) {
   else return n * factorial(n - 1);
 }
 
-var a, b, c;
+let a, b, c;
 a = factorial(1); // a gets the value 1
 b = factorial(2); // b gets the value 2
 c = factorial(3); // c gets the value 6
@@ -72,7 +72,7 @@ c = factorial(3); // c gets the value 6
 
 **2.1. Tham số (parameters)**
 
-- Tham số là các biến được định nghĩa trong khi khai báo hàm. Chúng đóng vai trò là giá trị đầu vào mà hàm yêu cầu để thực hiện một nhiệm vụ cụ thể nào đó
+- Tham số là các biến được định nghĩa (trong dấu ( ) ) trong khi khai báo hàm. Chúng đóng vai trò là giá trị đầu vào mà hàm yêu cầu để thực hiện một nhiệm vụ cụ thể nào đó
 - **Ví dụ**
   ```js
   function greet(name) {
@@ -152,14 +152,19 @@ c = factorial(3); // c gets the value 6
   // 20
   ```
 
+- Trong JS, hàm được đối xử như một biến bình thường nên:
+  - Có thể gán hàm cho biến.
+  - Truyền hàm này vào hàm kia như một tham số (Callback).
+  - Trả về một hàm từ một hàm khác (Higher-order function).
+
 **3. Function Scope**
 
-- Các biến được định nghĩa bên trong một hàm không thể truy cập từ ngoài hàm vì nó được định nghĩa trong phạm vi của hàm
-- Một hàm có thể truy cập đến mọi biến và mọi hàm khác trong cùng phạm vi mà nó được định nghĩa
+- Scope: Biến khai báo bên trong hàm thì không thể truy cập từ bên ngoài.
+- Một hàm có thể truy cập đến mọi biến và mọi hàm khác trong cùng phạm vi mà nó được định nghĩa (Closure)
 
 ```js
 // Các biến sau được định nghĩa trong phạm vi global scope
-var num1 = 20,
+let num1 = 20,
   num2 = 3,
   name = "Khoa";
 
@@ -170,9 +175,9 @@ function multiply() {
 
 multiply(); // Returns 60
 
-// Một ví dụ hàm lồng nhau
+// Một ví dụ hàm lồng nhau (Closure)
 function getScore() {
-  var num1 = 50,
+  let num1 = 50,
     num2 = 50;
 
   function add() {
@@ -194,39 +199,63 @@ getScore(); // Returns "Khoa scored 100"
 - **Cú pháp:**
 
 ```js
+// Gọi hàm
+console.log(tenHam(2, 3)); // Output: 5
 function tenHam(thamSo1, thamSo2) {
   // Các lệnh thực thi
   return thamSo1 + thamSo2;
 }
+```
 
-// Gọi hàm
+- Phiên bản sau hoisting:
+
+```js
+function tenHam(thamSo1, thamSo2) {
+  // Các lệnh thực thi
+  return thamSo1 + thamSo2;
+}
 console.log(tenHam(2, 3)); // Output: 5
 ```
 
 **2.2. Function Expressions**
 
 - Hàm được gán vào một biến
-- Hàm này không thể được gọi trước khi khai báo vì nó không được **hoisted**
+- Hàm này không thể được gọi trước khi khai báo vì phần nội dung hàm không được đưa lên đầu khi hoisting
 - **Cú pháp:**
 
 ```js
+console.log(tenHam(2, 3)); // Output: Uncaught ReferenceError: tenHam is not defined
 const tenHam = function (thamSo1, thamSo2) {
   return thamSo1 + thamSo2;
 };
+```
 
-console.log(tenHam(2, 3)); // Output: 5
+- Phiên bản sau hoisting:
+
+```js
+const tenHam;
+console.log(tenHam(2, 3)); // Output: Uncaught ReferenceError: tenHam is not defined
+tenHam = function (thamSo1, thamSo2) {
+  return thamSo1 + thamSo2;
+};
 ```
 
 **2.3. Arrow functions**
 
+- Là loại hàm hay được sử dụng nhất sau này.
 - **Arrow Function** là một cú pháp mới để viết các hàm trong Javascript.
 - Nó giúp tiết kiệm thời gian phát triển và đơn giản hóa phạm vi function
 - **Cú pháp:**
 
 ```js
-const tenHam = (thamSo1, thamSo2) => thamSo1 + thamSo2;
+const tenHam1 = (thamSo1, thamSo2) => {
+  return thamSo1 + thamSo2;
+};
 
 console.log(tenHam(2, 3)); // Output: 5
+// hoặc
+const tenHam = (thamSo1, thamSo2) => thamSo1 + thamSo2;
+console.log(tenHam1(2, 3)); // Output: 5
 ```
 
 - **Ví dụ:**
@@ -256,22 +285,31 @@ button.addEventListener("click", () => {});
 
 **3. Callback Function**
 
-- Đây là một hàm và được được truyền qua đối số khi gọi hàm khác
+- Do hàm cũng là một kiểu biến nên có thể được khai báo làm tham số (parameter) cho một hàm khác.
+- Khi đó, hàm được truyền vào làm đối số gọi sẽ là callback function.
 
 ```js
+// tham số là param
 function myFunction(param) {
   param("Khang");
 }
-
+// myCallback chính là hàm callback
 function myCallback(name) {
   console.log(`Hello ${name}`);
 }
+// mình đang truyền hàm myCallback vào hàm myFunction
 myFunction(myCallback);
 ```
 
 #### II. Làm việc với mảng
 
-Cho một mảng sau:
+- Cú pháp chung: 
+```js
+tenMang.tenPhuongThuc(callback(currentValue, index, array))
+```
+- Thường thì currentValue sẽ được đặt tên là số ít của tên mảng.
+  Cho một mảng sau:
+- Trong phần này phải nắm rõ được cú pháp, mục đích và kết quả trả về của các phương thức.
 
 ```js
 const courses = [
@@ -291,7 +329,8 @@ array.forEach(callback(currentValue, index, array));
 ```
 
 ```js
-courses.forEach(function (course, index) {
+// course la cac phần tử trong mảng courses
+courses.forEach((course, index) => {
   console.log(index, course);
 });
 ```
@@ -301,6 +340,7 @@ courses.forEach(function (course, index) {
 
 **2. `every`**
 
+- every: tất cả -> tất cả phải thỏa mãn một điều kiện
 - Kiểm tra tất cả phần tử của một mảng phải thỏa mãn một điều kiện nào đó
 - Thỏa mãn điều kiện sẽ trả về true, còn lại trả về false
 - Kiểm tra lần lượt theo thứ tự trong mảng, chỉ cần 1 phần tử trong mảng sai điều kiện thì sẽ dừng lại và trả về kết quả
@@ -311,15 +351,17 @@ array.every(callback(currentValue, index, array));
 ```
 
 ```js
-var isFree = courses.every(function (course, index) {
+const isFree = courses.every((course, index) => {
   return course.coin === 0;
+  // if (course.coint === 0 ) return true
+  // return false;
 });
-
 console.log(isFree);
 ```
 
 **3. `some`**
 
+- some -> Một vài -> Chỉ cần một vài thỏa mãn (cụ thể là 1 phần tử) thỏa mãn
 - Duyệt mảng như every và forEach tuy nhiên chỉ cần có một phần tử trong mảng thỏa mãn điều kiện, vòng lặp sẽ ngay lập tức dừng lại
 - **Cú pháp:**
 
@@ -328,7 +370,7 @@ array.some(callback(currentValue, index, array));
 ```
 
 ```js
-var isFree = courses.some(function (course, index) {
+let isFree = courses.some((course, index) => {
   return course.coin === 0;
 });
 
@@ -339,7 +381,7 @@ console.log(isFree);
 
 - Dùng để tìm kiếm trong mảng
 - Nếu có sẽ trả về chính phần tử đó, nếu không có sẽ trả về `undefined`
-- Nó lặp qua từng phần tử, hàm được gọi lại sẽ trả về phần tử, kiểm tra với điều kiện nếu thỏa mãn thì vòng lặp sẽ dừng, trả về đối tượng đầu tiên tìm được
+- Nó lặp qua từng phần tử, kiểm tra với điều kiện nếu thỏa mãn thì vòng lặp sẽ dừng, trả về đối tượng đầu tiên tìm được
 - **Cú pháp:**
 
 ```js
@@ -347,7 +389,7 @@ array.find(callback(currentValue, index, array));
 ```
 
 ```js
-var course = courses.find(function (course, index) {
+let course = courses.find((course, index) => {
   return course.name === "Angular";
 });
 
@@ -356,7 +398,7 @@ console.log(course);
 
 **5. `filter`**
 
-- Tương tự như `find` nhưng sẽ trả về tất cả các phần tử thỏa mãn điều kiện
+- Tương tự như `find` nhưng sẽ trả về một mảng chứa tất cả các phần tử thỏa mãn điều kiện
 - **Cú pháp:**
 
 ```js
@@ -364,7 +406,7 @@ array.filter(callback(currentValue, index, array));
 ```
 
 ```js
-var course = courses.filter(function (course, index) {
+let course = courses.filter((course, index) => {
   return course.coin >= 100;
 });
 
@@ -377,19 +419,26 @@ console.log(course);
 - **Cú pháp:**
 
 ```js
-array.filter(callback(currentValue, index, array));
+array.map(callback(currentValue, index, array));
 ```
 
 ```js
-var course = courses.map(function (course, index, currentArray) {
-  return course.coin >= 100;
+let courses2 = courses.map((course, index) => {
+  // 1. Tạo một biến mới là một Object hoàn toàn khác (không bị trùng tham chiếu)
+  const newCourse = {
+    ...course, // Copy lại toàn bộ các thuộc tính cũ (id, name, coin)
+    coin: course.coin * 2,
+  };
+  return newCourse;
 });
-
-console.log(course);
+console.log(courses2);
 ```
+
+- Không nên sử dụng newCourse = course trong map
 
 **7. `reduce`**
 
+- reduce -> thu gọn -> thu gọn mảng lại thành một giá trị.
 - Tích lũy các phần tử của mảng thành một giá trị duy nhất (số, chuỗi, đối tượng, v.v.).
 
 - **Cú pháp:**
@@ -397,15 +446,17 @@ console.log(course);
   ```js
   array.reduce(callback(accumulator, currentValue, index, array), initialValue);
   ```
-
-  - `callback`: Hàm được gọi cho từng phần tử.
   - `accumulator`: Giá trị tích lũy từ lần gọi trước.
   - `currentValue`: Giá trị hiện tại của phần tử.
   - `initialValue` (tuỳ chọn): Giá trị khởi tạo của accumulator. Nếu không được cung cấp, phần tử đầu tiên của mảng sẽ được dùng.
 
 ```js
-var course = courses.reduce(function (course, index, currentArray) {
-  return course.coin >= 100;
-});
-console.log(course);
+const coinSum = courses.reduce((accumulator, course) => {
+  return accumulator + course.coin;
+}, 0); // 0 là giá trị khởi tạo
+console.log(coinSum); // Kết quả: 300
 ```
+
+- Dù initialValue là tùy chọn, nhưng hãy luôn cung cấp nó trừ khi có lý do cực kỳ đặc biệt. Vì giúp:
+  - Kiểm soát được kiểu dữ liệu trả về (Số, Chuỗi, Mảng, Object).
+  - Tránh lỗi crash không mong muốn.
