@@ -301,12 +301,16 @@ function myCallback(name) {
 myFunction(myCallback);
 ```
 
+- Callback function thường được áp dụng trong addEventListener (xử lý sự kiện), trong các phương thức của mảng, gọi
+
 #### II. Làm việc với mảng
 
-- Cú pháp chung: 
+- Cú pháp chung:
+
 ```js
-tenMang.tenPhuongThuc(callback(currentValue, index, array))
+tenMang.tenPhuongThuc(callback(currentValue, index, array));
 ```
+
 - Thường thì currentValue sẽ được đặt tên là số ít của tên mảng.
   Cho một mảng sau:
 - Trong phần này phải nắm rõ được cú pháp, mục đích và kết quả trả về của các phương thức.
@@ -358,7 +362,20 @@ const isFree = courses.every((course, index) => {
 });
 console.log(isFree);
 ```
+- Ứng dụng thực tế:
+```js
+const inputs = [
+    { field: "username", value: "khoa123" },
+    { field: "email", value: "" }, // Chưa điền
+    { field: "password", value: "123456" }
+];
 
+const isFormValid = inputs.every(input => input.value.length > 0);
+
+if (!isFormValid) {
+    alert("Vui lòng điền đầy đủ thông tin!");
+}
+```
 **3. `some`**
 
 - some -> Một vài -> Chỉ cần một vài thỏa mãn (cụ thể là 1 phần tử) thỏa mãn
@@ -413,6 +430,77 @@ let course = courses.filter((course, index) => {
 console.log(course);
 ```
 
+- Ứng dụng thực tế:
+- Thanh tìm kiếm kết hợp:
+
+```js
+const users = [
+  { name: "Nguyen Van A", email: "a@gmail.com" },
+  { name: "Tran Van B", email: "b@yahoo.com" },
+  { name: "Le Thi C", email: "c@gmail.com" },
+];
+
+const keyword = "gmail"; // Người dùng nhập
+const searchResult = users.filter((user) => {
+  const lowerKeyword = keyword.toLowerCase();
+  // Kiểm tra tên có chứa từ khóa KHÔNG?
+  const matchName = user.name.toLowerCase().includes(lowerKeyword);
+  // Kiểm tra email có chứa từ khóa KHÔNG?
+  const matchEmail = user.email.toLowerCase().includes(lowerKeyword);
+  // Chỉ cần 1 trong 2 đúng là lấy
+  return matchName || matchEmail;
+});
+// Kết quả: Lấy được User A và User C (vì email có đuôi gmail)
+```
+
+- Bộ lọc:
+
+```js
+const products = [
+  { id: 1, name: "iPhone 15", brand: "Apple", price: 250 },
+  { id: 2, name: "iPhone 11", brand: "Apple", price: 100 },
+  { id: 3, name: "Galaxy S23", brand: "Samsung", price: 150 },
+  { id: 4, name: "Macbook Air", brand: "Apple", price: 180 },
+];
+
+// User chọn trên giao diện
+const filters = {
+  brand: "Apple",
+  maxPrice: 200,
+};
+
+const result = products.filter((product) => {
+  // Điều kiện 1: Đúng thương hiệu
+  const isCorrectBrand = product.brand === filters.brand;
+  // Điều kiện 2: Giá nhỏ hơn mức trần
+  const isAffordable = product.price <= filters.maxPrice;
+
+  return isCorrectBrand && isAffordable;
+});
+
+console.log(result);
+// Kết quả: [{ iPhone 11... }, { Macbook Air... }]
+// (iPhone 15 bị loại vì đắt, Samsung bị loại vì sai hãng)
+```
+
+- Xóa phần tử trong mảng (trong react không dùng splice mà dùng filter để xóa vì nó không thay đổi mảng gốc)
+
+```js
+let messages = [
+  { id: 101, text: "Tin nhắn rác" },
+  { id: 102, text: "Tin quan trọng" },
+  { id: 103, text: "Chào bạn" },
+];
+
+const idToDelete = 101;
+
+// "Giữ lại tất cả tin nhắn có ID KHÁC 101"
+messages = messages.filter((msg) => msg.id !== idToDelete);
+
+console.log(messages);
+// Kết quả: Còn lại id 102 và 103. (101 đã biến mất)
+```
+
 **6. `map`**
 
 - Được sử dụng khi muốn thay đổi các phần tử, giá trị trong mảng và sẽ trả về một mảng mới từ mảng gốc, không làm thay đổi mảng gốc
@@ -434,7 +522,26 @@ let courses2 = courses.map((course, index) => {
 console.log(courses2);
 ```
 
-- Không nên sử dụng newCourse = course trong map
+- Không nên sử dụng newCourse = course trong map vì sẽ làm thay đổi mảng gốc
+- Map hay được ứng dụng để biến mảng dữ liệu json thành các thẻ HTML để hiển thị danh sách dữ liệu ra màn hình, ví dụ:
+
+```js
+const products = [
+  { id: 1, name: "iPhone 15", price: 1000 },
+  { id: 2, name: "Samsung S24", price: 900 },
+];
+
+// Biến đổi data thành mảng chứa các thẻ div HTML
+const html = products.map((product) => {
+  return `<div class="product-item">
+                <h3>${product.name}</h3>
+                <p>Giá: ${product.price}$</p>
+            </div>`;
+});
+
+// Gắn vào giao diện, sử dụng join để từ mảng -> string loại bỏ dấu ","
+document.body.innerHTML = html.join("");
+```
 
 **7. `reduce`**
 
@@ -446,6 +553,7 @@ console.log(courses2);
   ```js
   array.reduce(callback(accumulator, currentValue, index, array), initialValue);
   ```
+
   - `accumulator`: Giá trị tích lũy từ lần gọi trước.
   - `currentValue`: Giá trị hiện tại của phần tử.
   - `initialValue` (tuỳ chọn): Giá trị khởi tạo của accumulator. Nếu không được cung cấp, phần tử đầu tiên của mảng sẽ được dùng.
