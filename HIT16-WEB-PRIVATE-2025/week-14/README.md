@@ -252,7 +252,7 @@ const tenHam1 = (thamSo1, thamSo2) => {
   return thamSo1 + thamSo2;
 };
 
-console.log(tenHam(2, 3)); // Output: 5
+console.log(tenHam1(2, 3)); // Output: 5
 // hoặc
 const tenHam = (thamSo1, thamSo2) => thamSo1 + thamSo2;
 console.log(tenHam1(2, 3)); // Output: 5
