@@ -532,6 +532,9 @@ Ví dụ:
 
 ![alt text](image.png)
 
+- Các ví dụ có thể áp dụng:
+![alt text](image-8.png)
+![alt text](image-6.png)
 #### 4. Reponsive nhanh và dễ bảo trì hơn với css variables
 
 ```html

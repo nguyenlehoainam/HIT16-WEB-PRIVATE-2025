@@ -554,6 +554,9 @@ input,
 button,
 textarea,
 select {
-  font: inherit;
+  font-family: inherit;
+}
+button {
+  cursor: pointer;
 }
 ```

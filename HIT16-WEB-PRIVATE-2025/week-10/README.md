@@ -1,4 +1,4 @@
-# HIT16-WEB-PRIVATE-2025 - WEEK 10
+# HIT16-WEB-PRIVATE-2025 - WEEK 8
 
 ---
 
@@ -283,13 +283,14 @@ const z = 20;
 z = 30; // Lỗi: Assignment to constant variable
 ```
 
+- Dùng const theo mặc định, nếu cần gán lại giá trị cho biến thì dùng let, và cố gắng tránh dùng var.
 ---
 
 ## **IV. Hoisting và Scope**
 
 #### **1. Ví dụ về Hoisting**
 
-Hoisting là cơ chế đưa khai báo biến/hàm lên đầu phạm vi trước khi thực thi.
+Hoisting là cơ chế đưa khai báo biến/hàm lên đầu phạm vi trước khi thực thi. (chỉ có phần khai báo được đưa lên, còn giá trị được khởi tạo thì không)
 
 - Với **`var`**, biến được khởi tạo với giá trị `undefined`.
 - Với **`let`/`const`**, biến không thể được truy cập trước khi khai báo.
@@ -300,6 +301,12 @@ Hoisting là cơ chế đưa khai báo biến/hàm lên đầu phạm vi trướ
 // Hoisting với var
 console.log(a); // undefined
 var a = 5;
+/*
+điều này tương đương với
+var a;
+console.log(a);
+a=5;
+*/
 
 // Hoisting với let và const
 console.log(b); // Lỗi: Cannot access 'b' before initialization
@@ -543,6 +550,8 @@ console.log(`${a} is greater than ${b}: ${a > b}`);
 - **Comparison Operators (Toán tử so sánh)**: `==`, `===`, `!=`, `!==`, `<`, `>`, `<=`, `>=`.
 - **Logical Operators (Toán tử logic)**: `&&`, `||`, `!`.
 - **Ternary Operator (Toán tử 3 ngôi)**: `condition ? expr1 : expr2`.
+
+- Đối với Logical Operators (Toán tử logic), mn nên tìm hiểu thêm các giá trị truthy và falsy kết hợp && và ||.
 
 #### **2. So sánh `==` và `===`**
 

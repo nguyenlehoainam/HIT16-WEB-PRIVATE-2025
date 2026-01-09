@@ -1,4 +1,4 @@
-# HIT16-WEB-PRIVATE-2025 - WEEK 13
+# HIT16-WEB-PRIVATE-2025 - WEEK 10
 
 ---
 
@@ -80,6 +80,8 @@
   const text = "   Hello World!   ";
   console.log(text.trim()); // "Hello World!"
   ```
+- Ứng dụng để check xem một string có phải là khoảng trắng hay không, loại bỏ khoảng trắng thừa từ input
+- chương trình ứng dụng, đăng nhập, đăng ký,.. 
 
 **4. includes()**
 
@@ -94,6 +96,14 @@
 
   - `searchString`: Chuỗi cần kiểm tra (bắt buộc).
   - `position`: Vị trí bắt đầu tìm kiếm (không bắt buộc, mặc định là 0).
+  - Ứng dụng cho các thanh tìm kiếm
+```js
+const productName = "iPhone 15 Pro Max";
+const keyword = "iphone";
+// Cần chuyển về chữ thường để tìm chính xác hơn
+const isMatch = productName.toLowerCase().includes(keyword.toLowerCase()); 
+// Kết quả: true -> Hiển thị sản phẩm này
+```
 
 - **Ví dụ:**
 
@@ -127,6 +137,16 @@
   console.log(text.split(",", 2)); // ["apple", "banana"]
   console.log(text.split("")); // ["a", "p", "p", "l", "e"]
   ```
+
+- Thực tế: Lấy tên miền từ URL hoặc kiểm tra đuôi file khi upload ảnh.
+- Ứng dụng: Tách chuỗi dựa trên dấu chấm . hoặc dấu gạch chéo /., đếm số từ trong một chuỗi, lấy ra họ, tên đệm, tên
+
+```js
+const filename = "avatar-image.png";
+const parts = filename.split("."); // ["avatar-image", "png"]
+const extension = parts[parts.length - 1]; // "png"
+// Kiểm tra xem có phải ảnh không
+```
 
 **6. indexOf()**
 
@@ -360,6 +380,19 @@ console.log(text.substring(4, 0)); // "Java" (tự động đổi thứ tự n�
   const newArr = arr.slice(1, 3); // Trích xuất từ vị trí 1 đến 3 (không bao gồm 3)
   console.log(newArr); // [2, 3]
   ```
+- Thực tế: Trang web có 100 sản phẩm, chỉ hiển thị 10 sản phẩm mỗi trang.
+- Ứng dụng: Cắt mảng dữ liệu lớn thành các mảng con nhỏ hơn để hiển thị.
+```js
+const allProducts = [/* 100 sản phẩm */];
+const page = 1;
+const itemsPerPage = 10;
+const start = (page - 1) * itemsPerPage;
+const end = page * itemsPerPage;
+const productsOnPage1 = allProducts.slice(start, end);
+```
+- Tại sao dùng slice() mà không dùng splice() cho phân trang?
+  - slice(): Không thay đổi mảng gốc (allProducts). Khi người dùng chuyển trang, dữ liệu gốc vẫn còn nguyên để ta cắt phần khác.
+  - splice(): Sẽ cắt và xóa luôn phần tử khỏi mảng gốc. Nếu dùng splice, bấm sang trang 2 rồi quay lại trang 1 thì dữ liệu trang 1 đã bị mất vĩnh viễn. -> Do đó, phân trang bắt buộc dùng slice.
 
 **6. indexOf()**
 
@@ -397,6 +430,8 @@ console.log(text.substring(4, 0)); // "Java" (tự động đổi thứ tự n�
   const newArr = arr1.concat(arr2);
   console.log(newArr); // [1, 2, 3, 4]
   ```
+- Thực tế: Khi lướt Facebook/TikTok, cuộn xuống dưới thì tải thêm bài mới ghép vào danh sách cũ.
+- Ứng dụng: Tính năng "Tải thêm" (Load more / Infinite Scroll)
 
 **8. includes()**
 
@@ -429,6 +464,16 @@ console.log(text.substring(4, 0)); // "Java" (tự động đổi thứ tự n�
   const arr = ["apple", "banana", "cherry"];
   console.log(arr.join(", ")); // "apple, banana, cherry"
   ```
+- Ứng dụng: đảo ngược chuỗi
+```
+const str = "Hello";
+// 1. split(''): ["H", "e", "l", "l", "o"]
+// 2. reverse(): ["o", "l", "l", "e", "H"]
+// 3. join(''):  "olleH"
+
+const reversed = str.split('').reverse().join(''); 
+console.log(reversed); // "olleH"
+```
 
 **10. reverse()**
 
@@ -454,12 +499,52 @@ console.log(text.substring(4, 0)); // "Java" (tự động đổi thứ tự n�
   array.sort(compareFunction);
   ```
   - `compareFunction`: Hàm so sánh tùy chọn để xác định thứ tự (nếu không có, mảng sẽ được sắp xếp theo thứ tự chuỗi mặc định).
+  - `compareFunction`: ra âm thì số đầu tiên đứng trước, số 2 đứng sau, dương thì ngược lại, 0 thì không thay đổi.
+
 - **Ví dụ**:
   ```javascript
   const arr = [4, 2, 3, 1];
   arr.sort((a, b) => a - b); // Sắp xếp theo thứ tự tăng dần
   console.log(arr); // [1, 2, 3, 4]
   ```
+!!! . Chú ý: sort() mặc định sắp xếp theo chuỗi (string) chứ không phải theo số.
+
+```js
+const numbers = [5, 20, 100, 1];
+numbers.sort();
+console.log(numbers); 
+// Kết quả: [1, 100, 20, 5]  <-- SAI! Vì nó so sánh ký tự đầu tiên: "1" < "2" < "5"
+```
+- Giải pháp: Để sắp xếp số, ta phải truyền vào một hàm so sánh (compare function): (a, b) => ...
+  - Nếu muốn tăng dần: return a - b
+  - Nếu muốn giảm dần: return b - a
+- Tại sao lại a - b?
+  - Nếu a = 5, b = 20 -> 5 - 20 = -15 (Số âm) -> Máy hiểu a nhỏ hơn b -> Đứng trước.
+  - Nếu a = 100, b = 20 -> 100 - 20 = 80 (Số dương) thì máy hiểu a lớn hơn b -> Đứng sau.
+
+!!! . Mặc định khi dùng so sánh string nên dùng hàm localCompare vì nó chính xác tuyệt đối cho mọi ngôn ngữ, hỗ trợ so sánh số trong chuỗi.
+    So sánh String bình thường sẽ theo mã ASCII dẫn đến Sai thứ tự Hoa/Thường, Sai số (10 < 2), Sai Tiếng Việt/Ký tự có dấu.
+    Cú pháp: chuỗi1.localeCompare(chuỗi2, ngôn_ngữ, tùy_chọn);
+    arr.sort((a, b) => a.localeCompare(b));
+```js
+const names = ["apple", "Banana", "cherry"];
+names.sort();
+
+console.log(names); 
+// Kết quả: ['Banana', 'apple', 'cherry']
+// Banana bắt đầu bằng B phải đứng giữa A và C.
+// Lý do ASCII: 'B' (66) nhỏ hơn 'a' (97).
+```
+```js
+// Cách sai (So sánh thường)
+const arr = ["Én", "Đào", "Dũng"];
+arr.sort(); 
+console.log(arr); // Kết quả: ["Dũng", "Én", "Đào"] (Sai: Đào đứng sau Én vì chữ Đ có mã lớn)
+
+// Cách đúng (Dùng localeCompare)
+arr.sort((a, b) => a.localeCompare(b, 'vi')); 
+console.log(arr); // Kết quả: ["Dũng", "Đào", "Én"] (Đúng chuẩn Tiếng Việt)
+```
 
 **12. shift()**
 
@@ -600,6 +685,13 @@ console.log(text.substring(4, 0)); // "Java" (tự động đổi thứ tự n�
   const mergedPerson = Object.assign({}, person, details);
   console.log(mergedPerson); // { name: 'John', age: 30, country: 'USA' }
   ```
+  ```javascript
+  const defaultSettings = { theme: "light", lang: "en", notifications: true };
+  const userSettings = { theme: "dark" }; // User chỉ chỉnh theme
+
+  const finalSettings = Object.assign({}, defaultSettings, userSettings);
+  // Kết quả: { theme: "dark", lang: "en", notifications: true }
+  ```
 
 **2. Object.keys()**
 
@@ -672,6 +764,8 @@ console.log(text.substring(4, 0)); // "Java" (tự động đổi thứ tự n�
   console.log(person.hasOwnProperty("name")); // true
   console.log(person.hasOwnProperty("gender")); // false
   ```
+- Thực tế: JSON trả về từ backend đôi khi thiếu trường dữ liệu. Cần kiểm tra trước khi truy cập để tránh lỗi ứng dụng bị crash.
+
 
 **6. Bảng mô tả các phương thức đối tượng**
 
