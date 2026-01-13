@@ -461,7 +461,7 @@ createPost();
 **3.6 Một số cách call api phân trang (pagination)**
 **3.6.1** Tư tưởng chung việc xử lý phân trang
 
-- Hãy tưởng tượng việc phân trang giống như đang đọc một cuốn sách dày 1000 trang. Không thể đọc 1 lúc hết 1000 trang (tải hết dữ liệu), mà bạn phải đọc từng trang một.
+- Hãy tưởng tượng việc phân trang giống như đang đọc một cuốn sách dày 1000 trang. Không thể đọc 1 lúc hết 1000 trang (tải hết dữ liệu), mà phải đọc từng trang một.
 - Mọi logic phân trang đều xoay quanh việc kiểm soát 3 con số này:
   - Current Page : Đang ở trang nào? (Ví dụ: Trang 1).
   - Limit / Page Size: Số item trong một trang? (Ví dụ: 20 ).
@@ -471,8 +471,7 @@ createPost();
 
 - Phân trang có số: Có số trang cụ thể (1, 2, 3, ...), nút Next/Prev. Dữ liệu cũ bị xóa thay bằng dữ liệu mới. Ví dụ google, shopee, rophim
   ![alt text](image-5.png)
-
-![alt text](image-6.png)
+  ![alt text](image-6.png)
 
 - Phân trang không có số:
   - Phân trang có nút xem thêm (đt thứ 2): Có một nút bấm duy nhất. Dữ liệu mới nối đuôi dữ liệu cũ.
