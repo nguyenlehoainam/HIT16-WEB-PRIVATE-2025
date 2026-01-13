@@ -22,19 +22,19 @@ Trước đây để có thể xử lý các tác vụ bất đồng bộ, Javas
 
 #### 1. Promise là gì?
 
-**Promise** là một đối tượng trong Javascript giúp xử lý bất đồng bộ (asynchronous). Nó đại diện cho một giá trị trong tương lai (có thể thành công hoặc thất bại)
+**Promise** (lời hứa) là một đối tượng trong Javascript giúp xử lý bất đồng bộ (asynchronous). Nó đại diện cho kết quả của một tác vụ bất đồng bộ. Kết quả này có thể chưa có ngay bây giờ, nhưng sẽ có trong tương lai.
 
 #### 2. Các trạng thái của Promise
 
 **Promise** có 3 trạng thái chính:
 
 - **Pending**: Lời hứa chưa được thực hiện (Promise chưa hoàn thành hoặc thất bại)
-- **Fulfilled**: Promise được hoàn thành và trả về kết quả (resolve)
-- **Rejected**: Promise bị lỗi (reject)
+- **Fulfilled**: Promise được hoàn thành và trả về kết quả (gọi hàm resolve() )
+- **Rejected**: Promise bị lỗi (gọi hàm reject() )
 
 #### 3. Cách tạo và sử dụng Promise
 
-- Cách tạo **Promise**
+- Cách tạo **Promise**:
 
   ```js
   const promise = new Promise((resolve, reject) => {
@@ -52,45 +52,35 @@ Trước đây để có thể xử lý các tác vụ bất đồng bộ, Javas
   - resolve(value): Gọi khi thành công.
   - reject(error): Gọi khi thất bại.
 
-- Cách sử dụng **Promise**
+- Cách lấy kết quả từ resolve và reject của **Promise** :
 
   ```js
   promise
     .then((result) => {
       console.log("Kết quả:", result); // Xử lý thành công
+      //console log ra Kết quả: Thành công! 🎉
     })
     .catch((error) => {
       console.log("Lỗi:", error); // Xử lý lỗi
+      //console log ra Lỗi: Lỗi xảy ra! ❌
     })
     .finally(() => {
       console.log("Hoàn thành! 🚀"); // Dù thành công hay thất bại, vẫn chạy
+      //console log ra Hoàn thành! 🚀
     });
   ```
 
-  - `.then()` → Nhận kết quả khi Promise thành công (resolve)
+  - .then() → Nhận kết quả khi Promise thành công (resolve)
+    - Sau khi nhận kết quả, thường sẽ hiển thị dữ liệu lên màn hình
   - .catch() → Nhận lỗi khi Promise thất bại (reject).
+    - Sau khi nhận lỗi, thường thông báo lỗi cho người dùng
   - .finally() → Luôn chạy dù thành công hay thất bại.
 
-#### 4. Ví dụ với setTimeout
-
-```js
-function wait(ms) {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(`Đã chờ ${ms}ms`);
-    }, ms);
-  });
-}
-
-wait(2000)
-  .then((result) => console.log(result)) // "Đã chờ 2000ms"
-  .finally(() => console.log("Done! 🚀"));
-```
-
-#### 5. Promise Chaining
+#### 4. Promise Chaining
 
 - **Promise Chaining** là cách nối chuỗi nhiều **Promise** để thực hiện các tác vụ tuần tự, trong đó kết quả của bước trước sẽ được truyền sang bước sau
 - Mỗi `.then()` sẽ trả về một Promise nên nó cho phép chaining (xâu chuỗi) nhiều `.then()` liên tiếp, nếu không có return trong callback trong `.then()` thì `.then()` tiếp theo sẽ nhận undefined
+- .then() chỉ có thể dùng với Promise
 
 ```js
 function getUser(userId) {
@@ -122,14 +112,17 @@ function getOrderDetails(orderId) {
 
 console.log("Bắt đầu...");
 
-getUser(1)
-  .then((user) => getOrders(user)) // Bước 1 → Bước 2
-  .then((orders) => getOrderDetails(orders[0])) // Bước 2 → Bước 3
+getUser(1) //gọi hàm getUser(1)
+  .then((user) => getOrders(user)) // truyền kết quả resolve{ 1, name: "Nguyễn Văn A" } vào biến user
+  .then((orders) => getOrderDetails(orders[0])) // truyền kết quả resolve["order123", "order456"] vào biến orders
   .then((orderDetails) => {
+    // truyền kết quả resolve{ orderId, item: "Laptop", price: 1500 } vào biến orderDetails
     console.log("🎉 Chi tiết đơn hàng:", orderDetails);
   })
   .catch((error) => console.error("❌ Lỗi:", error));
 ```
+
+![alt text](image-2.png)
 
 ### II. Async/Await
 
@@ -144,7 +137,7 @@ getUser(1)
 
 ##### 2.1. async
 
-- Khi khai báo một hàm với `async`, nó trả về một **promise**
+- Khi khai báo một hàm với `async` ở trước hàm, nó trả về một **promise**
 - Nếu trong hàm có return giá trị, giá trị này sẽ được bọc trong một `Promise.resolve()`
 
 ```js
@@ -155,6 +148,29 @@ async function getNumber() {
 console.log(getNumber());
 // 👉 Kết quả: Promise { 10 }
 // (Vì 10 được bọc trong Promise.resolve(10))
+```
+
+- Tương đương với :
+
+```js
+function getNumber() {
+  // Phải tự dùng Promise.resolve() để bọc giá trị 10
+  return Promise.resolve(10);
+}
+
+console.log(getNumber());
+```
+
+- Tương đương với :
+
+```js
+function getNumber() {
+  // 1. Tạo một đối tượng Promise mới
+  return new Promise((resolve, reject) => {
+    resolve(10);
+  });
+}
+console.log(getNumber());
 ```
 
 - Vì nó trả về một Promise nên chúng ta có thể sử dụng `.then()` để lấy ra kết quả từ promise
@@ -170,6 +186,17 @@ async function getData() {
   console.log(result); // 👉 20
 }
 
+getData();
+```
+
+- So sánh với cách viết .then()
+
+```js
+function getData() {
+  Promise.resolve(20).then((result) => {
+    console.log(result); // 👉 20
+  });
+}
 getData();
 ```
 
@@ -195,13 +222,12 @@ fetchOrderDetails();
 
 #### 1. API là gì?
 
-- **API (Application Programming Interface)** là giao diện lập trình ứng dụng, giúp các ứng dụng hoặc hệ thống có thể giao tiếp với nhau
+- Giải thích đơn giản thì **API** giúp cho người làm frontend có thể lấy ra, thêm , thay đổi,... dữ liệu trong cơ sở dữ liệu của server (backend) hoặc thực hiện một số chức năng khác như đăng nhập, ...
 
 - Ví dụ thực tế:
-  - Khi bạn đặt đồ ăn qua ứng dụng Grab, ứng dụng này sẽ gửi yêu cầu đến máy chủ (server) của nhà hàng.
-  - Nhà hàng xử lý yêu cầu và gửi phản hồi về ứng dụng.
-  - Ứng dụng hiển thị thông tin về đơn hàng của bạn.
-    👉 API chính là cầu nối giúp ứng dụng và máy chủ giao tiếp với nhau!
+  - Muốn lấy được dữ liệu danh sách phim trong csdl để còn hiển thị lên trang web thì sẽ phải call api từ phía server, khi đó server sẽ trả về một danh sách phim dưới dạng json như trong ảnh.
+    ![alt text](image-3.png)
+  - User muốn đăng nhập thì , nhập tk mk xong , người làm frontend sẽ phải call api xác thực xem tk mk có tồn tại trong csdl không,..
 
 #### 2. Client và Server là gì?
 
@@ -217,9 +243,9 @@ fetchOrderDetails();
   - Server gửi phản hồi (Response) về Client
   - Client hiển thị dữ liệu nhận được
 - Ví dụ thực tế
-  - Nhập `facebook.com` trên trình duyệt -> Client gửi request
-  - Máy chủ Facebook xử lý yêu cầu và gửi trang web về -> Server gửi response
-  - Trình duyệt hiển thị nội dung của Facebook (Client hiển thị dữ liệu)
+  - Nhập `facebook.com` trên trình duyệt -> Client gửi request (call api bài viết) để lấy các bài viết
+  - Server Facebook xử lý yêu cầu và gửi dữ liệu bài viết cho client (gửi phản hồi response)
+  - Trình duyệt nhận được dữ liệu của api và hiển thị nội dung các bài viết của Facebook
 
 #### 3. Fetch API
 
@@ -240,7 +266,7 @@ fetchOrderDetails();
 | **PATCH**       | Cập nhật dữ liệu trên server     |
 | **DELETE**      | Xóa dữ liệu trên server          |
 
-##### 3.3. Cách thành phần kèm theo khi Fetch API
+##### 3.3. Các thành phần kèm theo khi Fetch API
 
 - **Headers**
   - Headers (Tiêu đề HTTP) chứa các thông tin bổ sung về yêu cầu (request) hoặc phản hồi (response)
@@ -275,8 +301,10 @@ fetch("https://jsonplaceholder.typicode.com/posts", {
     "Content-Type": "application/json",
   },
   body: JSON.stringify({ title: "Hello", body: "Nội dung", userId: 1 }),
+  // JSON.stringify() chuyển object thành JSON string
 })
   .then((response) => response.json())
+  //.json() chuyển JSON string thành object trong JS
   .then((data) => console.log("✅ Dữ liệu phản hồi:", data))
   .catch((error) => console.error("❌ Lỗi:", error));
 ```
@@ -293,7 +321,7 @@ fetch("https://jsonplaceholder.typicode.com/posts", {
   }
   ```
 
-  - Dùng `JSON.stringify()` để chuyển object → JSON string
+  - Dùng `JSON.stringify()` để chuyển object → JSON string, nên cần hàm này khi gửi dữ liệu lên server
 
   ```js
   const user = { name: "Alice", age: 25 };
@@ -301,7 +329,7 @@ fetch("https://jsonplaceholder.typicode.com/posts", {
   console.log(jsonString); // '{"name":"Alice","age":25}'
   ```
 
-  - Dùng `JSON.parse()` để chuyển JSON string → object
+  - Dùng `JSON.parse()` để chuyển JSON string → object, nên cần hàm này khi lấy dữ liệu từ server
 
   ```js
   const jsonString = '{"name":"Alice","age":25}';
@@ -317,9 +345,9 @@ fetch("https://jsonplaceholder.typicode.com/posts", {
     .then((data) => console.log("📌 Dữ liệu JSON:", data));
   ```
 
-##### 3.4. Gửi dữ liệu với Fetch API
+##### 3.4. Sử dụng Fetch API
 
-**3.3.1. GET (Đơn giản nhất)**
+**3.4.1. GET (Đơn giản nhất)**
 
 ```js
 fetch("https://jsonplaceholder.typicode.com/posts/1")
@@ -328,7 +356,7 @@ fetch("https://jsonplaceholder.typicode.com/posts/1")
   .catch((error) => console.error("❌ Lỗi khi gọi API:", error));
 ```
 
-**3.3.2. POST**
+**3.4.2. POST**
 
 ```js
 fetch("https://jsonplaceholder.typicode.com/posts", {
@@ -347,7 +375,7 @@ fetch("https://jsonplaceholder.typicode.com/posts", {
   .catch((error) => console.error("❌ Lỗi khi gửi dữ liệu:", error));
 ```
 
-**3.3.3. PUT**
+**3.4.3. PUT**
 
 ```js
 fetch("https://jsonplaceholder.typicode.com/posts/1", {
@@ -367,7 +395,7 @@ fetch("https://jsonplaceholder.typicode.com/posts/1", {
   .catch((error) => console.error("❌ Lỗi khi cập nhật dữ liệu:", error));
 ```
 
-**3.3.4. DELETE**
+**3.4.4. DELETE**
 
 ```js
 fetch("https://jsonplaceholder.typicode.com/posts/1", {
@@ -393,7 +421,7 @@ async function getData() {
     const response = await fetch(
       "https://jsonplaceholder.typicode.com/posts/1"
     );
-    const data = await response.json(); // Chuyển kết quả thành JSON
+    const data = await response.json(); // Chuyển kết quả thành object trong js
     console.log("✅ Dữ liệu nhận được:", data);
   } catch (error) {
     console.error("❌ Lỗi xảy ra:", error);
@@ -428,4 +456,287 @@ async function createPost() {
 }
 
 createPost();
+```
+
+**3.6 Một số cách call api phân trang (pagination)**
+**3.6.1** Tư tưởng chung việc xử lý phân trang
+
+- Hãy tưởng tượng việc phân trang giống như đang đọc một cuốn sách dày 1000 trang. Không thể đọc 1 lúc hết 1000 trang (tải hết dữ liệu), mà bạn phải đọc từng trang một.
+- Mọi logic phân trang đều xoay quanh việc kiểm soát 3 con số này:
+  - Current Page : Đang ở trang nào? (Ví dụ: Trang 1).
+  - Limit / Page Size: Số item trong một trang? (Ví dụ: 20 ).
+  - Total pages: Tổng cộng có bao nhiêu dữ liệu? Để biết khi nào thì hết dữ liệu mà dừng lại và thông báo hết cho user.
+
+**3.6.2** Các kiểu phân trang:
+
+- Phân trang có số: Có số trang cụ thể (1, 2, 3, ...), nút Next/Prev. Dữ liệu cũ bị xóa thay bằng dữ liệu mới. Ví dụ google, shopee, rophim
+  ![alt text](image-5.png)
+
+![alt text](image-6.png)
+
+- Phân trang không có số:
+  - Phân trang có nút xem thêm (đt thứ 2): Có một nút bấm duy nhất. Dữ liệu mới nối đuôi dữ liệu cũ.
+    ![alt text](image-7.png)
+  - Infinitie scroll: Ví dụ facebook, youtube,...
+    ![alt text](image-9.png)
+
+**3.6.3** Ví dụ code phân trang có số
+
+- Nguồn api: https://ophim18.cc/api-document
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      button {
+        font-family: inherit;
+      }
+
+      .movies {
+        display: grid;
+        margin-top: 3rem;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1rem;
+        justify-content: center;
+      }
+
+      .movies .movie__name {
+        font-size: 1rem;
+      }
+
+      .movies .movie__origin-name {
+        font-size: 0.875rem;
+      }
+
+      .movies .movie__img {
+        overflow: hidden;
+        border-radius: 8px;
+      }
+
+      .movie .movie__img img:hover {
+        transform: scale(1.05);
+      }
+
+      .movies .movie__img img {
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.3s;
+        aspect-ratio: 2/3;
+      }
+
+      .movie {
+        display: grid;
+        grid-template-rows: subgrid;
+        grid-row: span 3;
+        text-align: center;
+        gap: 0;
+      }
+
+      .pagination {
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+        align-items: flex-end;
+        gap: 1rem;
+      }
+
+      button {
+        padding: 12px 16px;
+        cursor: pointer;
+        border-radius: 8px;
+        border: none;
+        transition: all 0.3s;
+      }
+      button:hover {
+        background-color: rgba(0, 0, 0, 0.266);
+      }
+
+      .page-info {
+        border-radius: 8px;
+        border: 1px solid black;
+        padding: 0.5rem;
+      }
+
+      .page-input {
+        padding: 0.25rem 0.5rem;
+        text-align: end;
+        max-width: 100px;
+      }
+
+      .wrapper {
+        padding-inline: 1.5rem;
+        margin: 0 auto;
+      }
+
+      .spinner {
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #3498db;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+        margin: 50px auto;
+        grid-column: 1 / -1;
+      }
+
+      .error-msg {
+        text-align: center;
+        color: red;
+        grid-column: 1 / -1;
+        padding: 20px;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="movies"></div>
+      <div class="pagination">
+        <button class="btn-prev" disabled>Trang trước</button>
+        <div class="page-info">
+          <span>Trang</span>
+          <input type="number" class="page-input" value="1" min="1" />
+          <span class="total-pages"> /...</span>
+        </div>
+        <button class="btn-next">Trang sau</button>
+      </div>
+    </div>
+    x
+    <script>
+      const container = document.querySelector(".movies");
+      const pageInput = document.querySelector(".page-input");
+      const totalPages = document.querySelector(".total-pages");
+      const btnPrev = document.querySelector(".btn-prev");
+      const btnNext = document.querySelector(".btn-next");
+
+      let totalPagesCount = 1;
+      const params = {
+        page: 1,
+        limit: 24,
+      };
+
+      const toggleControls = (isDisabled) => {
+        btnPrev.disabled = isDisabled;
+        btnNext.disabled = isDisabled;
+        pageInput.disabled = isDisabled;
+        if (!isDisabled) {
+          btnPrev.disabled = params.page <= 1;
+          btnNext.disabled = params.page >= totalPagesCount;
+        }
+      };
+      const fetchMovies = async (slug, params = {}) => {
+        const baseUrl = `https://ophim1.com/v1/api/danh-sach/${slug}`;
+        const url = new URL(baseUrl);
+        Object.keys(params).forEach((key) => {
+          if (params[key] !== undefined && params[key] !== null) {
+            url.searchParams.append(key, params[key]);
+          }
+        });
+        try {
+          container.innerHTML = '<div class="spinner"></div>';
+          toggleControls(true); // Disable buttons
+          const response = await fetch(url);
+          const res = await response.json();
+          renderMovies(res);
+        } catch (error) {
+          console.log(error);
+          container.innerHTML = `<div class="error-msg">⚠️ Lỗi: ${error.message}. <br> Vui lòng thử lại.</div>`;
+        } finally {
+          toggleControls(false); // Enable buttons
+        }
+      };
+
+      const renderMovies = (res) => {
+        if (!res.data || !res.data.items || res.data.items.length === 0) {
+          container.innerHTML = `<div class="error-msg">Không có dữ liệu</div>`;
+          return;
+        }
+        const imageDomain = res.data.APP_DOMAIN_CDN_IMAGE;
+        const movies = res.data.items;
+        if (movies.length === 0) {
+          container.innerHTML = `Không có dữ liệu`;
+          return;
+        }
+        const totalItemsPerPage = res.data.params.pagination.totalItemsPerPage;
+        const totalItems = res.data.params.pagination.totalItems;
+        totalPagesCount = Math.ceil(totalItems / totalItemsPerPage);
+        pageInput.max = totalPagesCount;
+        totalPages.textContent = ` / ${totalPagesCount}`;
+        btnPrev.disabled = params.page <= 1;
+        btnNext.disabled = params.page >= totalPagesCount;
+        const htmlString = movies
+          .map((movie) => {
+            const thumbUrl = `${imageDomain}/uploads/movies/${movie.thumb_url}`;
+            return `
+                    <div class="movie">
+                        <div class="movie__img">
+                            <img src="${thumbUrl}" alt="${movie.name}" loading="lazy">
+                        </div>
+                        <h1 class="movie__name">${movie.name}</h1>
+                        <h2 class="movie__origin-name">${movie.origin_name}</h2>
+                    </div>
+                `;
+          })
+          .join("");
+        container.innerHTML = htmlString;
+      };
+      btnPrev.addEventListener("click", () => {
+        if (params.page > 1) {
+          params.page--;
+          pageInput.value = params.page;
+          fetchMovies("hoat-hinh", params);
+        }
+      });
+
+      btnNext.addEventListener("click", () => {
+        if (params.page < totalPagesCount) {
+          params.page++;
+          pageInput.value = params.page;
+          fetchMovies("hoat-hinh", params);
+        }
+      });
+
+      pageInput.addEventListener("change", () => {
+        let newVal = parseInt(pageInput.value);
+        if (isNaN(newVal) || newVal < 1) newVal = 1;
+        if (newVal > totalPagesCount) newVal = totalPagesCount;
+        params.page = newVal;
+        pageInput.value = newVal;
+        fetchMovies("hoat-hinh", params);
+      });
+
+      fetchMovies("hoat-hinh", params);
+    </script>
+  </body>
+</html>
 ```
