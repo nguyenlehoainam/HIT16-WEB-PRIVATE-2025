@@ -30,7 +30,6 @@
 <hr>
 <h4 id="i-destructuringi-destructuring"><a href="#i-destructuring">I. Destructuring</a> </h4>
 <h4 id="ii-spreadii-spread"><a href="#ii-spread">II. Spread</a> </h4>
-<h4 id="iii-restiii-rest"><a href="#iii-rest">III. Rest</a> </h4>
 <h4 id="iv-settimeoutsetintervaliv-settimeoutsetinterval"><a href="#iv-settimeoutsetinterval">IV. setTimeout/setInterval</a> </h4>
 <h4 id="v-callback-hellv-callback-hell"><a href="#v-callback-hell">V. Callback Hell</a> </h4>
 <h4 id="vi-đồng-bộ-và-bất-đồng-bộvi-đồng-bộ-synchronous-và-bất-đồng-bộ-asynchronous"><a href="#vi-%C4%91%E1%BB%93ng-b%E1%BB%99-synchronous-v%C3%A0-b%E1%BA%A5t-%C4%91%E1%BB%93ng-b%E1%BB%99-asynchronous">VI. Đồng bộ và Bất đồng bộ</a> </h4>
@@ -231,23 +230,6 @@ array<span class="token punctuation">[</span><span class="token number">0</span>
 <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token spread operator">...</span>copyWithSpread<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 😉 😊 😇</span>
 </code></pre></li>
 </ul>
-<h3 id="iii-rest">III .Rest </h3>
-<ul>
-<li>Rest giúp gom nhiều tham số vào một mảng.</li>
-<li><strong>Rest với Function:</strong></li>
-</ul>
-<pre data-role="codeBlock" data-info="js" class="language-javascript js"><code><span class="token keyword keyword-function">function</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token parameter"><span class="token spread operator">...</span>numbers</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword control-flow keyword-return">return</span> numbers<span class="token punctuation">.</span><span class="token method function property-access">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">total<span class="token punctuation">,</span> num</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> total <span class="token operator">+</span> num<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token function">sum</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 10</span>
-</code></pre><ul>
-<li><strong>Rest với Destructuring:</strong></li>
-</ul>
-<pre data-role="codeBlock" data-info="js" class="language-javascript js"><code><span class="token keyword keyword-const">const</span> <span class="token punctuation">[</span>first<span class="token punctuation">,</span> <span class="token spread operator">...</span>rest<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-
-<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>first<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 10</span>
-<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>rest<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [20, 30, 40]</span>
 </code></pre><h3 id="iv-settimeoutsetinterval">IV. setTimeout/setInterval </h3>
 <h4 id="1-settimeout">1. setTimeout() </h4>
 <ul>
